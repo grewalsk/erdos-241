@@ -1,0 +1,1975 @@
+arXiv:math/0407117v1  [math.NT]  8 Jul 2004
+A Complete Annotated Bibliography of Work Related
+to Sidon Sequences
+Kevin O’Bryant∗
+Department of Mathematics
+University of California, San Diego, USA
+kevin@member.ams.org
+Submitted: May 3, 2004; Accepted pending revision: May 17, 2 004; Published: July sometime,
+2004
+MR Subject Classiﬁcations: 11B50, 11B83, 05B10
+Abstract
+A Sidon sequence is a sequence of integers a1 < a 2 < . . . with the property that
+the sums ai + aj (i ≤ j) are distinct. This work contains a survey of Sidon sequence s
+and their generalizations, and an extensive annotated and h yperlinked bibliography
+of related work.
+1 Introduction
+For a subset A of an abelian group (usually Z), deﬁne
+A∗(k) := # {(a1, a2) ∈ A × A : a1 + a2 = k}
+and
+A◦(k) := # {(a1, a2) ∈ A × A : a1 − a2 = k}.
+In 1932, Simon Sidon [3] considered sets of integers with both A∗ and A◦ bounded1.
+It is easily shown (and done so in the next section) that A∗(k) ≤ 2 for all k if and only if
+A◦(k) ≤ 1 for all k ̸= 0. This led Sidon to ask Erd˝ os how large a subset of {1, 2, . . . , n} can
+∗The author is a National Science Foundation Postdoctoral Resear ch Fellow at the University of
+California at San Diego, grant DMS-0202460.
+1Here is one of his theorems. Suppose that C and g are real numbers. There is a constant K = K(C, g)
+such that for every set A of positive integers with A∗(k) + A◦(k) ≤ g (for all k > 0) and every sequence
+λa with∑ |λa|2 ≤ C, there is a function f : [0 , 1] → C which is bounded by K and ˆf (a) = λa for every
+a ∈ A.
+to appear in the electronic journal of combinatorics 11 (2004), #R00 1
+
+be with the property that A∗(k) ≤ 2 (for all k)? Since that time such sets, e.g., {1, 2, 5, 7},
+have been known as Sidon sets. In other words, A is a Sidon set if the coeﬃcients of
+(∑
+a∈A
+za
+)2
+are bounded by 2.
+Unfortunately, many authors call Sidon sets “ B2 sets”, and harmonic analysts use the
+term “Sidon set” to mean something entirely diﬀerent. These two fa ctors make searching
+the literature rather diﬃcult. In Math Sci-Net, for example, it is impo ssible to search
+for a math expression such as “ B2”, and a search for “Sidon” returns almost 700 hits,
+most concerning the harmonic analysts’ Sidon sets. Further, the re are several diﬀerent
+notations in use, sometimes making it diﬃcult to compare results. For these reasons, I felt
+that it would be useful to compile a complete annotated bibliography w ith a consistent
+notation and to lay out the major avenues of research, past, pre sent and possibly future.
+In loose terms, requiring a set to have the Sidon property forces it to be thin, e.g.,
+it cannot contain three consecutive integers. The most basic ques tion is “How thick can
+a Sidon set be?” There are several ways to make this question explic it, several diﬀerent
+settings to explore, and a variety of generalizations. Having only pa rtially solved these
+problems, researchers have recently begun turning their attent ion to the question “what
+is the structure of a maximally thick Sidon set?”
+In Section 2, we deﬁne the relevant sets and counting functions an d ﬁx the terminology
+used in the annotations. In Section 3, we present the known gener al constructions of
+(generalized) Sidon sets. In Sections 4 and 5 we give the state-of- the-art results concerning
+the density of Sidon sets. In Section 6 we state a few of the results concerning the structure
+of Sidon sets and their sumsets. In Section 7 we discuss the problem of ﬁnding a Sidon
+subset of a given set, such as Sidon sets whose elements are squar es or ﬁfth powers. In
+Section 9 we list some of the major unsolved questions.
+Finally, we give a partially annotated bibliography of works which either develop or
+apply the theory of Sidon sets. The bibliography is, so far as I know, complete and 100%
+accurate. The bibliography is heavily hyperlinked (so you lose someth ing if you print it
+out), and the links to Math Sci-Net reviews require a Math Sci-Net su bscription. Please
+email the author regarding any omissions, additions, errors, or cla riﬁcations.
+2 Terminology
+We begin by deﬁning a generalized Sidon sequence (with parameters h and g) to be a
+sequence A such that the coeﬃcients of
+(∑
+a∈A
+za
+)h
+(1)
+are bounded by g. We note that the coeﬃcient of zk in (1), which we denote A∗h(k),
+has a number-theoretic interpretation: it is the number of ways to write k as a sum of h
+to appear in the electronic journal of combinatorics 11 (2004), #R00 2
+
+(not necessarily distinct) elements of A. Also note that this deﬁnition is sensible for A a
+subset of any group G.
+Our notation A∗h(k) is motivated by the notation for Fourier convolution: for any
+functions f, g, we have
+f ∗ g(k) =
+∑
+x∈G
+f (x)g(k − x).
+Thus, if A is the indicator function of the sequence A (a common and useful abuse
+of notation), then A∗h(k) is exactly the convolution of h copies of A evaluated at k:
+A∗h(k) = A ∗ · · · ∗ A(k). For brevity, we write A∗ in place of A∗2. Likewise, we hijack the
+notation of Fourier correlation:
+A◦(k) =
+∑
+x
+A(x)A(k + x) = # {(a1, a2) ∈ A × A : a2 − a1 = k}.
+While convolution is associative, correlation is not. Thus A◦h is ill-deﬁned; we adopt the
+convention A◦h = A◦h−1 ◦ A.
+Deﬁnition 1 ( B∗
+h[g] sequence). A sequence A is a B∗
+h[g] sequence if the coeﬃcients of(∑
+a∈A za)h
+are bounded by g. If A ⊆ G ̸= Z, then we call A a B∗
+h[g](G) sequence. In
+particular, if G is the additive group of integers modulo n, then we speak of B∗
+h[g] (mod n)
+sequences. We use the same notation for the property and for t he class of sequences with
+the property, i.e., if A is a B∗
+h[g] sequence then we write A ∈ B∗
+h[g].
+Thus, Sidon sequences are exactly the B∗
+2[2] sequences. We note that A◦ is bounded
+by 1 if and only if A∗ is bounded by 2. For if A◦(k) > 1 (with k > 0), then there are
+a1, a2, a3, a4 ∈ A with k = a1 − a2 = a3 − a4, and at most two of the ai are equal. This
+means that a4 + a1 = a1 + a4 = a2 + a3 = a3 + a2, so that A∗(a1 + a4) ≥ 3 (it is possible
+that a2 = a3 or a4 = a1, but not both). Note however that if A = {2k, 2k + 1 : k ≥ 1},
+then for all k, A∗(k) ≤ 4, while A◦(1) = ∞; and if A = {±2k : k ≥ 1} then A◦(k) ≤ 3 for
+all k ̸= 0, but A∗(0) = ∞. The upshot is that B∗
+2[2] sequences are not only historically
+important, but they are qualitatively easier to deal with. In essent ially all ways, more is
+known about Sidon sequences than about B∗
+h[g] sequences with h > 2 or g > 3.
+We use the notation [ n] := {1, 2, . . . , n}. Obviously the B∗
+h[g] property is invariant
+under translation and dilation, so a supposition of the type “ A ⊆ [n]” can usually be
+replaced with “ A is a subset of an arithmetic progression of length n”.
+Deﬁnition 2 ( R and C). Rh(g, n) is the largest cardinality of a B∗
+h[g] sequence contained
+in [n]. Ch(g, n) is the largest cardinality of a B∗
+h[g] (mod n) sequence.
+Deﬁnition 3 ( Bh[g] sequence). A Bh[g] sequence is a B∗
+h[h!g] sequence. If g = 1, then
+we speak simply of Bh sequences.
+We note that many authors deﬁne a Bh[g] sequence to be a B∗
+h[h!(g + 1) − 1] sequence
+(and so a Sidon sequence, for these authors, is a sequence for wh ich A∗h(k) ≤ 3). This
+is not without reason. If k = a1 + · · · + ah and the ai are distinct, then there are h!
+to appear in the electronic journal of combinatorics 11 (2004), #R00 3
+
+rearrangements of the ai which contribute to A∗h(k). Since there are asymptotically few
+h-tuples from A×· · ·×A that have repeated ai’s, one expects that there is little distinction
+(asymptotically) between B∗
+h[h!g] sets and B∗
+h[h!(g+1)−1] sets. This expectation, however,
+has not been proven to hold except for h = 2, g = 1.
+3 Constructions
+3.1 The greedy algorithm
+The obvious ﬁrst attempt at constructing a B∗
+h[g] sequence is to be greedy. Set γ1 = 1,
+and deﬁne for each k ≥ 1 the sequence
+Gk = {γ1, γ2, . . . , γk}
+where γk is the least m > γ k−1 such that {γ1, γ2, . . . , γk} is a B∗
+h[g] sequence. Then
+Gh[g] :=
+∞⋃
+k=1
+Gk
+is an inﬁnite B∗
+h[g] sequence.
+Mian & Chowla [10] computed the ﬁrst terms of G2[2] (i.e., the greedy Sidon sequence,
+also called the Mian-Chowla sequence) to be 1, 2, 4, 8, 13, 21, 31, 45 , 66, 81, 97, . . . .
+St¨ ohr [12] notes that the Mian-Chowla sequence satisﬁes γk < (k − 1)3 + 1. Even for this
+most simple case, however, the growth of γk is not well understood. See [42]. The points
+(k, logk(γk)) are shown in Figure 3.1.
+It is interesting to study the greedy sequence with diﬀerent seeds . Start by setting
+γ1, . . . , γr, and then continue the sequence in the same manner as above. The resulting
+sequence is denoted Gh[g; γ1, . . . , γr].
+Conjecture 4. For any h and g, there are not positive integers r, γ1, . . . , γr such that
+inf
+A∈B∗
+h[g]
+{∑
+a∈A
+1
+a
+}
+is achieved with A = Gh[g; γ1, . . . , γr].
+This conjecture is dealt with in [60, 108]; it is known that the inﬁmum in Co njecture 4
+(for g = h = 2) is between 2 .16 and 2 .25.
+3.2 Ruzsa’s sets
+A very simple construction of B2 sequences was given by Ruzsa [59], which is generalized
+in [125] to B2[g2] sequences. Let θ be a generator of the multiplicative group modulo the
+prime p. For k, t ∈ [p − 1], let at,k be the congruence class modulo p2 − p deﬁned by
+at,k ≡ t (mod p − 1) and at,k ≡ kθt (mod p).
+to appear in the electronic journal of combinatorics 11 (2004), #R00 4
+
+50 100 150 200
+1.8
+1.9
+2.1
+2.2
+2.3
+Figure 1: The points ( k, logk(γk)) for the greedy Sidon set G2[2].
+Deﬁne the set
+Ruzsa(p, θ, k) := {at,k : 1 ≤ t < p } ⊆ Z/(p2 − p).
+If K is any subset of [ p − 1], then
+Ruzsa(p, θ, K) :=
+⋃
+k∈K
+Ruzsa(p, θ, k)
+is a subset of Z/(p2 − p) with cardinality |K|(p − 1) and
+Ruzsa(p, θ, K) ∈ B2[|K|2].
+An example is given in Figure 3.2: the row labeled k is Ruzsa(13, 2, k). Note that each
+row is a translate modulo 13 2 − 13 of the row above (and rotated). This is because
+at,kθ + p ≡ a(t+1 mod p−1),k (mod p2 − p),
+and consequently Ruzsa(p, θ, kθ) + p = Ruzsa(p, θ, k). Since θ is a generator of the
+multiplicative group modulo p, this implies that for ﬁxed p and θ all of the various
+Ruzsa(p, θ, k) are translates of one another.
+3.3 Bose’s sets
+Bose [6] constructed Sidon sequences by using ﬁnite aﬃne geometr y. His construction was
+extended to Bh sequences (and given in the language of ﬁnite ﬁelds) in [15], and exten ded
+to appear in the electronic journal of combinatorics 11 (2004), #R00 5
+
+t
+k
+1 2 3 4 5 6 7 8 9 10 11 12
+1 145 134 99 16 149 90 115 152 57 10 59 144
+2 121 86 3 136 77 102 139 44 153 46 131 132
+3 97 38 63 100 5 114 7 92 93 82 47 120
+4 73 146 123 64 89 126 31 140 33 118 119 108
+5 49 98 27 28 17 138 55 32 129 154 35 96
+6 25 50 87 148 101 150 79 80 69 34 107 84
+7 1 2 147 112 29 6 103 128 9 70 23 72
+8 133 110 51 76 113 18 127 20 105 106 95 60
+9 109 62 111 40 41 30 151 68 45 142 11 48
+10 85 14 15 4 125 42 19 116 141 22 83 36
+11 61 122 75 124 53 54 43 8 81 58 155 24
+12 37 74 135 88 137 66 67 56 21 94 71 12
+Figure 2: Table of at,k with p = 13, θ = 2. Each row is a Sidon set, the union of any
+two rows is a B∗
+2[8] set, the union of any |K| rows is a B∗
+2[2|K|2] set. Speciﬁcally, the row
+labeled k is Ruzsa(13, 2, k).
+to B2[g2] sequences in [125]. Let q be any prime power, θ a generator of the multiplicative
+group of Fqh, and k ∈ Fq, and deﬁne the set
+Boseh(q, θ, k) := {a ∈ [qh − 1] : θa − kθ ∈ Fq}.
+Boseh(q, θ, 1) is Bh (mod qh − 1) set, and some work (see [11]) has been done on the
+question of how quickly these sets can be computed and whether va rying θ (with h = 2)
+can help produce a Sidon set with smaller largest element. If K is any subset of Fq \ {0},
+then
+Bose2(q, θ, K) :=
+⋃
+k∈K
+Bose2(q, θ, k)
+is a B2[|K|2] (mod q2 − 1) sequence.
+An example is given in Figure 3.3, with q = 13, h = 2, F132 = F13[x]/(x2 + 2), and
+θ = 1 + 3x. The column labeled c1 is Bose2(13, 1 + 3x mod (13 , x2 + 2), c1). Note that, as
+with Ruzsa’s sets, varying k has the eﬀect of translating the set:
+Boseh(q, θ, k) = Boseh(q, θ, 1) + logθ(k).
+We note that, unlike Ruzsa’s sets, each row (except the one labeled zero) in Figure 3.3 is
+also a Sidon set.
+3.4 Singer’s sets
+Sidon sequences arose incidentally in Singer’s work [4] on ﬁnite projec tive geometry. While
+Singer’s construction gives a slightly thicker Sidon set than Bose’s (which is slightly thicker
+to appear in the electronic journal of combinatorics 11 (2004), #R00 6
+
+c1
+c0
+0 1 2 3 4 5 6 7 8 9 10 11 12
+0 77 147 21 49 35 91 7 119 133 105 63 161
+1 168 164 148 1 19 114 87 123 138 79 13 76 116
+2 70 25 66 40 50 149 71 83 89 146 16 18 157
+3 112 23 58 108 125 31 92 20 67 113 60 82 131
+4 140 153 95 159 136 48 110 86 120 88 51 59 141
+5 126 96 127 34 45 122 37 145 74 81 106 139 72
+6 14 90 93 137 128 15 10 130 27 152 101 33 162
+7 98 78 117 17 68 111 46 94 99 44 53 9 6
+8 42 156 55 22 165 158 61 121 38 129 118 43 12
+9 56 57 143 135 4 36 2 26 132 52 75 11 69
+10 28 47 166 144 29 151 104 8 115 41 24 142 107
+11 154 73 102 100 62 5 167 155 65 134 124 150 109
+12 84 32 160 97 163 54 39 3 30 103 85 64 80
+Figure 3: The least positive integer k such that (1 + 3 x)k = c0 + c1x mod (13 , x2 + 2).
+The column corresponding to c1 is the Sidon set Bose2(13, 1 + 3x mod (13 , x2 + 2), c1).
+than Ruzsa’s), the construction is more complicated — even after t he simpliﬁcation of [15].
+Singer’s construction was extended to B2[g2] sequences in [125]. No computational work
+has been published for Singer’s sets.
+Let q be any prime power, and let θ be a generator of the multiplicative group of Fqh+1.
+For each ⃗k = ⟨k1, . . . , kh⟩ ∈ Fh
+q deﬁne the set
+T (⃗k) := {0} ∪
+{
+a ∈ [qh+1 − 1] : θa −
+h∑
+i=1
+kiθi ∈ Fq
+}
+.
+Then deﬁne
+Singerh(q, θ, ⃗k)
+to be the congruence classes modulo qh+1−1
+q−1 that intersect T (⃗k). Also deﬁne
+Singerh(q, θ, K) :=
+⋃
+⃗k∈K
+Singerh(q, θ, ⃗k),
+where K is any subset of Fh
+q . The set Singerh(q, θ, ⟨1, 0, 0, . . .⟩) is a Bh (mod qh+1−1
+q−1 ) set.
+The set Singer2(q, θ, ⟨1, [k], 0⟩) is a B∗
+2[2k2] set.
+3.5 Erd˝ os & Tur` an’s sets
+Erd˝ os & Tur` an [5] gave a construction based on quadratic residu es. These sets are sub-
+stantially thinner than the constructions of Ruzsa, Bose, and Sing er given above.
+to appear in the electronic journal of combinatorics 11 (2004), #R00 7
+
+Fix a prime p, and let ( k2) be the unique integer in [ p − 1] congruent to k2 modulo p.
+The set {2pk + (k2) : 1 ≤ k < p } is a B2 set contained in [2 p + 1, 2p(p − 1) + 1].
+3.6 Probabilistic Sets
+The seminal paper of Erd˝ os & R´ enyi [13] introducing the probabilis tic method to com-
+binatorial number theory contains a small section on B2g sets. The crucial observation
+made is that (setting pn = 1/√
+n) the sum
+N −1∑
+n=1
+pnpN −n
+is bounded independent of N. In particular, they prove the existence of an inﬁnite B∗
+2[g]
+set a1 < a 2 < · · · satisfying
+ak = O
+(
+k2(1+2/(g−1)))
+.
+See the review of [13] for a more detailed explanation.
+See [84, 92, 94, 99, 116, 126] for some applications of probability to Sidon sequences, and
+vice versa.
+4 The size of ﬁnite Sidon sequences
+One of the “most wanted” problems is to asymptotically estimate Rh(g, n) for any h, g
+with h > 2 or g > 3. Also on the “most wanted” list is a construction of B∗
+h[g] sequences,
+with g > h !, which is dense but is not merely several Bh sets woven together (such sets
+do exist: [25]).
+We measure the thickness of B∗
+h[g] sets with the quantity:
+σh(g) := lim
+n→∞
+Rh(g, n)
+h
+√
+⌊g/h!⌋ n
+.
+Strictly speaking, this limit is not known to exist for h > 2 or for g > 3. One should
+always understand a lower bound on σh(g) as being a lower bound on the corresponding
+lim inf, and an upper bound as being an upper bound on the lim sup. If g = h!, then we
+simply write σh.
+There are a number of conjectures that are natural to make:
+1. The limit in the deﬁnition of σh(g) is in fact well-deﬁned.
+2. For each h, σh(g) is an increasing function of g.
+3. For each h, lim g→∞ σh(g) is deﬁned and ﬁnite.
+4. If kh! ≤ g1 ≤ g2 < (k + 1)h!, then σh(g1) = σh(g2).
+to appear in the electronic journal of combinatorics 11 (2004), #R00 8
+
+2 6 10 14 18 22 26 30 34 38 42 46 50
+1
+1.1
+1.2
+1.3
+1.4
+1.5
+1.6
+1.7
+1.8
+Figure 4: The best known upper and lower bounds on σ2(g).
+As basic as these questions may seem, they remain unanswered. Re garding question 3,
+the limit is known to be bounded between two positive constants. Sad ly, there isn’t even
+a conjecture as to growth of σh as a function of h (it may well depend on the parity of h).
+The only explicit values known are σ2(2) = σ2(3) = 1.
+4.1 h = 2
+Erd˝ os oﬀered USD 500 for answer to the question, “Is R2(2, n) − √n unbounded?” The
+answer is likely “yes”; it is also likely that R(2, n) − √n is nonnegative. Unfortunately,
+there has been no progress on these questions since 1941, when it was found that
+−nα/2 < R(2, n) − √n < n 1/4 + 1,
+the lower bound holding only for n suﬃciently large, with α being a real number such
+that there is always a prime between n − nα and n (the current record is α = 0.525).
+The best known upper and lower bounds on σ2(g) are shown in Figure 4.1. The lower
+to appear in the electronic journal of combinatorics 11 (2004), #R00 9
+
+bound is
+σ2(4) ≥
+√
+8/7 > 1.069,
+σ2(6) ≥
+√
+16/15 > 1.032,
+σ2(8) ≥
+√
+8/7 > 1.069,
+σ2(10) ≥
+√
+49/45 > 1.043,
+σ2(12) ≥
+√
+6/5 > 1.095,
+σ2(14) ≥
+√
+121/105 > 1.073,
+σ2(16) ≥
+√
+289/240 > 1.097,
+σ2(18) ≥
+√
+32/27 > 1.088,
+σ2(20) ≥
+√
+40/33 > 1.100,
+σ2(22) ≥
+√
+324/275 > 1.085,
+and for g ≥ 12
+σ2(2g) ≥
+√
+2 g + 2 ⌊g/3⌋ + ⌊g/6⌋√
+6g2 − 2g ⌊g/3⌋ + 2g
+.
+In particular,
+lim
+g→∞
+σ2(g) ≥
+√
+121/96 > 1.122.
+The upper bound is a combination of
+σ2(2g) ≤
+√
+7
+4 (2 − 1/g)
+and
+⌊g/2⌋
+g σ2(g)2 ≤
+
+
+
+
+
+
+
+
+
+
+
+1.74043 − 1.00483/g, g ≤ 8 and even;
+1.58337 − 0.026335
+g +
+√
+0.011572 − 0.083397
+g + 0.00069356
+g2 , g ≥ 10 and even;
+1.74043 − 4.75492
+g , g ≤ 23 and odd;
+1.58337 − 0.071949
+g +
+√
+0.011572 − 0.22784
+g + 0.0051768
+g2 , g ≥ 25 and odd.
+In particular,
+lim
+g→∞
+σ2(g) ≤ 1.839.
+For g = 2, the upper bound is due to Erd˝ os & Tur` an [5] and the upper bou nd is
+due to Singer [4]. For g = 3, the upper bound is Ruzsa’s [59], and the lower bound is
+from R(g + 1, n) ≤ R(g, n). For g > 3 the upper bound is a combination of Green [113]
+(for small g) and Martin & O’Bryant [124] (for large g). The lower bound for g = 4 is
+due to Habsieger & Plagne [119], the g = 6 and g = 8 bounds are due to [118], and for
+all other even g by Martin & O’Bryant [125]. The lower bounds for odd g > 3 are just
+σ2(2g) ≤ σ2(2g + 1).
+The proof of σ2(2) = 1 is succinct and elegant; we present it momentarily. The upper
+bound was found initially in [5] and simpliﬁed in [19]. The lower bound was fou nd in [4]
+and simpliﬁed to this form in [59].
+Theorem 5. The largest Sidon subset of [n] has ∼ √
+n elements, i.e., σ2 = 1.
+Proof. Let 1 ≤ a1 < a 2 < · · · < a r ≤ n be a Sidon sequence, and consider the diﬀerences
+(the parameter u will be set to
+⌊
+n1/4⌋
+):
+to appear in the electronic journal of combinatorics 11 (2004), #R00 10
+
+a2 − a1, a 3 − a2, . . . , a r − ar−1
+a3 − a1, a 4 − a2, . . . , a r − ar−2
+.
+.
+.
+au+1 − a1, a u+2 − a2, . . . , a r − ar−u
+The k-th row contains r − k diﬀerences, and since {ai} is a Sidon set, these diﬀerences
+are distinct. That’s a total of ∑ u
+i=1(r − i) = ru − 1
+2u(u + 1) diﬀerences. The sum of all
+these diﬀerences is at least
+ru−u(u+1)/2∑
+i=1
+i = 1
+2
+(
+ru − 1
+2 u(u + 1)
+)(
+ru − 1
+2u(u + 1) + 1
+)
+.
+On the other hand, the sum of the diﬀerences in the k-th row telescopes to
+r∑
+i=r−k+1
+ai −
+k∑
+i=1
+ai < kn,
+and so the sum of all the diﬀerences is less than ∑ u
+k=1 kn = nu(u + 1)/2. Comparing the
+upper and lower bounds yields an inequality in terms of n, r, and u =
+⌊
+n1/4⌋
+. Calculus
+implies that r < n 1/2 + n1/4 + 1, which in turn implies that σ2 ≤ 1.
+We now give Ruzsa’s construction of a Sidon set contained in p(p − 1) with p − 1
+elements ( p is any odd prime), from which it follows (using the elementary fact tha t the
+ratio between consecutive primes goes to 1) that σ2 ≥ 1. Let θ be a primitive root modulo
+p, and consider the set A of integers at (1 ≤ t < p − 1) deﬁned by
+1 ≤ at < p 2 − p and at ≡ t (mod p − 1) and at ≡ θt (mod p).
+Now suppose, by way of contradiction, that there are three pairs (arm, avm) ∈ A × A
+satisfying arm + avm = k (for some ﬁxed k ∈ Z). Each pair gives rise to a factorization
+modulo p of
+x2 − kx + θk ≡ (x − arm)(x − avm) (mod p),
+using the critical relation armavm ≡ θrm+vm = θk (mod p). Factorization modulo p is
+unique, so it must be that two of the three pairs are congruent mod ulo p, say
+ar1 ≡ ar2 (mod p). (2)
+In this case, θr1 ≡ ar1 ≡ ar2 ≡ θr2 (mod p). Since θ has multiplicative order p − 1, this
+tells us that r1 ≡ r2 (mod p − 1). Since arm ≡ rm (mod p − 1) by deﬁnition, we have
+ar1 ≡ ar2 (mod p − 1). (3)
+Equations (2) and (3), together with ar1 + av1 = k = ar2 + av2 imply that the pairs
+(ar1, av1), (ar2, av2) are identical, and so there are not three such pairs. Thus, A is a Sidon
+set. In particular, A = Ruzsa(p, θ, 1).
+to appear in the electronic journal of combinatorics 11 (2004), #R00 11
+
+k min{ak − a1} Witness
+2 1 {0,1}
+3 3 {0,1,3}
+4 6 {0,1,4,6}
+5 11 {0,1,4,9,11}
+{0,2,7,8,11}
+6 17 {0,1,4,10,12,17}
+{0,1,4,10,15,17}
+{0,1,8,11,13,17}
+{0,1,8,12,14,17}
+7 25 {0,1,4,10,18,23,25}
+{0,1,7,11,20,23,25}
+{0,1,11,16,19,23,25}
+{0,2,3,10,16,21,25}
+{0,2,7,13,21,22,25}
+8 34 {0,1,4,9,15,22,32,34}
+9 44 {0,1,5,12,25,27,35,41,44}
+10 55 {0,1,6,10,23,26,34,41,53,55}
+11 72 {0,1,4,13,28,33,47,54,64,70,72}
+{0,1,9,19,24,31,52,56,58,69,72}
+Figure 5: Shortest Sidon sequences (from [125])
+A Sidon sequence a1 < a 2 < · · · < a k is called “short” if ak − a1 is as small as possible.
+Figure 4.1 contains (up to reﬂection and translation) all of the shor t Sidon sequences with
+k ≤ 10, and two of the short Sidon sequences with k = 11; I don’t know if there are more.
+It is rumored that Imre Ruzsa has computed that min {a12−a1} = 85, min {a13−a1} = 106,
+min{a14 − a1} = 127. It is likely that for each k, there is short Sidon set with a1 = 0 and
+a2 = 1, while it seems likely that each triple ( a1, a2, a3) is the beginning of only ﬁnitely
+many short Sidon sequences.
+Figure 4.1 gives the values of n for which R(g, n) − R(g, n − 1) = 1. This table
+was computed using the easiest algorithm and a small amount of time. I encourage the
+interested reader (or her students!) to extend it.
+The construction given in [118] is optimized by choosing x so that R(g, x)/√gx is
+maximized. This appears to happen (for each g) with a fairly small value of x; a formula
+would lay to rest further optimization eﬀorts (such as those in [119 , 125]). Even given a
+perfect optimization, however, it is unlikely that this construction is optimal in any sense.
+4.2 h > 2
+Very little is understood about Bh sets for h > 2. The construction of Bose & Chowla [15]
+show that σh ≥ 1, and we know that σ2 = 1. Various improvements on the upper bound
+to appear in the electronic journal of combinatorics 11 (2004), #R00 12
+
+g
+k
+2 3 4 5 6 7 8 9 10 11
+3 4
+4 7 5
+5 12 8 6
+6 18 13 8 7
+7 26 19 11 9 8
+8 35 25 14 12 10 9
+9 45 35 18 15 12 11 10
+10 56 46 22 19 14 13 12 11
+11 73 58 27 24 17 15 14 13 12
+12 ≤ 92 ≤ 72 31 29 20 18 16 15 14 13
+13 ≤ 123 ≤ 101 37 34 24 21 18 17 16 15
+14 ≤ 140 ≤ 128 44 40 28 26 21 19 18 17
+15 ≤ 163 ≤ 52 ≤ 47 32 29 24 22 20 19
+16 ≤ 195 36 34 27 24 22 21
+17 ≤ 42 ≤ 38 30 28 24 23
+18 34 32 27 25
+19 ≤ 38 ≤ 36 30 28
+20 33 31
+21 ≤ 37 35
+21 ≤ 38
+Figure 6: min {n : R2(g, n) ≥ k} (from [125], extended by John Trono)
+to appear in the electronic journal of combinatorics 11 (2004), #R00 13
+
+h
+σh
+2 3 4 5 6 7 8 9 10
+1
+1.5
+2
+2.5
+3
+Figure 7: The best known upper and lower bounds on σh.
+on σh were given in [14, 20, 32, 39, 58, 61, 82]
+Cilleruelo [110] proved that σ3 ≤ 1.576, σ4 ≤ 1.673, and for h > 75,
+σh
+h ≤ 5
+2
+(
+15
+4 − 5
+4⌈h/2⌉
+)1/4 (⌈h/2⌉!)2
+√
+⌈h/2⌉
+for odd h, and
+σh
+h ≤ 5
+2
+(15
+4 − 5
+2h
+)1/4
+((h/2)!)2√
+h/2
+for even h. He does give improvements for h ∈ [5, 74] also.
+Ben Green [113] has improved these upper bounds and shown
+σ3 ≤ (7/2)1/3 < 1.519
+σ4 ≤ 71/4 < 1.627
+σh ≤ 1
+2e
+(
+h + 3
+2 log h + oh(log h)
+)
+.
+Green’s bound for σh ultimately relies on the observation that if Xi are independent
+random variables taking values uniformly in a set of integers A, then the central limit
+theorem implies that X1 + X2 + · · · + Xh has a normal distribution (for large h). While
+Green’s bound is not given in an eﬀective form, we presume that this c ould be done in a
+straightforward manner.
+to appear in the electronic journal of combinatorics 11 (2004), #R00 14
+
+4.3 Cyclic groups
+The earliest appearances of Sidon sets were as Monthly problems [1, 2] asking for Sidon
+subsets of Zn. If A is a B∗
+h[g](modm) set and gcd( k, m) = 1, then so is kA + r =
+{ka + r : a ∈ A}; we say that A and kA + r are equivalent. Veblen and Dickson asked for
+all inequivalent Sidon subsets of Zn for various n. The number of inequivalent modular
+Sidon sets that arise from the construction of Bose & Chowla is inves tigated in [16, 17].
+The constructions of Ruzsa, Bose, and Singer all give modular Sidon sets. This would
+seem to be a more symmetric setting, and so an easier setting. Unfo rtunately, while
+the constructions are naturally modular, the upper bounds on Rh(g, n) sets all seem to
+fundamentally rely on the asymmetry of [ n]. Progress (beyond the very little in [125])
+on bounding Ch(g, n) would be a signiﬁcant contribution. Here’s what is known about
+C2(g, n):
+Theorem 6. Let q be a prime power, and let k, g, f, x, y be positive integers with k < q .
+i.
+(C2(2,n)
+2
+)
+≤
+⌊ n
+2
+⌋
+, and in particular C2(2, n) ≤ √n + 1;
+ii. C2(3, n) ≤
+√
+n + 9/2 + 3;
+iii. C2(4, n) ≤
+√
+3n + 7/6;
+iv. C2(g, n) ≤ √gn for even g;
+v. C2(g, n) ≤
+√
+1 − 1
+g
+√gn + 1, for odd g.
+vi. If q is a prime, then C2(2k2, q2 − q)) ≥ k(q − 1);
+vii. C2(2k2, q2 − 1) ≥ kq;
+viii. C2(2k2, q2 + q + 1) ≥ kq + 1;
+ix. If gcd(x, y) = 1 , then C2(gf, xy ) ≥ C2(g, x)C2(f, y);
+5 The size of inﬁnite Sidon sequences
+Let A ⊆ Z be a Sidon sequence, and let A(n) = #( A ∩ [n]). St¨ ohr [12] strengthens an
+unpublished result of Erd˝ os and proved that
+lim inf
+n→∞
+A(n)
+√
+n/ log(n)
+̸= ∞
+St¨ ohr also gave Erd˝ os’s proof that there is a Sidon sequence with
+lim sup
+n→∞
+A(n)√n ≥ 1
+2 ;
+to appear in the electronic journal of combinatorics 11 (2004), #R00 15
+
+this was improved by Kr¨ uckeberg [14] to 1/
+√
+2, and taken to B∗
+2[g] sequences by Cilleruelo
+& Trujillo [111]. In [28] a Sidon sequence is constructed with
+A(n) > 10−3(n log n)1/3
+for suﬃciently large n. Erd˝ os asked [29] if there is a sequence a1 < a 2 < . . . with ak =
+o (k3−ǫ) for any positive ǫ; Ruzsa constructed a Sidon sequence with A(n) ∼ n
+√
+2−1+o(1).
+Sheng Chen [55] conjectures that if A is a Bh sequence with counting function A(n),
+then
+lim inf
+n→∞
+A(n)
+(log n
+n
+)1/h
+is ﬁnite. See also [44, 45, 56, 57, 66, 67, 77, 79, 80]. Neither the res ults nor the conjectures
+have been extended to B∗
+h[g] sequences.
+6 The distribution of A and A + A
+If An ⊂ [n] is a sequence of Sidon sets and |A| ∼ √n, then An becomes uniformly
+distributed in [ n] (see [49]). Moreover, An becomes uniformly distributed in congruence
+classes modulo m (for any ﬁxed m) (see [90, 95, 120]). It is shown in [63] that if A is any
+ﬁnite Sidon sequence, then the sumset A + A consists of at least c|A|2 intervals (for an
+unspeciﬁed constant c). With care this can be improved to ( |A|2 − |A| − 1)/4. Extensive
+computations indicate that if |A| ∼ √n, then A + A consists of ∼ |A| 2/3 intervals. Very
+little is known about the structure of A + A. Must the size of the longest interval in
+A + A go to inﬁnity as n does (with |A| ∼ √n)?
+Martin & O’Bryant [124] conjecture that B∗
+2[g] sets with maximal size are uniformly
+distributed. Current computations are insuﬃcient to extend this c onjecture to B∗
+h[g] sets.
+7 Restricted Sidon sequences
+A well known conjecture [65] states that the ﬁfth powers 0 , 1, 32, 243, . . . are a Sidon
+sequence. Ruzsa [116] shows that there is an α such that {n5 + ⌊αn4⌋ : n ≥ n0} is a Sidon
+set. Cilleruelo [69] considered Sidon sequences all of whose terms ar e squares. Abbot
+[46] studied the size of Sidon sequences contained in an arbitrary se t of integers with
+cardinality n (there is one with size at least 2
+25
+√n).
+Lindstr¨ om [21, 23] initiated the study of B∗
+h[g] sets in group Zd.
+Erd˝ os [25] investigated Sidon subsets of B∗
+2[g] sets. Alon & Erd˝ os [34] considered the
+problem of decomposing a ﬁnite B∗
+2[g] into B2 sets; how many B2 sets are needed?
+8 Generalizations
+The graph theorist’s analogs of Sidon sets are magic and harmonious labelings. See
+[26, 27].
+to appear in the electronic journal of combinatorics 11 (2004), #R00 16
+
+The bigger setting for the Sidon question is that of sets which avoid a linear form. Let
+L be an m × n matrix of integers. The set A is said to avoid L if there are no nontrivial
+solutions to L⃗ a= ⃗0 with ⃗ a= ( a1, a2, . . . , an)T , ak ∈ A . Sidon sets are the special case
+L = [1 , 1, −1, −1], sets with 3-term arithmetic progressions are the case L = [1 , −2, 1],
+etc. It is surprising that in such a general setting signiﬁcant and st rong results can be
+found. Precisely this is done in [22, 24, 59].
+9 Other open questions
+If A∗ is bounded, is it necessarily 0 inﬁnitely often? This is equivalent to a USD 500
+question of Erd˝ os [43]: If every positive integer can be written as a sum of two elements
+of B ⊆ N (i.e., B is a base), must the number of ways to do so go to inﬁnity?
+Is there an anti-Freiman theorem: If |A+A|/|A|2 > c, then A has a large B∗
+2[g] subset,
+where g and ‘large’ depend only c? This question may be related to the quasi-Sidon sets
+discussed in [49, 127].
+10 Bibliography
+[1] Oswald Veblen, Diophantine analysis: problem 132 , Amer. Math. Monthly 13 (Feb 1906), 46,
+Solution by F. H. Saﬀord appears in 13 (Nov 1906), 215.
+The problem reads: “From the numbers, 0 , 1, 2, . . ., 42, select seven, such that the
+42 diﬀerences of these seven numbers shall be congruent (mod 43 ) to the numbers
+0, 1, 2, . . . ,42. The diﬀerences may be both + and −.”
+The solution concludes: “Hence the problem is impossible.”
+[2] L. E. Dickson, Diophantine analysis: Problem 142 , Amer. Math. Monthly 13 (Nov 1906), 219,
+Solution by L. E. Dickson appears in 14 (May 1907):107 –108.
+The problem reads: “Let n be an integer > 1 and set p = n(n−1)+1. Required n integers
+whose n(n−1) diﬀerences are congruent (modulo p) to the numbers 1 , 2, . . . , p−1. Exhibit
+at least for n = 3, 4, 5, all inequivalent sets of solutions where a set a1, a2, . . . , an is called
+equivalent to the m(a1 − d), m(a2 − d), . . . , m(an − d), for any integers m and d (m not
+divisible by p).”
+For n = 3 , 4, 5, 6, 8 there is a unique set, and for n = 7 there are none. The
+solutions are n = 3 ⇒ { 0, 1, 3}, n = 4 ⇒ { 0, 1, 3, 9}, n = 5 ⇒ { 0, 1, 6, 8, 18},
+n = 6 ⇒ {0, 1, 3, 10, 14, 26}, and n = 8 ⇒ {0, 1, 3, 13, 32, 36, 43, 52}.
+[3] S. Sidon, Ein Satz ¨ uber trigonomietrische Polynome und seine Anwend ungen in der Theorie der
+Fourier-Reihen, Math. Annalen 106 (1932), 536–539.
+[4] James Singer, A theorem in ﬁnite projective geometry and some application s to number theory , Trans.
+Amer. Math. Soc. 43 (1938), 377–385. MR 1501951
+Using ﬁnite projective geometry, Singer shows that for p a prime power, C2(2, p2 + p +
+1) ≥ p + 1. An algebraic outline of his argument follows. Let θ ∈ Fp3 be a primitive
+element. Then {1, θ, θ2} is a basis of Fp3 over Fp, hence for each a ∈ Z, there are unique
+ra, ma, na ∈ Fp such that θa = raθ2 + maθ + na. The set {0} ∪ {a ∈ [0, p3 − 1) : (ra, ma) =
+(0, 1)}, reduced modulo p2 + p + 1, witnesses C2(2, p2 + p + 1) ≥ p + 1.
+to appear in the electronic journal of combinatorics 11 (2004), #R00 17
+
+This article cites [1], [2].
+[5] P. Erd¨ os and P. Tur` an, On a problem of Sidon in additive number theory, and on some re lated
+problems, J. London Math. Soc. 16 (1941), 212–215. MR 3,270e
+The authors demonstrate that ∀ǫ > 0 ∃n0 such that ( 1√
+2 − ǫ)√n < R 2(2, n) < √n +
+O
+(
+n1/4)
+for all n > n 0.
+The lower bound comes from R2(2, 2p2) ≥ p − 1 ( p prime), which is witnessed by
+{2pk +(k2) : 1 ≤ k < p }, where ( k2) is the unique integer in [1 , p) congruent to k2 modulo
+p.
+The upper bound (the argument can actually be made to give R2(2, n) < n 1/2 +
+n1/4 + 1) is repeated almost verbatim as Theorem 4 in [31, Chapter II]. Let S ⊂ [n]
+be a Sidon set with maximal cardinality, and let Au = |S ∩ [−n3/4 + u, u)|. The idea is
+to bound ∑ (Au
+2
+)
+above and below. The lower bound uses Cauchy’s inequality, and the
+upper bound uses the observation that ( si, sj) ∈ S × S is determined by si − sj, i.e.,
+Sidon sets not only have distinct sums, but distinct diﬀerences as we ll.
+This article cites [3].
+[6] R. C. Bose, An aﬃne analogue of Singer’s theorem , J. Indian Math. Soc. (N.S.) 6 (1942), 1–15.
+MR 4,33c
+Using ﬁnite aﬃne geometry, Bose demonstrates that for p a prime power, C2(2, p2 − 1) ≥
+p. This theorem is only slightly weaker (in terms of C2(g,n)√gn ) than Singer’s [4], while
+his proof is substantially simpler. His argument, in algebraic form, is as follows. Let
+θ ∈ Fp2 be a primitive element. For each a ∈ Z, there is a unique ma, na ∈ Fp such that
+θa = maθ + na. The set {a ∈ [0, p2 − 1) : ma = 1} witnesses C2(2, p2 − 1) ≥ p.
+This article cites [4].
+[7] S. Chowla, Solution of a problem of Erd¨ os and Turan in additive-number theory, Proc. Nat. Acad.
+Sci. India. Sect. A. 14 (1944), 1–2. MR 7,243b
+Chowla notes that the constructions of Bose [6] or of Singer [4] ma y be combined with
+the bound of Erd¨ os & Tur` an [5] to give R2(2, n) ∼ √n, i.e., σ2 = 1. Chowla also notes
+that R2(2, n) ≥ C2(2, n − 1) + 1 by adjoining n to any subset of [ n − 1] which is a B2
+(mod n − 1) set and contains 1. Chowla also points out that the error term in t he lower
+bound of R2(2, n) depends on a result of the form “For suﬃciently large n there is a
+prime between n and n − nθ.”
+This article cites [5], [6].
+[8] , Solution of a problem of Erd¨ os and Turan in additive-number -theory, Proc. Lahore Philos.
+Soc. 6 (1944), 13–14. MR 7,243c
+[9] P. Erd¨ os,On a problem of Sidon in additive number theory and on some rel ated problems. Addendum,
+J. London Math. Soc. 19 (1944), 208. MR 7,242f
+Erd˝ os observes that [4] and [5] together imply R2(2, n) ∼ √n, i.e., σ2 = 1.
+This article cites [4], [5].
+[10] Abdul Majid Mian and S. Chowla, On the B2 sequences of Sidon , Proc. Nat. Acad. Sci. India. Sect.
+A. 14 (1944), 3–4. MR 7,243a
+to appear in the electronic journal of combinatorics 11 (2004), #R00 18
+
+Nothing is proved here, but the ﬁrst 11 terms of the greedy Sidon s et are reported, and
+it is noted that this supports the conjecture that R2(2, n) ≥ √n for all n.
+The greedy Sidon set begins a1 = 1 , 2, 4, 8, 13, 21, 31, 45, 66, 81, 97, . . .. The authors
+state “It seems likely that
+lim
+m→∞
+am+1 − am
+m = 2
+as far as our table goes, we have √am ≤ m.” However, a17 = 290 > 172.
+This article cites [3], [5].
+[11] R. C. Bose and S. Chowla, On the construction of aﬃne diﬀerence sets , Bull. Calcutta Math. Soc.
+37 (1945), 107–112. MR 7,365g
+This paper considers of the mechanics of converting Bose’s constr uction [6] into actual
+numbers. Suppose that p is a power of a prime, and θ ∈ Fp2 is a primitive element
+satisfying θ2 + aθ + b = 0. Deﬁne f1 = 0 and fm ≡ b
+a−fm
+(mod p). Deﬁne also log b(N )
+to be the unique integer t ∈ [0, p) such that bt ≡ N (mod p). Then the set {d1, . . . , dp},
+deﬁned by d1 = 1, dm−1 = 1 + dm − (p + 1) ind(fm − a), witnesses C2(2, p2 − 1) ≥ p.
+This article cites [4].
+[12] Alfred St¨ ohr, Gel¨ oste und ungel¨ oste Fragen ¨ uber Basen der nat¨ urlichen Zahlenreihe. I, II , J. Reine
+Angew. Math. 194 (1955), 40–65, 111–140. MR 17,713a
+This survey addresses Sidon sets in §12aβ on pages 129–135. Two results of Erd˝ os are
+given: There is an inﬁnite Sidon set whose counting function A(n) satisﬁes lim sup A(n)√n ≥
+1
+2 ; Every inﬁnite Sidon set has a counting function A(n) satisfying lim inf A(n)√n = 0.
+St¨ ohr notes that this second result shows that the guess of Mian & Chowla [10] that
+the n-th term of the greedy Sidon set is at most n2 is false. He also notes that the
+second statement (and its proof) can be made more precise: Ever y inﬁnite Sidon set has
+a counting function A(n) satisfying lim inf A(n)√log n√n ≪ 1. These results are also reported
+as Theorems 8 and 9 of [31, Chapter II].
+St¨ ohr then raises the question of how large lim inf A(n)√log n√n can be, and if the answer
+is 0, then what would be a suitable replacement for
+√log n√n . He also asks if there is a Sidon
+set for which 0 < lim inf A(n)√log n√n ≤ lim sup A(n)√log n√n < ∞. Similar questions are raised
+for Bh sets.
+St¨ ohr then considers the greedy Sidon set, and notes that its n-th element an is at
+most ( n − 1)3 + 1.
+This article cites [4], [5], [7], [9], [10].
+[13] P. Erd˝ os and A. R´ enyi,Additive properties of random sequences of positive intege rs, Acta Arith. 6
+(1960), 83–110. MR 22:10970
+This papers examines the behavior of S∗(n) for sets S deﬁned by P(k ∈ S) = pk, for
+various sequences pk. The result relating to Sidon sequences states that for every δ > 0,
+there exists a B∗[g] sequence {a1, a2, . . .} satisfying ak = O
+(
+k2(1+2(g−1)− 1)
+)
+.
+to appear in the electronic journal of combinatorics 11 (2004), #R00 19
+
+We give the main steps of the proof. Set pn = n− 1
+2 −ǫ (with ǫ > (g + 1) −1) and
+qn = 1 − pn. Deﬁne the independent random variables Xn to be 1 with probability pn
+and 0 with probability qn. Deﬁne the random function f (n) = ∑ n/2
+k=1 XkXn−k; we wish
+to show that almost surely f (n) ≤ g
+2 (with ﬁnitely many exceptions). Then
+E[exp(tf (n))] =
+∏
+k≤n/2
+(
+1 + et − 1
+(k(n − k))1/2+ǫ
+)
+≤
+∏
+k≤n/2
+exp
+( et − 1
+(k(n − k))1/2+ǫ
+)
+≤ exp
+(et − 1
+n2ǫ I(ǫ)
+)
+,
+where I(ǫ) is a constant depending only on ǫ as n → ∞. Set t = log(1 + n2ǫ) and apply
+the Exponential Chebyshev Theorem to ﬁnd (with K = g/2):
+P(f (n) > K ) ≤ E[exp(tf (n))]
+exp(t(K + 1)) ≤ C1
+n2ǫ(K+1) .
+Thus ∑ ∞
+n=1 P (f (n) > K ) converges, and the Borel-Cantelli Lemma guarantees that
+{n : Xn = 1 } is almost surely a B∗[g] sequence (at least, after deleting ﬁnitely many
+terms).
+This, and other results of this paper, are given in [31, Chapter 3].
+This article cites [3], [5].
+[14] Fritz Kr¨ uckeberg,B2-Folgen und verwandte Zahlenfolgen , J. Reine Angew. Math. 206 (1961), 53–60.
+MR 23:A3729
+Theorem 1: 1
+h
+h√
+h ≤ σh ≤ (h · h!)1/h
+Theorem 2: 1
+2h2 ≤ σh(h!g) ≤ (h · h!)1/h.
+Theorem 3: There is B∗[2] set A with
+lim sup
+n→∞
+|A ∩ [n]|√
+2n ≥ 1
+2 .
+The lower bounds in Theorems 1 and 2 are worse than those obtained by the construction
+of Singer [4] (simpliﬁed and generalized to h > 2 in [15]), and the upper bounds are from
+the obvious pigeonhole argument. Theorem 3 is proved in English in [18, Chapter 2].
+This article cites [3], [4], [5], [7], [10], [12].
+[15] R. C. Bose and S. Chowla, Theorems in the additive theory of numbers , Comment. Math. Helv. 37
+(1962/1963), 141–147. MR 26:2418
+If m is a prime power, then Ch(h!, mh − 1) ≥ m and Ch
+(
+h!, mh+1−1
+m−1
+)
+≥ m + 1. Thus,
+σh ≥ 1.
+This article cites [6], [7], [5], [4].
+to appear in the electronic journal of combinatorics 11 (2004), #R00 20
+
+[16] H. Halberstam and R. R. Laxton, On perfect diﬀerence sets , Quart. J. Math. Oxford Ser. (2) 14
+(1963), 86–90. MR 28:5027
+The authors simplify the construction of [4]. They also consider the p roblem of identifying
+those t such that there is an s with tA + s ≡ A (mod m), where A is a B∗[2] (mod m)
+set.
+This article cites [4].
+[17]
+, Perfect diﬀerence sets , Proc. Glasgow Math. Assoc. 6 (1964), 177–184 (1964). MR 29:5748
+[18] H. Halberstam and K. F. Roth, Sequences. Vol. I , Clarendon Press, Oxford, 1966. MR 35:1565
+This book is the reference for Sidon set research prior to 1969. It also contains t he
+ﬁrst rigorous treatment of the probabilistic method, and introduc tion to sieves, and a
+lengthy discussion of diﬀerent notions of density and their uses. Ma king a copy of this
+oft-referenced text available online would be a valuable service to th e community.
+[19] Bernt Lindstr¨ om, An inequality for B2-sequences, J. Combinatorial Theory 6 (1969), 211–212.
+MR 38:4436
+This is the book proof that σ2 ≤ 1. The argument is reproduced in the survey accompa-
+nying this bibliography.
+[20] , A remark on B4-sequences, J. Combinatorial Theory 7 (1969), 276–277. MR 40:2634
+As a consequence of a correlation inequality of van der Corput: σ4 ≤ 81/4.
+[21] , Determination of two vectors from the sum , J. Combinatorial Theory 6 (1969), 402–407.
+MR 38:5641
+Author’s abstract: “Let Sm be the set of all vectors of dimension m with all com-
+ponents 0 or 1. Let φ(m) be the maximum of |A + B| for pairs A, B of subsets of Sm
+such that the sums a + b are diﬀerent for diﬀerent pairs ( a, b), a ∈ A, b ∈ B. Let λ(m)
+be the maximum of |A|, A ⊂ Sm, such that the sums a1 + a2 are diﬀerent for diﬀerent
+subsets {a1, a2} in A. Let ν(m) be the maximum of |A|, A ⊂ Sm, for A such that the
+sums a1 + a2 are diﬀerent modulo 2 for diﬀerent subsets {a1, a2} in A, a1 ̸= a2. The
+problem is to estimate φ(m)1/m, λ(m)1/m and ν(m)1/m as m → ∞.”
+The bounds are √
+6 ≤ lim
+m→∞
+φ(m)1/m ≤
+√
+8,
+lim
+m→∞
+ν(m)1/m =
+√
+2,
+21/2 ≤ lim inf
+m→∞
+λ(m)1/m, lim sup
+m→∞
+λ(m)1/m ≤ 22/3.
+The author added (in proof, so their is no proof) that he could impro ve the 2 2/3 to 2 3/5
+using information theory.
+[22] J´ anos Koml´ os, Mikl´ os Sulyok, and Endre Szemer´ edi,A lemma of combinatorial number theory , Mat.
+Lapok 23 (1972), 103–108 (1973). MR 50:2048 (Hungarian, with English summary)
+[23] Bernt Lindstr¨ om,On B2-sequences of vectors , J. Number Theory 4 (1972), 261–265. MR 46:3322
+to appear in the electronic journal of combinatorics 11 (2004), #R00 21
+
+Let Fh(g, N, d) denote the maximum possible size of a B∗
+h[g](Zd) set contained in
+{0, 1, . . . , N − 1}d. Theorem 1 states that F2(2, N, d) ≤ N d/2 + O
+(
+N d2/(2d+2)
+)
+, and
+Theorem 2 states that lim sup d→∞ F2(2, 2, d)1/d ≤ 23/5. The d = 1 case of Theorem 1 is
+the main result of [5].
+The paper concludes with three open problems: (1) F2(2, N, d) = N d/2 + O (1), (2)
+limd→∞ F2(2, 2, d)1/d =
+√
+2, and (3) Estimate F2(3, N, d).
+This article cites [5], [18], [21], [19], [20], [3].
+[24] J. Koml´ os, M. Sulyok, and E. Szemer´ edi, Linear problems in combinatorial number theory , Acta
+Math. Acad. Sci. Hungar. 26 (1975), 113–121. MR 51:342
+[25] P. Erd˝ os,Some applications of Ramsey’s theorem to additive number th eory, European J. Combin.
+1 (1980), 43–46. MR 82a:10067
+Erd˝ os and Donald Newman conjectured (independently) that the re is a B2[k] sequence
+which is not the union of a ﬁnite number of B2 sequences. He notes that this follows
+from Ramsey’s theorem. Erd˝ os also conjectures that there is B∗
+2 [2g] set A such that if
+A = ∪n
+i=1Ai, then some Ai is not a B∗
+2 [2g − 2] set. This is proved explicitly for three
+cases: (1) h = 2 and g = 1 (with A = {4i + 4j}); (2) g = 2 s; and (3) g = 1
+2
+(2s
+s
+)
+with
+s ≥ 1. He comments that he is unable to verify the conjecture with h = 2, g = 5.
+Suppose that the cardinality of the continuum is > ℵ1. There is a set S ⊆ R with
+cardinality ℵ2, S is a B∗
+2 [4] set, and if S = ∪∞
+i=1Si, then some Si is not a B∗
+2 [2] set.
+Set L(g, n) to be the largest integer ℓ such that every B∗
+2 [g] set with n elements
+contains a Sidon subset with ℓ elements. He conjectures that L(g, n)/√
+n is unbounded
+(as n → ∞ ), and speculates that L(g, n) = O
+(
+n1/2+ǫ)
+for every ǫ > 0. He proves that
+L(4, n) = O
+(
+n3/4)
+and L(8, n) = O
+(
+n2/3)
+.
+This article cites [18], [24].
+[26] R. L. Graham and N. J. A. Sloane, On additive bases and harmonious graphs , SIAM J. Algebraic
+Discrete Methods 1 (1980), 382–404. MR 82f:10067a
+Author’s abstract: “This paper ﬁrst considers several types of additive bases. A typical
+problem is to ﬁnd nγ(k), the largest n for which there exists a set {0 = a1 < a 2 < · · · <
+ak} of distinct integers modulo n such that each r in the range 0 ≤ r ≤ n − 1 can be
+written at least once as r ≡ ai + aj (modulo n) with i < j . For example nγ(8) = 24,
+as illustrated by the set {0, 1, 2, 4, 8, 13, 18, 22}. The other problems arise if at least is
+changed to at most , or i < j to i ≤ j, of if the words modulo n are omitted. Tables
+and bounds are given for each of these problems. Then a closely rela ted graph labeling
+problem is studied. A connected graph with n edges is called harmonious if it is possible
+to label the vertices with distinct numbers (modulo n) in such a way that the edge
+sums are also distinct (modulo n). Som inﬁnite families of graphs (odd cycles, ladders,
+wheels, · · · ) are shown to be harmonious while others (even cycles, most comple te or
+complete bipartite graphs, · · · ) are not. In fact most graphs are not harmonious. The
+function nγ(k) is the size of the largest harmonious subgraph of the complete gra ph on
+k vertices.”
+[27] , On constant weight codes and harmonious graphs , Proceedings of the West Coast Conference
+on Combinatorics, Graph Theory and Computing (Humboldt State Un iv., Arcata, Calif., 1979),
+Utilitas Math., Winnipeg, Man., 1980, pp. 25–40. MR 82f:10067b
+to appear in the electronic journal of combinatorics 11 (2004), #R00 22
+
+The authors apply the construction of [15] to bound the size of con stant weight codes
+and to harmonious graphs. A graph G = (V, E) is harmonious if it is possible to label the
+|V | vertices with distinct values from Z|E| so that every element of Z|E| occurs uniquely
+as an edge sum of G. The connection to Sidon sets is that A is Sidon set (modulo
+(|A|
+2
+)
+)
+exactly if the vertices of the complete graph K|A| can be labeled (with distinct labels
+from A) so that the edge sums are distinct.
+[28] Mikl´ os Ajtai, J´ anos Koml´ os, and Endre Szemer´ edi,A dense inﬁnite Sidon sequence , European J.
+Combin. 2 (1981), 1–11. MR 83f:10056
+I haven’t seen this article, but references to it indicate that it cont ains a proof that there
+is a Sidon set of positive integers with #( A ∩ [n]) ≫ (n log n)1/3 for all large n. The
+obvious pigeonhole bound gives only n1/3.
+[29] Paul Erd˝ os,Some of my favourite problems which recently have been solve d , Proceedings of the Inter-
+national Mathematical Conference, Singapore 1981 (Singapore, 1981), North-Holland, Amsterdam,
+1982, pp. 59–79. MR 84f:10003
+In §4, Erd˝ os notes that the greedy Sidon sequence satisﬁes γk = O
+(
+k3)
+, and recalls
+his conjecture that in fact γk = o
+(
+k3)
+. The existence of a B∗
+2 [2] sequence a1, a2, . . .
+with ak = o
+(
+k3)
+was shown in [28], but their method does not give a sequence with
+ak = o
+(
+k3−ǫ)
+for any ǫ > 0.
+This article cites [18], [28].
+[30] A. S´ ark¨ ozy,On squares in arithmetic progressions , Ann. Univ. Sci. Budapest. E¨ otv¨ os Sect. Math.
+25 (1982), 267–272. MR 84j:10055
+[31] Heini Halberstam and Klaus Friedrich Roth, Sequences, Second, Springer-Verlag, New York, 1983,
+ISBN 0-387-90801-3. MR 83m:10094
+From the preface: “Changes from the ﬁrst edition [18] have been k ept to a minimum.
+Several misprints and some errors that have come to light in the yea rs since the publica-
+tion of the ﬁrst edition have been corrected. At several places in t he text, and in a short
+postscript, we have added references to developments that hav e occurred since the ﬁrst
+appearance of Sequences.”
+[32] A. G. D ′yachkov and V. V. Rykov, Bs-sequences, Mat. Zametki 36 (1984), 593–601, English trans-
+lation: Math. Notes 36 (1984), no. 3-4, 794–799. MR 86m:11016
+I haven’t seen this article, but Zentralblatt 567:10041 indicates tha t it contains the
+bounds
+σ2h ≤ (sh(h!)2)1/2h, σ 2h−1 ≤ (sh · h!(h − 1)!)1/2h−1
+where s1 = 1, s2 = 2, s3 = 3 and sh =
+√
+125s/36 for h ≥ 4.
+[33] P. Erd˝ os and R´ obert Freud,On disjoint sets of diﬀerences , J. Number Theory 18 (1984), 99–109.
+MR 85g:11018
+[34] Noga Alon and P. Erd˝ os, An application of graph theory to additive number theory , European J.
+Combin. 6 (1985), 201–203. MR 87d:11015
+[35] L´ aszl´ o Babai and Vera T. S´ os,Sidon sets in groups and induced subgraphs of Cayley graphs , European
+J. Combin. 6 (1985), 101–114. MR 87f:05081
+to appear in the electronic journal of combinatorics 11 (2004), #R00 23
+
+[36] P. Erd˝ os, A. S´ ark¨ ozy, and V. T. S´ os,Problems and results on additive properties of general sequ ences.
+IV , Number Theory (Ootacamund, 1984), Springer, Berlin, 1985, pp . 85–104. MR 88i:11011a
+[37] , Problems and results on additive properties of general sequ ences. V , Monatsh. Math. 102
+(1986), 183–197. MR 88i:11011b
+[38] Andrew D. Pollington, On the density of B2-bases, Discrete Math. 58 (1986), 209–211.
+MR 87h:11013
+A B2-base is a set for which every nonzero integer appears uniquely as a diﬀer-
+ence. Theorem 1: There is a B2-basis A (with counting function A(n)) for which
+lim sup n−1/2A(n) ≥ 1
+2 . Theorem 2: There exist B2-bases A for which A(n) >
+(n log n)1/3/103 for all n > n 0.
+[39] I. E. Shparlinski ˘ ı,On Bs-sequences, Combinatorial Analysis, No. 7 (Russian), Moskov. Gos. Univ.,
+Moscow, 1986, pp. 42–45, 163. MR 89j:11008
+[40] Benny Chor and Ronald L. Rivest, A knapsack-type public key cryptosystem based on arithmeti c in ﬁnite ﬁelds ,
+IEEE Trans. Inform. Theory 34 (1988), 901–909. MR 89k:94043
+The system is roughly as follows. Choose a prime power q around 200, h around 25,
+k ∈ Fq, and a generator θ of the multiplicative group of Fqh . Publish Boseh(q, θ, k) in
+sorted order a1 < · · · < a p as Alice’s public key. Bob can send a message to Alice by
+ﬁrst encoding it as a vector ⃗ xof p nonnegative integers with sum h, and sending the sum
+⃗ x· ⟨a1, . . . , ap⟩. Alice can decode this by using her private information: θ and k. Their
+are additional contortions recommended to disguise θ and k.
+This knapsack cryptosystem was superior to earlier knapsacks in t hat there was
+greater density, increasing the information per bit and fortifying a gainst certain attacks.
+The Chor-Rivest cryptosystem is simpliﬁed in [50] (and renamed the p owerline cryp-
+tosystem), and broken in [75] and [117] using LLL.
+[41] D. Hajela, Some remarks on Bh[g] sequences, J. Number Theory 29 (1988), 311–323.
+MR 90d:11022
+[42] Xing De Jia, On the distribution of a B2-sequence, Qufu Shifan Daxue Xuebao Ziran Kexue Ban 14
+(1988), 12–18. MR 89j:11023
+[43] P. Erd˝ os,Some old and new problems on additive and combinatorial numb er theory , Combinatorial
+Mathematics: Proceedings of the Third International Conferenc e (New York, 1985), New York Acad.
+Sci., New York, 1989, pp. 181–186. MR 90i:11016
+[44] Xing De Jia, On B6-sequences, Qufu Shifan Daxue Xuebao Ziran Kexue Ban 15 (1989), 7–11.
+MR 90j:11022
+[45] John C. M. Nash, On B4-sequences, Canad. Math. Bull. 32 (1989), 446–449. MR 91e:11025
+[46] H. L. Abbott, Sidon sets , Canad. Math. Bull. 33 (1990), 335–341. MR 91k:11022
+Author’s abstract: “Denote by g(n) be the largest integer m such that every set of
+integers of size n contains a subset of size m whose pairwise sums are distinct. It is shown
+that g(n) > cn 1/2 for any constant c < 2
+25 and all suﬃciently large n.”
+[47] J. Cilleruelo, B2-sequences whose terms are squares , Acta Arith. 55 (1990), 261–265. MR 91i:11023
+A B2 sequence {a2
+1, a2
+2, . . . , a2
+k, . . .} is constructed such that ak ≪ k2. The sequence
+{a1, a2, . . .} is almost I = ∪∞
+j=1 = ∪∞
+j=1{a : 6 j ≤ a < 6j + 6 j/2, a ≡ 2 (mod 6) }, but
+some elements needs to be removed.
+to appear in the electronic journal of combinatorics 11 (2004), #R00 24
+
+[48] P. Erd˝ os, Some applications of probability methods to number theory. Successes and limitations ,
+Sequences (Naples/Positano, 1988), Springer, New York, 1990, pp. 182–194. MR 91d:11084
+[49] P. Erd˝ os and R. Freud, On sums of a Sidon-sequence , J. Number Theory 38 (1991), 196–205.
+MR 92g:11028
+This nicely written article begins with a proof that a Sidon subset of [ n] with √n elements
+is uniformly distributed as n → ∞ . This is used to study how unbalanced the sumset
+S = {ai + aj : ai, aj ∈ A} of a Sidon set A ⊆ [n] (not necessarily maximal) can be. They
+show that #( S ∩ [n]) cannot be larger than n/π (as n → ∞ ), but can be as large as
+n(1 − 1/
+√
+2). This improves the trivial bounds of n/2 and n/4 to 0 .318n and 0 .293n.
+The authors then consider a couple of generalizations of Sidon sets , the most inter-
+esting being that of a quasi-Sidon sequence, i.e., a sequence of A integers whose sumset
+S has cardinality (1 + o (1))
+(|A|
+2
+)
+. Loosely, A∗(x) ≤ 2 for almost all integers x. They note
+that a quasi-Sidon subset of [ n] can have cardinality ∼
+√
+4n/3, but cannot have cardinal-
+ity ∼
+√
+3.93n. Curiously, if one uses the “distinct diﬀerence” description of Sidon sets,
+then the corresponding quasi-Sidon sets cannot be substantively larger than a classic
+Sidon set.
+[50] H. W. Lenstra Jr., On the Chor-Rivest knapsack cryptosystem , J. Cryptology 3 (1991), 149–155.
+MR 92j:94012
+Author’s abstract: “Among all public-key cryptosystems that depend on the knapsac k
+problem, the system proposed by B. Chor and R. L. Rivest [40] is one of the few that have
+not been broken. The main diﬃculty in implementing their system is the c omputation of
+discrete logarithms in large ﬁnite ﬁelds. In this note we describe the ‘p owerline system’,
+which is a modiﬁcation of the Chor-Rivest system that does not have this shortcoming.
+The powerline system, which is not a knapsack system, is at least as s ecure as the original
+Chor-Rivest system.”
+See also [75] and [117].
+[51] An Ping Li, On B3-sequences, Acta Math. Sinica 34 (1991), 67–71. MR 92f:11037
+[52] Vera T. S´ os, An additive problem in diﬀerent structures , Graph Theory, Combinatorics, Algo-
+rithms, and Applications (San Francisco, CA, 1989), SIAM, Philadelp hia, PA, 1991, pp. 486–510.
+MR 92k:11026
+[53] Torleiv Kløve, Constructions of Bh[g]-sequences, Acta Arith. 58 (1991), 65–78. MR 92f:11033
+[54] Javier Cilleruelo and Antonio C´ ordoba, B2[∞]-sequences of square numbers , Acta Arith. 61 (1992),
+265–270. MR 93g:11014
+[55] Sheng Chen, On Sidon sequences of even orders , Acta Arith. 64 (1993), 325–330. MR 94h:11015
+Let A(n) be the counting function of the B2k sequence A. Then
+lim infn→∞ A(n)
+(
+log n
+n
+)1/2k
+< ∞. Chen conjectures that for all h ≥ 2, A a Bh
+sequence, lim inf n→∞ A(n)
+(
+log n
+n
+)1/h
+< ∞.
+[56] Martin Helm, On B2k-sequences, Acta Arith. 63 (1993), 367–371. MR 95c:11029
+[57] , Some remarks on the Erd˝ os-Tur´ an conjecture , Acta Arith. 63 (1993), 373–378.
+MR 94c:11012
+[58] Xing De Jia, On ﬁnite Sidon sequences , J. Number Theory 44 (1993), 84–92. MR 94k:11014
+to appear in the electronic journal of combinatorics 11 (2004), #R00 25
+
+Author’s abstract: “A set A of integers is called a Bh-sequence if all sums a1 +· · ·+ah,
+where ai ∈ A, are distinct up to rearrangement of the summands. Let Fh(n) [resp. fh(n)]
+denote the size of a largest Bh-sequence [resp. Bh-sequence for Z/(n)]. It is proved
+that, for every r ≥ 1 as n → ∞ , F2r(n) ≤ r1/2r(r!)1/rn1/2r + O(n1/4r), f2r(n) ≤
+(r!)1/rn1/2r + O(n1/4r). Some open problems concerning Bh-sequences are also discussed
+in this paper.”
+Translating into the notation of this survey, that says σh ≤ (h/2 · ((h/2)!)2)1/h for even
+h.
+[59] Imre Z. Ruzsa, Solving a linear equation in a set of integers. I , Acta Arith. 65 (1993), 259–282.
+MR 94k:11112
+Fix integers a1, . . . , ak, b. Ruzsa considers sets S for which b =∑ siai has no solutions
+with si ∈ S with and without the stipulation that the si be distinct. Sum-free sets, 3-
+term-AP-free sets [65, Problem E10], and Sidon sequences are som e of the special cases
+studied.
+Ruzsa gives an interesting spin on the Erd˝ os/Tur` an [5] bound, giv ing R(2, n) ≤√
+n + n1/4 + 1 and R(3, n) ≤ √n + 4n1/4 + 11. He also shows that {s ∈ [0, p(p − 1)) : s ≡ i
+(mod p − 1), s ≡ gi (mod p), g a primitive root } witnesses C(2, p(p − 1)) = p − 1.
+He also shows that one may take at most (1 + o (1))h2−1/hn1/h numbers from [0 , n)
+such that the h-fold sums of distinct elements (up to rearrangements of the summ ands)
+are distinct.
+Part II is [74].
+[60] Zhen Xiang Zhang, A B2-sequence with larger reciprocal sum , Math. Comp. 60 (1993), 835–839.
+MR 93m:11012
+Author’s abstract: “A sequence of positive integers is called a B2-sequence if the pair-
+wise diﬀerences are all distinct. The Mian-Chowla sequence is the B2-sequence obtained
+by the greedy algorithm. Its reciprocal sum S∗ has been conjectured to be the maximum
+over all B2-sequences. In this paper we give a B2-sequence which disproves this conjec-
+ture. Our sequence is obtained as follows: the ﬁrst 14 terms are ob tained by the greedy
+algorithm, the 15th term is 229, from the 16th term on, the greedy algorithm continues.
+The reciprocal sum of the ﬁrst 300 terms of our sequence is larger than S∗.”
+[61] Sheng Chen, On the size of ﬁnite Sidon sequences , Proc. Amer. Math. Soc. 121 (1994), 353–356.
+MR 94h:11016
+Author’s abstract: “Let h ≥ 2 be an integer. A set of positive integers B is called a
+Bh-sequence, or a Sidon sequence of order h, if all sums a1 + a2 + · · ·+ ah, where ai ∈ B
+(i = 1 , 2, . . . , h), are distinct up to rearrangements of the summands. Let Fh(n) be the
+size of the maximum Bh-sequence contained in {1, 2, . . . , n}. We prove that
+F2r−1(n) ≤ ((r!)2n)1/(2r−1) + O
+(
+n1/(4r−2)
+)
+.
+”
+In the terminology of this survey, this is σh
+h ≤ (⌈h/2⌉!)2 for odd h.
+[62] Paul Erd˝ os, Some problems in number theory, combinatorics and combinat orial geometry , Math.
+Pannon. 5 (1994), 261–269. MR 95j:11018
+to appear in the electronic journal of combinatorics 11 (2004), #R00 26
+
+[63] P. Erd˝ os, A. S´ ark¨ ozy, and T. S´ os,On sum sets of Sidon sets. I , J. Number Theory 47 (1994), 329–
+347. MR 95e:11030
+This article gives bounds for the number of intervals in the sumset of a Sidon set. Deﬁne
+B(A + A, d) := {s : s − d ̸∈ A+ A, s ∈ A + A},
+and denote its counting function by B(A + A, d, n). The following theorems are proved:
+Theorem 1: There is an absolute constant c1 > 0 such that for every ﬁnite Sidon set A
+and integer d > 0,
+|B(A + A, d)| > c 1|A|2.
+Theorem 2: There is an absolute constant c2 such that for every Sidon set A and integer
+d > 0,
+lim sup
+N →∞
+B(A + A, d, n)
+A2(N ) > c 2 > 10−7.
+Theorem 3: For n > n 0, there is a Sidon set in [ n] whose sumset does not contain a gap
+of length 3 √n. Theorem 4: ∀ǫ > 0 there is a Sidon set (let s1 < s 2 < . . . be its sumset)
+and integer i0 such that ∀i > i 0
+si+1 − si < s
+1
+2
+i (log si)
+3
+2 +ǫ.
+Theorem 5: There is an absolute constant c4 > 0 such that if A is a ﬁnite Sidon set with
+|A| ≥ 2 and sumset s1 < s 2 < · · · < s u, then
+max
+1≤i<u
+(si+1 − si) > c 4 log |A|.
+I remark that with a little care one may prove the inequality
+|B(A + A, d)| ≥ 1
+4 (|A|2 − |A| − 1)
+in Theorem 1, and one may take c2 = 1
+62 > 0.0162.
+The paper concludes with some interesting open problems. Does the number of
+“length one” intervals in the sumset of a ﬁnite Sidon set go to inﬁnity a s the size of
+the set does? Does
+1
+t
+t−1∑
+i=1
+(si+1 − si)2 → ∞
+where s1 < s 2 < · · · < s t is the sum set of a ﬁnite Sidon set? If A is a dense ﬁnite Sidon
+set, must A + A be well-distributed w.r.t. small moduli?
+[64] P. Erd˝ os, A. S´ ark¨ ozy, and V. T. S´ os,On additive properties of general sequences , Discrete Math.
+136 (1994), 75–99, Trends in discrete mathematics. MR 96d:11014
+Author’s abstract: “The authors give a survey of their papers on additive properties
+of general sequences and they prove several further results o n the range of additive
+representation functions and on diﬀerence sets. Many related un solved problems are
+discussed.”
+[65] Richard K. Guy, Unsolved problems in number theory , Second, Springer-Verlag, New York, 1994,
+ISBN 0-387-94289-0, Unsolved Problems in Intuitive Mathematics, I. MR 96e:11002
+[66] Martin Helm, A remark on B2k-sequences, J. Number Theory 49 (1994), 246–249. MR 96b:11024
+to appear in the electronic journal of combinatorics 11 (2004), #R00 27
+
+Author’s abstract: “Improving a result of Chen [A note on B2k-sequences, preprint]
+in this paper we prove that
+lim inf
+n→∞
+A(n)
+n1/2k (log n)1/(3k−1) < ∞
+holds for every inﬁnite B2k-sequence A.”
+[67] Xing De Jia, On B2k-sequences, J. Number Theory 48 (1994), 183–196. MR 95d:11027
+If A is a B2k sequence whose counting function satisﬁes A(n2) ≪ A(n)2, then
+lim inf
+n→∞
+A(n)
+2k
+√
+n/ log(n)
+< ∞.
+[68] Zhen Xiang Zhang, Finding ﬁnite B2-sequences with larger m − a1/2
+m , Math. Comp. 63 (1994), 403–
+414. MR 94i:11109
+The set ( mBose2(p, θ, k) + r) ∪ {0} is a Sidon set modulo p2 − 1 provided p is a prime
+power, θ generates the multiplicative group of Fp2, 1 ≤ k < p , and gcd( m, p2 − 1) = 1.
+This paper considers the algorithmic diﬃculties of computing
+min
+θ,r
+max {Bose2(p, θ, 1) + r} ,
+where Bose2(p, θ, 1) + r is reduced modulo p2 − 1. As an application of the algorithm,
+it is noted that for p = 829, there are θ and r such that max {Bose2(p, θ, 1) + r} =
+8292 − 16939, whence R(2, 670303) −
+√
+670303 > 10. The algorithm is simpliﬁed and
+made faster in [89].
+[69] J. Cilleruelo, B2[g] sequences whose terms are squares , Acta Math. Hungar. 67 (1995), 79–83.
+MR 95m:11032
+[70] P. Erd˝ os, A. S´ ark¨ ozy, and V. T. S´ os,On sum sets of Sidon sets. II , Israel J. Math. 90 (1995),
+221–233. MR 96f:11034
+Author’s abstract: “It is proved that there is no Sidon set in [ n] whose sumset contains
+c1n1/2 consecutive integers, but it may contain c2n1/3 consecutive integers. Moreover,
+it is shown that a ﬁnite Sidon set cannot be well-covered by generalize d arithmetic
+progressions.”
+[71] Mihail N. Kolountzakis, An eﬀective additive basis for the integers , Discrete Math. 145 (1995), 307–
+313. MR 96m:11010
+Author’s abstract: “We give an algorithm for the enumeration of a set E of nonnegative
+integers with the property that each nonnegative integer x can be written as a sum of
+two elements of E in at least C1logx and at most C2logx ways, where C1, C2 are positive
+constants. Such a set is called a basis and its existence has been est ablished by Erd˝ os. Our
+algorithm takes time polynomial in n to enumerate all elements of E not greater than
+n. We accomplish this by derandomizing a probabilistic proof which is slight ly diﬀerent
+than that given by Erd˝ os.”
+[72] Hanno Lefmann and Torsten Thiele, Point sets with distinct distances , Combinatorica 15 (1995),
+379–408. MR 96h:52016
+to appear in the electronic journal of combinatorics 11 (2004), #R00 28
+
+[73] Carl Pomerance and Andr´ as S´ ark¨ ozy,Combinatorial number theory , Handbook of Combinatorics,
+Vol. 1, 2, Elsevier, Amsterdam, 1995, pp. 967–1018. MR 97e:11032
+[74] Imre Z. Ruzsa, Solving a linear equation in a set of integers. II , Acta Arith. 72 (1995), 385–397.
+MR 96j:11128
+[75] C. P. Schnorr and H. H. H¨ orner, Attacking the Chor-Rivest cryptosystem by improved lattic e reduc-
+tion, Advances in Cryptology—EUROCRYPT ’95 (Saint-Malo, 1995), Lect ure Notes in Comput.
+Sci., vol. 921, Springer, Berlin, 1995, pp. 1–12. MR 96k:94014
+Author’s abstract: “Summary: “We introduce algorithms for lattice basis reduction
+that are improvements of the famous L3-algorithm. If a random L3-reduced lattice basis
+b1, · · · , bn is given such that the vector of reduced Gram-Schmidt coeﬃcients ({µi,j},
+1 ≤ j < i ≤ n) is uniformly distributed in [0 , 1)(
+n
+2), then the pruned enumeration ﬁnds
+with positive probability a shortest lattice vector. We demonstrate the power of these
+algorithms by solving random subset sum problems of arbitrary dens ity with 74 and 82
+weights, by breaking the Chor-Rivest cryptoscheme in dimensions 1 03 and 151 and by
+breaking Damg ˚ ard’s hash function.””
+This paper breaks the Chor-Rivest cryptosystem [40] with a few da ys computation. The
+followup attack in [117] is more eﬃcient.
+[76] Joel Spencer and Prasad Tetali, Sidon sets with small gaps , Discrete Probability and Algorithms
+(Minneapolis, MN, 1993), Springer, New York, 1995, pp. 103–109. MR 97g:05163
+[77] Sheng Chen, A note on B2k sequences, J. Number Theory 56 (1996), 1–3. MR 97a:11035
+Let A = {a1 < a 2 < . . . } be a B2k sequence ( k ≥ 2) with counting function A(n). Then
+lim inf
+n→∞
+A(n)
+n1/(2k)(log n)1/(4k−4) < ∞
+and
+lim sup
+n→∞
+an
+n2k√log n = ∞.
+[78] S. W. Graham, Bh sequences, Analytic Number Theory, Vol. 1 (Allerton Park, IL, 1995), Birkh¨ auser
+Boston, Boston, MA, 1996, pp. 431–449. MR 97h:11019
+[79] Martin Helm, On B3-sequences, Analytic Number Theory, Vol. 2 (Allerton Park, IL, 1995), Progr.
+Math., vol. 139, Birkh¨ auser Boston, Boston, MA, 1996, pp. 465– 469. MR 97d:11040
+[80] , On the distribution of B3-sequences, J. Number Theory 58 (1996), 124–129.
+MR 97d:11041
+Author’s abstract: “An inﬁnite set of natural numbers is called a B3-sequence if all
+sums a1 + a2 + a3 with aj ∈ A and a1 ≤ a2 ≤ a3 are distinct. Let A(n) be the number
+of positive elements ≤ n in A. P. Erd˝ os conjectures that every B3-sequence A satisﬁes
+lim infn→∞ A(n)n−1/3 = 0. In this paper we prove that no sequence satisfying A(n) ∼
+αn1/3 can be a B3-sequence. We also give other necessary conditions for a B3-sequence.”
+[81] Xingde Jia, Bh[g]-sequences with large upper density , J. Number Theory 56 (1996), 298–308.
+MR 96k:11009
+The analysis in this article is ﬂawed; see [105] for an explanation and co rrection.
+to appear in the electronic journal of combinatorics 11 (2004), #R00 29
+
+[82] Mihail N. Kolountzakis, The density of Bh[g] sequences and the minimum of dense cosine sums , J.
+Number Theory 56 (1996), 4–11. MR 96k:11026
+Author’s abstract: “A set E of integers is called a Bh[g] set if every integer can be
+written in at most g diﬀerent ways as a sum of h elements of E. We give an upper bound
+for the size of a Bh[1] subset {n1, . . . , nk} of {1, . . . , n} whenever h = 2 m is an even
+integer:
+k ≤ (m(m!)2)1/hn1/h + O
+(
+n1/2h
+)
+.
+For the case h = 2 ( h = 4) this has already been proved by Erd˝ os and Tur´ an (by Lind-
+str¨ om). It has been independently proved for all even h by Jia who used an elementary
+combinatorial argument. Our method uses a result, which we prove , related to the min-
+imum of dense cosine sums which roughly states that if 1 ≤ λ1 < · · · < λ N ≤ (2 − ǫ)N
+are N diﬀerent integers then
+⏐
+⏐
+⏐
+⏐
+⏐min
+x
+N∑
+1
+cos λjx
+⏐
+⏐
+⏐
+⏐
+⏐ ≥ Cǫ 2N.
+Finally we exhibit some dense ﬁnite and inﬁnite B2[2] sequences.”
+[83]
+, Problems in the additive number theory of general sets, I: se ts with distinct sums (1996),
+15 pages, unpublished.
+This delightful review of problems—including for each a summary of wh at’s known and
+an outline of how it is known—is a must-read for researchers in the ar ea. The three
+sections are entitled “Finite Bh[g] sets”, “Inﬁnite Bh[g] sets with large lower density”,
+and “Inﬁnite Bh[g] with large upper density”.
+[84] , Some applications of probability to additive number theory and harmonic analysis , Number
+Theory (New York, 1991–1995), Springer, New York, 1996, pp. 2 29–251. MR 98i:11061
+Author’s abstract: “We present some applications of the probabilistic method in ad-
+ditive number theory and harmonic analysis. We describe two genera l approaches to the
+probabilistic construction of certain objects. The question of whe ther one can actually
+“construct” these is also discussed and several examples of “der andomized” probabilistic
+proofs are given.”
+[85] Imre Z. Ruzsa, Sumsets of Sidon sets , Acta Arith. 77 (1996), 353–359. MR 97j:11013
+This paper follows [63, 70] in the consideration of the length of the lon gest interval
+contained in the sumset of a Sidon set, and the length of the longest interval not contained
+in A. For example, a set A ⊆ [n] is given such that A + A contains an interval of length
+c√n, showing that this is the correct size up to the constant factor.
+[86] A. S´ ark¨ ozy and V. T. S´ os,On additive representation functions , The Mathematics of Paul Erd˝ os, I,
+Springer, Berlin, 1997, pp. 129–150. MR 97m:11019
+[87] B´ ela Bajnok, Constructions of spherical 3-designs, Graphs Combin. 14 (1998), 97–107.
+MR 99f:05020
+to appear in the electronic journal of combinatorics 11 (2004), #R00 30
+
+Author’s abstract: “Spherical t-designs are Chebyshev-type averaging sets on the d-
+sphere Sd ⊂ Rd+1 which are exact for polynomials of degree at most t. This concept
+was introduced in 1977 by Delsarte, Goethals, and Seidel, who also fo und the minimum
+possible size of such designs, in particular, that the number of point s in a 3-design on
+Sd must be at least n ≥ 2d + 2. In this paper we give explicit constructions for spherical
+3-designs on Sd consisting of n points for d = 1 and n ≥ 4; d = 2 and n = 6 , 8, ≥ 10;
+d = 3 and n = 8 , ≥ 10; d = 4 and n = 10 , 12, ≥ 14; d ≥ 5 and n ≥ 5(d + 1)/2 odd or
+n ≥ 2d + 2 even. We also provide some evidence that 3-designs of other size s do not exist.
+We will introduce and apply a concept from additive number theory ge neralizing the
+classical Sidon-sequences. Namely, we study sets of integers S for which the congruence
+ε1x1 + ε2x2 + · · · + εtxt ≡ 0 mod n, where εi = 0 , ±1 and xi ∈ S (i = 1 , 2, . . . , t), only
+holds in the trivial cases. We call such sets Sidon-type sets of stre ngth t, and denote their
+maximum cardinality by s(n, t). We ﬁnd a lower bound for s(n, 3), and show how Sidon-
+type sets of strength 3 can be used to construct spherical 3-de signs. We also conjecture
+that our lower bound gives the true value of s(n, 3) (this has been veriﬁed for n ≤ 125).”
+[88] D. Frank Hsu and Xingde Jia, Some nonexistence results on perfect addition sets , Proceedings of the
+Twenty-Ninth Southeastern International Conference on Comb inatorics, Graph Theory and Com-
+puting (Boca Raton, Fl, 1998), vol. 134, 1998, pp. 131–137. MR 2000a:11021
+[89] Bernt Lindstr¨ om, Finding ﬁnite B2-sequences faster, Math. Comp. 67 (1998), 1173–1178.
+MR 98m:11012
+Lindstr¨ om shows that for any two generators θ, θ′ of Fp2 (p an odd prime power), there
+is an m and an r such that
+Bose2(p, θ, 1) = m Bose2(p, θ′, 1) − r.
+In other words, varying the generator does not generate “new” Bose sets. (It is easy
+to extend this to show the uselessness of varying k in Bose2(p, θ, k).) He also gives a
+criterion (in terms of u and v) for the existence of a generator θ satisfying θ2 = uθ + v.
+These two results greatly improve the eﬃciency of Zhang’s algorithm [68].
+[90] , Well distribution of Sidon sets in residue classes , J. Number Theory 69 (1998), 197–200.
+MR 99c:11021
+Author’s abstract: “A set A of non-negative integers is a Sidon set if the sums a + b
+(a, b ∈ A, a ≤ b) are distinct. Assume that a ⊆ [1, n] and that |A| = (1 + o (1)))n1/2.
+Let m ≥ 2 be an integer. In Theorem 1 I prove that asymptotically 1 /m of all elements
+in A fall into each residue class modulo m. When m = 2 I prove a sharper result in
+Theorem 2. Assume that |A| ≥ n1/2. Then the diﬀerence between the number of odd
+and the number of even elements in A is O
+(
+n3/8)
+. If the interval [1 , n] is divided into
+m equal parts and the number of elements from A in each part is counted, then similar
+results hold for these counts.”
+[91] Imre Z. Ruzsa, An inﬁnite Sidon sequence , J. Number Theory 68 (1998), 63–71. MR 99a:11014
+Author’s abstract: “We show the existence of an inﬁnite Sidon sequence such that the
+number of elements in [1 , N] is N
+√
+2−1+o(1).”
+[92] , A small maximal Sidon set , Ramanujan J. 2 (1998), 55–58, Paul Erd˝ os (1913–1996).
+MR 99g:11026
+to appear in the electronic journal of combinatorics 11 (2004), #R00 31
+
+Author’s abstract: “We construct a Sidon set A ⊂ [1, N] which has ≪ (N log N )1/3
+elements and which is maximal in the sense that the inclusion of any oth er integer from
+[1, N] destroys the Sidon property.”
+[93] Andreas Baltz, Tomasz Schoen, and Anand Srivastav, Probabilistic construction of small strongly
+sum-free sets via large Sidon sets , Randomization, Approximation, and Combinatorial Optimization
+(Berkeley, CA, 1999), Lecture Notes in Comput. Sci., vol. 1671, Sp ringer, Berlin, 1999, pp. 138–143.
+MR 2001e:68137
+[94] Anant P. Godbole, Svante Janson, Nicholas W. Locantore Jr., a nd Rebecca Rapoport,
+Random Sidon sequences , J. Number Theory 75 (1999), 7–22. MR 2000c:11031
+Author’s abstract: “A subset A of the set [ n] = {1, 2, . . . , n}, |A| = k is said to form a
+Sidon (or Bh) sequence h ≥ 2, if each of the sums a1 + a2 + · · ·+ ah, a1 ≤ a2 ≤ · · · ≤ ah;
+ai ∈ A, are distinct. We investigate threshold phenomena for the Sidon pr operty, showing
+that if An is a random subset of [ n], then the probability that An is a Bh sequence tends
+to unity as n → ∞ if kn = |An| ≪ n1/2h, and that P(An is Sidon) → 0 provided that
+kn ≫ n1/2h. The main tool employed is the Janson exponential inequality. The va lidity
+of the Sidon property at the threshold is studied as well. We prove, using the Stein-
+Chen method of Poisson approximation, that P(An is Sidon) → exp −λ (n → ∞ ) if
+kn ∼ Λ · n1/2h (Λ ∈ R+), where λ is a constant that depends in a well-speciﬁed way on
+Λ. Multivariate generalizations are presented.”
+[95] Mihail N. Kolountzakis, On the uniform distribution in residue classes of dense sets of integers with distinct sums ,
+J. Number Theory 76 (1999), 147–153. MR 2000a:11028
+Author’s abstract: “A set A ⊆ { 1, . . . , N} is of the type B2 if all sums a+b, with a ≥ b,
+a, b ∈ A , are distinct. It is well known that the largest such set is of size asy mptotic to
+N 1/2. For a B2 set A of this size we show that, under mild assumptions on the size of the
+modulus m and on the diﬀerence N 1/2 − |A| (these quantities should not be too large),
+the elements of A are uniformly distributed in the residue classes mod m. Quantitative
+estimates on how uniform the distribution is are also provided. This ge neralizes recent
+results of Lindstr¨ om whose approach was combinatorial. Our main tool is an upper bound
+on the minimum of a cosine sum of k terms, ∑ k
+1 cos λj x, all of whose positive integer
+frequencies j are at most (2 − ǫ)k in size. ”
+[96] B. Lindstr¨ om, Primitive quadratics reﬂected in B2-sequences, Portugal. Math. 56 (1999), 257–263.
+MR 2000j:11029
+[97] Bernt Lindstr¨ om,Computing B3-sequences, Proceedings of the Seventh Nordic Combinatorial Con-
+ference (Turku, 1999), Turku Cent. Comput. Sci., Turku, 1999, pp. 65–68. MR 2000k:11027
+[98] Imre Z. Ruzsa, Erd˝ os and the integers, J. Number Theory 79 (1999), 115–163. MR 2002e:11002
+A brief recounting of the state-of-the-art on several aspects of Sidon sets.
+[99] Andreas Baltz, Tomasz Schoen, and Anand Srivastav, Probabilistic construction of small strongly
+sum-free sets via large Sidon sets , Colloq. Math. 86 (2000), 171–176. MR 2001k:05197
+[100] T. Banakh, O. Verbitsky, and Ya. Vorobets, A Ramsey treatment of symmetry , Electron. J. Com-
+bin. 7 (2000), Research Paper 52, 25 pp. (electronic). MR 2001m:05255
+to appear in the electronic journal of combinatorics 11 (2004), #R00 32
+
+Author’s abstract: “Given a space Ω endowed with symmetry, we deﬁne ms(Ω , r) to
+be the maximum of m such that for any r-coloring of Ω there exists a monochromatic
+symmetric set of size at least m. We consider a wide range of spaces Ω including the
+discrete and continuous segments {1, . . . , n} and [0 , 1] with central symmetry, geometric
+ﬁgures with the usual symmetries of Euclidean space, and Abelian gr oups with a natu-
+ral notion of central symmetry. We observe that ms({1, . . . , n}, r) and ms([0, 1], r) are
+closely related, prove lower and upper bounds for ms([0, 1], 2), and ﬁnd asymptotics of
+ms([0, 1], r) for r increasing. The exact value of ms(Ω , r) is determined for ﬁgures of revo-
+lution, regular polygons, and multi-dimensional parallelopipeds. We als o discuss problems
+of a slightly diﬀerent ﬂavor and, in particular, prove that the minimal r such that there
+exists an r-coloring of the k-dimensional integer grid without inﬁnite monochromatic
+symmetric subsets is k + 1.”
+[101] Javier Cilleruelo, An upper bound for B2[2] sequences, J. Combin. Theory Ser. A 89 (2000), 141–
+144. MR 2001d:11026
+Cilleruelo gives a combinatorial proof that R(4, n) ≤
+√
+6n + 1, whence σ2(4) ≤
+√
+3.
+[102] , Gaps in dense Sidon sets , Integers 0 (2000), Paper A11, 6pp. (electronic).
+MR 2001m:11129
+Author’s abstract: “We prove that if A ⊂ [1, N] is a Sidon set with N 1/2 − L elements,
+then any interval I ⊂ [1, N] of length cN contains c|A| + EI elements of A, with |EI | ≤
+52N 1/4(1 + c1/2N 1/8)(1 + L1/2
++ )N −1/8, L+ = max {0, L}. In particular, if |A| = N 1/2 +
+O
+(
+N 1/4)
+, and g(A) is the maximum gap in A, we deduce that g(A) ≪ N 3/4. We also
+prove that, under this condition, the exponent 3 /4 is sharp.”
+[103] Javier Cilleruelo and Jorge Jim´ enez-Urroz, Bh[g] sequences, Mathematika 47 (2000), 109–115
+(2002). MR 1924491
+Author’s abstract: “We give new upper and lower bounds for Fh(g, N ), the maximum
+size of a Bh[g] sequence contained in [1 , N]. We prove
+Fh(g, N ) ≤ (
+√
+3hh!gN )1/h,
+and for any ǫ > 0 and g > g (ǫ, h),
+Fh(g, N ) ≥
+(
+(1 − ǫ)
+√ π
+6
+√
+hgN
+)1/h
++ o (() N 1/h).
+”
+This means that σh(h!g) ≤ (h!
+√
+3h)1/h (an improvement for h > 7) and
+lim infg→∞ σh(h!g)h−1/(2h) ≥
+√
+π/6.
+[104] B. Lindstr¨ om,A translate of Bose-Chowla B2-sets, Studia Sci. Math. Hungar. 36 (2000), 331–333.
+MR 2001j:11005
+[105] Bernt Lindstr¨ om, Bh[g]-sequences from Bh-sequences, Proc. Amer. Math. Soc. 128 (2000), 657–
+659. MR 2000e:11022
+If A is a Bh set and B = {0, 1, . . . , m}, then
+mA + B = {ma + b : a ∈ A, b ∈ B}
+is a Bh[g] set. Consequently, Rh(h!mh−1, n) ≥ (mh−1n)1/h(1 + o (1)).
+This is the same construction of [81], but here it is analyzed correct ly.
+to appear in the electronic journal of combinatorics 11 (2004), #R00 33
+
+[106] Melvyn B. Nathanson, N -graphs, modular Sidon and sum-free sets, and partition ide ntities, Ra-
+manujan J. 4 (2000), 59–67. MR 2001c:05011
+Author’s abstract: “Using a new graphical representation for partitions, the author
+obtains a family of partition identities associated with partitions into d istinct parts of an
+arithmetic progression, or, more generally, with partitions into dist inct parts of a set that
+is a ﬁnite union of arithmetic progressions associated with a modular s um-free Sidon set.
+Partition identities are also constructed for sets associated with m odular sum-free sets.”
+[107] Oriol Serra and Gilles Z´ emor, On a generalization of a theorem by Vosper , Integers 0 (2000), Paper
+A10, 10 pp. (electronic). MR 2001f:11178
+Author’s abstract: “Let S, T be subsets of Z/pZ with min {|S|, |T |} > 1. The Cauchy-
+Davenport theorem states that |S + T | ≥ min{p, |S| + |T | − 1}. A theorem by Vosper
+characterizes the critical pair in the above inequality. We prove the following general-
+ization of Vosper’s theorem. If |S + T | ≤ min{p − 2, |S| + |T | + m}, 2 ≤ | S|, |T |, and
+|S| ≤ p −
+(m+4
+2
+)
+, then S is a union of at most m + 2 arithmetic progressions with the
+same diﬀerence. The term
+(m+4
+2
+)
+is best possible, i.e. cannot be replaced by a smaller
+number. ”
+[108] H. Taylor and G. S. Yovanof, B2-sequences and the distinct distance constant , Comput. Math. Appl.
+39 (2000), 37–42, Sol Golomb’s 60th Birthday Symposium (Oxnard, CA , 1992). MR 2001j:11007
+Author’s abstract: “A sequence of positive integers 1 < α 1 < α 2 < . . . with the
+property that all diﬀerences αj − αi, i < j are distinct is called a B2-sequence. De-
+note by DDC (distinct diﬀerence constant) the maximum over all pos sible B2-sequences
+of the sum ∑ (1/αi). Previously known upper and lower bounds for the DDC are
+2.1597 < DDC < 2.374. We have estimated the following sharper bounds on DDC:
+2.1600383 < DDC < 2.2473. We have further proved that any B2-sequence which
+achieves the maximum reciprocal sum must start with the terms 1 , 2, 4.”
+[109] Peter J. Cameron and Paul Erd˝ os, Notes on sum-free and related sets , Recent Trends in Combina-
+torics (M´ atrah´ aza, 1995), Cambridge Univ. Press, Cambridge,2001, pp. 95–107. MR 2000c:05144
+Fix h and g, and Let fmax(n) be the number of maximal B∗
+h[g] sets contained in [ n].
+Then lim sup n→∞ fmax(n) = ∞.
+[110] Javier Cilleruelo, New upper bounds for ﬁnite Bh sequences, Adv. Math. 159 (2001), 1–17.
+MR 2002g:11023
+σ3 ≤
+(
+4
+1 + ( 2
+π+2 )4
+)1/3
+< 1.576,
+σ4 ≤
+(
+8
+1 + ( 2
+π+2 )4
+)1/4
+< 1.673.
+For 3 ≤ m < 38
+σ2m−1 ≤
+( (m!)2
+1 + cos2m(π/m)
+)1/(2m−1)
+,
+σ2m ≤
+( m(m!)2
+1 + cos2m(π/m)
+)1/(2m)
+.
+to appear in the electronic journal of combinatorics 11 (2004), #R00 34
+
+For 38 ≤ m
+σ2m−1 ≤
+(
+5
+2
+(15
+4 − 5
+4m
+)1/4 (m!)2
+√m
+)1/(2m−1)
+,
+σ2m ≤
+(
+5
+2
+(15
+4 − 5
+4m
+)1/4 √m(m!)2
+)1/(2m)
+.
+[111] Javier Cilleruelo and Carlos Trujillo, Inﬁnite B2[g] sequences, Israel J. Math. 126 (2001), 263–267.
+MR 2003d:11032
+Author’s abstract: “We exhibit, for any integer g ≥ 2, an inﬁnite sequence A ∈ B2[g]
+such that lim sup x→∞ A(x)x−1/2 = 3
+2
+√
+2
+√g − 1. In addition, we obtain better estimates
+for small values of g. For example, we exhibit an inﬁnite sequences A ∈ B2[2] such that
+lim supx→∞ A(x)x−1/2 =
+√
+3/2.”
+[112] G´ erard Cohen, Simon Litsyn, and Gilles Z´ emor,Binary B2-sequences: a new upper bound , J. Com-
+bin. Theory Ser. A 94 (2001), 152–155. MR 2002a:94019
+Author’s abstract: “We show that the maximum size of a B2-sequence of binary n-
+vectors for large enough n is at most 2 0.5753n, thus improving on the previous bound
+20.6n due to B. Lindstr¨ om.”
+[113] Ben Green, The number of squares and Bh[g] sets, Acta Arith. 100 (2001), 365–390.
+MR 2003d:11033
+This paper contains a substantial jump in sophisticatedness-of-t echnique over essentially
+all earlier work on the density of ﬁnite B∗
+h[g] sets. The techniques used in [118] to get
+upper bounds are incorporated and extended.
+The central problem here is to bound
+M (n) := inf
+f :[n]→R,∑ f (x)=n
+∑
+a+b=c+d
+f (a)f (b)f (c)f (d).
+As the summation has 3 degrees of freedom, it is not surprising that there are positive
+constants c1, c2 with c1n3 ≲ M (n) ≲ c2n3. Green shows that we may take c1 = 4/7 and
+c2 = 0 .64074. He also shows that the inﬁmum is obtained for a unique functio n f , and
+(f ◦ f ) ◦ f (x) is constant for x ∈ [n].
+A substantive amount of additional work gives the bounds
+σ3 ≤ (7/2)1/3 < 1.519
+σ4 ≤ 71/4 < 1.627
+σ2h((2h)!) ≤ π1/2h1/2(h!)2(1 + ǫ(h))/((2h)!)
+σ2h−1((2h − 1)!) ≤ π1/2h−1/2(h!)2(1 + ǫ(h))/((2h − 1)!).
+The function ǫ(h) tends to 0 as h → ∞ , but it is not computed explicitly. Also, Green
+shows that σ2(g) ≤ 7/4(1 − 1/g) and σ2(g) ≤ 1.6999.
+While the main theorems are proven in full detail, but there are numbe r of comments
+about generalizations that are neither proven nor straightforwa rd.
+[114] Alain Plagne, A new upper bound for B2[2] sets, J. Combin. Theory Ser. A 93 (2001), 378–384.
+MR 2001k:11035
+to appear in the electronic journal of combinatorics 11 (2004), #R00 35
+
+σ2(4) ≤ 1.67131.
+[115] , Recent progress on ﬁnite Bh[g] sets, Proceedings of the Thirty-Second Southeastern In-
+ternational Conference on Combinatorics, Graph Theory and Com puting (Baton Rouge, LA, 2001),
+vol. 153, 2001, pp. 49–64. MR 2003a:05146
+[116] I. Z. Ruzsa, An almost polynomial Sidon sequence , Studia Sci. Math. Hungar. 38 (2001), 367–375.
+MR 2002k:11030
+There is a real number α and integer n0 such that {n5 +
+⌊
+αn4⌋
+: n > n 0} is a Sidon set.
+[117] Serge Vaudenay, Cryptanalysis of the Chor-Rivest Cryptosystem , Journal of Cryptology 14 (Jan-
+uary 2001), 87 –100.
+Author’s abstract: “Knapsack-based cryptosystems used to be popular in the begin-
+ning of public key cryptography before all but the ChorRivest cryp tosystem being broken.
+In this paper we show how to break this one with its suggested param eters: F19724 and
+F25625 . We also give direction on possible extensions of our attack.”
+[118] Javier Cilleruelo, Imre Z. Ruzsa, and Carlos Trujillo, Upper and lower bounds for ﬁnite Bh[g] sequences,
+J. Number Theory 97 (2002), 26–34. MR 2003i:11033
+This nine page article inaugurated the modern era of Sidon-set rese arch, containing
+signiﬁcant advances in dealing with both g and h in getting both upper and lower bounds.
+In many cases, this was the ﬁrst progress over the trivial bounds . The results here have all
+received substantial further reﬁnement and generalization. We n ote that this article was
+submitted 31 months before publication, and the preprint was inﬂue ncing other workers
+as early as 2000.
+They prove that R2(2g, n) ≤ 1.319(2gn)1/2 + 1 and, whence σ2(2g) ≤ 1.319. They
+prove that σ2(2g) ≥ g+⌊g/2⌋√
+g2+2g⌊g/2⌋
+, whence σ2(4) ≥
+√
+3/2 > 1.224. For h > 2, they prove
+that Rh(h!g, n) ≤ (h(h!)2gN )1/h
+(1+cosh(π/h))1/h , whence
+σh(h!g)h ≤ h(h!)2
+1 + cosh(π/h) .
+[119] Laurent Habsieger and Alain Plagne, Ensembles B2[2]: l’´ etau se resserre, Integers 2 (2002), Paper
+A2, 20 pp. (electronic). MR 2002m:11010 (French)
+Author’s abstract: “Let F2(N, 2) denote the maximal cardinality of any B2[2] set
+included in {1, 2, . . . , N} It is a well known fact that the ratio F2(N, 2)/
+√
+N (N ≥ 1)
+is bounded from below and from above by two positive constants. Ho wever, one still
+ignores whether this quantity has a limit as N tends toward inﬁnity. This explains the
+huge amount of work that was produced in order to improve the bes t lower and upper
+asymptotic bounds for F2(N, 2)/
+√
+N . In this paper, we obtain the following asymptotic
+bounds
+4√
+7 ≲ F2(N, 2)√
+N
+< 2.3218 . . . .
+”
+[120] Tomasz Schoen, The distribution of dense Sidon subsets of Zm, Arch. Math. (Basel) 79 (2002),
+171–174. MR 2003f:11022
+to appear in the electronic journal of combinatorics 11 (2004), #R00 36
+
+Author’s abstract: “Let S ⊆ Zm be a Sidon set of cardinality |S| = m1/2 + O (1). It
+is proved, in particular, that for any interval I = {a, a + 1, . . . , a+ ℓ − 1} in Zm, 0 ≤ ℓ ¡
+m, we have ||S ∩ I| − | S|ℓ/m| = O
+(
+|S|1/2 log m
+)
+.”
+[121] David R. Wood, On vertex-magic and edge-magic total injections of graphs , Australas. J. Combin.
+26 (2002), 49–63. MR 2003e:05121
+Author’s abstract: “The study of graph labellings has focused on ﬁnding classes of
+graphs which admit a particualr type of labelling. Here we consider var iations of the
+well-known edge-magic and vertex-magic total labellings for which all graphs admit such
+a labelling. In particular, we consider two types of injections of the v ertices and edges
+of a graph with positive integers: (1) for every edge the sum of its la bel and those of its
+end-vertices is some magic constant (edge-magic); and (2) for every vertex the sum of its
+label and those of the edges incident to it is some magic constant (vertex-magic). Our aim
+is to minimise the maximum label or the magic constant associated with t he injection.
+We present upper bounds on these parameters for complete grap hs, forests and arbitrary
+graphs, which in a number of cases are within a constant factor of b eing optimal. Our
+results are based on greedy algorithms for computing an antimagic in jection, which is
+then extended to a magic total injection. Of independent interst is our result that every
+forest has an edge-antinmagic vertex labelling.”
+[122] B´ ela Bollob´ as and Oleg Pikhurko,Integer Sets with Prescribed Pairwise Diﬀerences Being Dis tinct,
+January 19, 2004, The website http://www.math.cmu.edu/ pikhurko /Papers/index.html links to the
+preprint, which it notes as “to appear in Europ J Comb.”
+Author’s abstract: “We label the vertices of a given graph G with positive integers
+so that the pairwise diﬀerences over its edges are all distinct. Let D(G) be the smallest
+value that the largest label can have.
+For example, for the complete graph Kn, the labels must form a Sidon set. Hence
+D(Kn) = (1 + o (1))n2. Rather surprisingly, we demonstrate that there are gaphs with
+only n3/2+o(1) edges achieving this bound.
+More generally, we study the maximum value of D(G) that a graph G of the given
+order n and size m can have. We obtain bounds which are sharp up to a logarithmic
+multiplicative factor. The analogous problem for pairwise sums is cons idered as well. Our
+results, in particular, disprove a conjecture of Wood.”
+[123] M. Helm, Upper bounds for B2[g]-sets, unpublished.
+I have not seen this article, but it reportedly contains a proof that R(4, n) ≤
+√
+6n+O (1).
+[124] Greg Martin and Kevin O’Bryant, Continuous Ramsey theory and Sidon sets , 2002,
+arXiv:math.NT/0210041.
+Author’s abstract: “A symmetric subset of the reals is one that remains invariant
+under some reﬂection x ↦→c − x. Given 0 < ǫ ≤ 1, there exists a real number ∆( ǫ)
+with the following property: if 0 ≤ δ < ∆( ǫ), then every subset of [0 , 1] with measure ǫ
+contains a symmetric subset with measure δ, while if δ > ∆( ǫ), then there exists a subset
+of [0, 1] with measure ǫ that does not contain a symmetric subset with measure δ. In this
+paper we establish upper and lower bounds for ∆( ǫ) of the same order of magnitude: for
+example, we prove that ∆( ǫ) = 2 ǫ − 1 for 11
+16 ≤ ǫ ≤ 1 and that 0 .59ǫ2 < ∆( ǫ) < 0.8ǫ2 for
+0 < ǫ ≤ 11
+16 .
+to appear in the electronic journal of combinatorics 11 (2004), #R00 37
+
+This continuous problem is intimately connected with a corresponding discrete prob-
+lem. A set S of integers is called a B∗[g] set if for any given m there are at most g
+ordered pairs ( s1, s2) ∈ S × S with s1 + s2 = m; in the case g = 2, these are better
+known as Sidon sets. We also establish upper and lower bounds of the same order of
+magnitude for the maximal possible size of a B∗[g] set contained in {1, . . . , n}, which
+we denote by R(g, n). For example, we prove that R(g, n) < 1.31√gn for all n ≥ g ≥ 2,
+while R(g, n) > 0.79√gn for suﬃciently large integers g and n.
+These two problems are so interconnected that both continuous a nd discrete tools can
+be applied to each problem with surprising eﬀectiveness. The harmon ic analysis methods
+and inequalities among various Lp norms we use to derive lower bounds for ∆( ǫ) also
+provide uniform upper bounds for R(g, n), while the techniques from combinatorial and
+probabilistic number theory that we employ to obtain constructions of large B∗[g] sets
+yield strong upper bounds for ∆( ǫ).”
+[125] , Constructions of Generalized Sidon Sets , August 5, 2004,
+http://www.math.ubc.ca/~gerg/.
+Author’s abstract: “We give explicit constructions of sets S with the property that
+for each integer k, there are at most g solutions to k = s1 + s2, ai ∈ S; such sets are
+called Sidon sets if g = 2 and generalized Sidon sets if g ≥ 3. We extend to general-
+ized Sidon sets the Sidon-set constructions of Singer, Bose, and R uzsa. We also further
+optimize Koulantzakis’ idea of interleaving several copies of a Sidon s et, extending the
+improvements of Cilleruelo & Ruzsa & Trujillo, Jia, and Habsieger & Plagn e.”
+[126] Melvyn Nathanson, On the ubiquity of Sidon sets , May 1, 2003, arXiv:math.NT/0304496.
+Author’s abstract: “It is proved that almost all small subsets of [ n] are B2[g] sets, in
+the sense that if B2[g](k, n) denotes the number of B2[g] sets of cardinality k contained
+in the interval [ n], then lim n→∞ B2[g](k, n)/
+(n
+k
+)
+= 1 if k = o
+(
+ng/(2g+2))
+.”
+[127] Oleg Pikhurko, Dense edge magic graphs and thin additive bases , November 8, 2003,
+http://www.dpmms.cam.ac.uk/~oleg/Papers/EdgeMagic.ps.
+Author’s abstract: “A graph G of ornder n and size m is edge-magic if there is a
+bijection ℓ : V (G) ∪ E(G) → [n + m] such that all sums ℓ(a) + ℓ(b) + ℓ(ab), ab ∈ E(G),
+are the same. We present new lower and upper bounds on M(n), the maximum size of
+an edge-magic graph of order n, being the ﬁrst to show an upper bound of the form
+M(n) ≤ (1 − ǫ)
+(n
+2
+)
+. Concrete estimates for ǫ can be obtained by knowing s(k, n), the
+maximum number of distinct pairwise sums that a k-subset of [ n] can have.
+So, we also study s(k, n), motivated by the above connections to edge-magic graphs
+and by the fact that a few known functions from additive number th eory can be expressed
+via s(k, n). For example, our estimate
+s(k, n) ≤ n + k2
+(1
+4 − 1
+(π + 2)2 + o (1)
+)
+implies new bounds on the maximum size of quasi-Sidon sets, a problem p ose by Erd˝ os
+and Freud [49]. The related problem for diﬀerences is considered as w ell.”
+to appear in the electronic journal of combinatorics 11 (2004), #R00 38
+

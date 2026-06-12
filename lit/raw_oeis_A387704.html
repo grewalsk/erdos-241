@@ -1,0 +1,374 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+  
+  <head>
+  <link rel="stylesheet" href="/styles.css">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="OEIS,integer sequences,Sloane" />
+  
+  
+  <title>A387704 - OEIS</title>
+  <link rel="search" type="application/opensearchdescription+xml" title="OEIS" href="/oeis.xml">
+  <script>
+  var myURL = "\/A387704"
+  function redir() {
+      var host = document.location.hostname;
+      if(host != "oeis.org" && host != "127.0.0.1" && !/^([0-9.]+)$/.test(host) && host != "localhost" && host != "localhost.localdomain") {
+          document.location = "https"+":"+"//"+"oeis"+".org/" + myURL;
+      }
+  }
+  function sf() {
+      if(document.location.pathname == "/" && document.f) document.f.q.focus();
+  }
+  </script>
+  </head>
+  <body bgcolor=#ffffff onload="redir();sf()"><a href="https://oeis.org/cdn-cgi/content?id=dg8CJ6BVDqC9u4NhXf8TJU3ETEnU8gdEuDmTMBoT4Xs-1781296860.5495098-1.2.1.1-qAwGqaYc.ke0rX5TbESL_.Zo.c2ght6b96MB009Co2I" aria-hidden="true" rel="nofollow noopener" style="display: none !important; visibility: hidden !important"></a>
+    <div class=loginbar>
+      <div class=login>
+      
+        <a href="/login?redirect=%2fA387704">login</a>
+      
+      </div>
+    </div>
+
+    <div class=center><div class=top>
+    <center>
+    <div class=donors>
+    The OEIS is supported by <a href="http://oeisf.org/#DONATE">the many generous donors to the OEIS Foundation</a>.
+    </div>
+
+    <div class=banner>
+    <a href="/"><img class=banner border="0" width="600" src="/banner2021.jpg" alt="A387704 - OEIS"></a>
+    </div>
+
+    
+    </center>
+    </div></div>
+
+    <div class=center><div class=pagebody>
+      
+    
+    <div class=searchbarcenter>
+        <form name=f action="/search" method="GET">
+            <div class=searchbargreet>
+                <div class=searchbar>
+                    <div class=searchq>
+                        <input class=searchbox maxLength=1024 name=q value="" title="Search Query">
+                        
+                        
+                        
+                        
+                    </div>
+                    <div class=searchsubmit>
+                        <input type=submit value="Search" name=go>
+                    </div>
+                    <div class=hints>
+                        <span class=hints><a href="/hints.html">Hints</a></span>
+                    </div>
+                </div>
+                <div class=searchgreet>
+                    (Greetings from <a href="/welcome">The On-Line Encyclopedia of Integer Sequences</a>!)
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class=sequence>
+        <div class=space1></div>
+        <div class=line></div>
+        
+        <div class=seqhead>
+            <div class=seqnumname>
+                <div class=seqnum>
+                    
+                        A387704
+                    
+                </div>
+                <div class=seqname>
+                    Size of the maximal subset S of {1,2,...,n} such that for all a, b, c in S not necessarily distinct, a+b+c is unique up to permutation.
+                    
+                </div>
+            </div>
+            <div class=scorerefs>
+                        
+                        1
+            </div>
+        </div>
+        
+            
+    
+    
+    <div>
+        <div class=seqdatabox>
+            <div class=seqdata>0, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7</div>
+            
+                <div class=seqdatalinks>
+                (<a href="/A387704/list">list</a>;
+                
+                
+                
+                    <a href="/A387704/graph">graph</a>;
+                
+                <a href="/search?q=A387704+-id:A387704">refs</a>;
+                <a href="/A387704/listen">listen</a>;
+                <a href="/history?seq=A387704">history</a>;
+                
+                <a href="/search?q=id:A387704&fmt=text">text</a>;
+                <a href="/A387704/internal">internal format</a>)
+                </div>
+            
+        </div>
+    </div>
+    <div class=entry>
+        
+            
+        
+            
+        
+            
+        
+            
+                 
+                 
+                 
+                 
+                     <div class=section>
+                         <div class=sectname>OFFSET</div>
+                         <div class=sectbody>
+                             
+                                 <div class=sectline>0,3</div>
+                             
+                         </div>
+                     </div>
+                 
+            
+        
+            
+                 
+                 
+                 
+                 
+                     <div class=section>
+                         <div class=sectname>COMMENTS</div>
+                         <div class=sectbody>
+                             
+                                 <div class=sectline>It is straightforward to prove a(n) &lt;= a(n+1) &lt;= a(n)+1, and a(n) &lt; a(3n+1).</div>
+                             
+                         </div>
+                     </div>
+                 
+            
+        
+            
+                 
+                 
+                 
+                 
+            
+        
+            
+                 
+                 
+                 
+                     
+                 
+                 
+                     <div class=section>
+                         <div class=sectname>LINKS</div>
+                         <div class=sectbody>
+                             
+                                 <div class=sectline>Sharvil Kesarwani, <a href="/A387704/b387704.txt">Table of n, a(n) for n = 0..150</a></div>
+                             
+                                 <div class=sectline>Thomas Bloom <a href="https://www.erdosproblems.com/forum/thread/241">Problem 241</a>, Erdős Problems.</div>
+                             
+                         </div>
+                     </div>
+                 
+            
+        
+            
+                 
+                 
+                 
+                 
+            
+        
+            
+                 
+                 
+                 
+                 
+                     <div class=section>
+                         <div class=sectname>EXAMPLE</div>
+                         <div class=sectbody>
+                             
+                                 <div class=sectline>For n=5, the maximal subset is {1,2,5}, which generates sums 3,4,5,6,7,8,9,11,12,15 uniquely. Adding 3 would create the duplicate sums 1+1+3=1+2+2, and adding 4 would create the duplicate sum 1+1+4=2+2+2. Hence, a(5)=3.</div>
+                             
+                         </div>
+                     </div>
+                 
+            
+        
+            
+                 
+                 
+                 
+                 
+            
+        
+            
+                 
+                 
+                 
+                 
+                     <div class=section>
+                         <div class=sectname>MATHEMATICA</div>
+                         <div class=sectbody>
+                             
+                                 <div class=sectline>FindMaxSubset[t_] := Module[{best={}, curr={}, used=ConstantArray[False, 3n+1], search},</div>
+                             
+                                 <div class=sectline>search[x_] := Module[{newSums}, If[Length[curr]&gt;Length[best], best=curr]; If[Length[curr] &gt; Length[best], best=curr]; If[Length[curr]+(n-x+1)&lt;=Length[best], Return[]]; Do[newSums=Flatten[{3k, k+2curr, k+Total /@ Subsets[curr, {2}], k+2curr}]; newSums = Flatten[{3k, Table[2k+c, {c, curr}], Table[k+curr[[i]]+curr[[j]], {i, Length@curr}, {j, i, Length@curr}]}]; If[FreeQ[used[[newSums]], True] &amp;&amp; DuplicateFreeQ[newSums], used[[newSums]]=True; AppendTo[curr, k]; search[k + 1]; curr=Delete[curr, -1]; used[[newSums]] = False; ], {k, x, n}]]; search[1]; best]</div>
+                             
+                         </div>
+                     </div>
+                 
+            
+        
+            
+                 
+                 
+                 
+                 
+            
+        
+            
+                 
+                 
+                     
+                 
+                 
+                 
+                     <div class=section>
+                         <div class=sectname>CROSSREFS</div>
+                         <div class=sectbody>
+                             
+                                 <div class=sectline>Cf. <a href="/A143824" title="Size of the largest subset {x(1),x(2),...,x(k)} of {1,2,...,n} with the property that all differences |x(i)-x(j)| are distinct.">A143824</a> (for 2-sums), <a href="/A385931" title="a(n) is the least integer such that there is an n-element set of integers between 0 and a(n) such that the sums of any three...">A385931</a> (for distinct 3-sums).</div>
+                             
+                                 <div class=sectline>Sequence in context: <a href="/A385654" title="Greatest prime factor of A385653(n).">A385654</a> <a href="/A186188" title="Least k such that A156077^(k)(n)=1 where a^(k)=a(a^(k-1)).">A186188</a> <a href="/A227177" title="n occurs n^2 - n + 1 times.">A227177</a> * <a href="/A132944" title="a(n) = floor(n^(1/3) + n^(1/4)).">A132944</a> <a href="/A210568" title="Array read by upwards antidiagonals: majority index of &quot;comet&quot; C_{s,t}.">A210568</a> <a href="/A262887" title="Number of ordered ways to write n as x^3 + y^2 + pi(z^2) (x &gt;= 0, y &gt;= 0 and z &gt; 0) with z-1 or z+1 prime, where pi(m) denot...">A262887</a></div>
+                             
+                                 <div class=sectline>Adjacent sequences:  <a href="/A387701" title="Smallest number m such that m, m+1, m+2, m+3, m+4 and m+5 have exactly n prime factors (counted with multiplicity).">A387701</a> <a href="/A387702" title="Smallest number m such that m, m+1, m+2, m+3, m+4, m+5 and m+6 have exactly n prime factors (counted with multiplicity).">A387702</a> <a href="/A387703" title="Primes p such that p + 10^i are prime for i from 1 to 5.">A387703</a> * <a href="/A387705" title="Triangle read by rows: T(n,k) = number of heapable permutations of length n with exactly k 132 patterns.">A387705</a> <a href="/A387706" title="Indices where the cumulative sum of sin(2k+1)^(2k+1) reaches a record high value.">A387706</a> <a href="/A387707" title="a(n) = A337345(A023196(n)), where A337345 is the number of divisors d of n for which A003961(d) &gt; 2*d, and A023196 lists the...">A387707</a></div>
+                             
+                         </div>
+                     </div>
+                 
+            
+        
+            
+                 
+                 
+                 
+                 
+                     <div class=section>
+                         <div class=sectname>KEYWORD</div>
+                         <div class=sectbody>
+                             
+                                 <div class=sectline><span title="a sequence of nonnegative numbers">nonn</span>,<span title="next term not known, may be hard to find.  please extend this sequence">hard</span></div>
+                             
+                         </div>
+                     </div>
+                 
+            
+        
+            
+                 
+                 
+                 
+                 
+                     <div class=section>
+                         <div class=sectname>AUTHOR</div>
+                         <div class=sectbody>
+                             
+                                 <div class=sectline><a href="/wiki/User:Sharvil_Kesarwani">Sharvil Kesarwani</a>, Dec 29 2025</div>
+                             
+                         </div>
+                     </div>
+                 
+            
+        
+            
+                 
+                 
+                 
+                 
+            
+        
+            
+                 
+                 
+                 
+                 
+                     <div class=section>
+                         <div class=sectname>STATUS</div>
+                         <div class=sectbody>
+                             
+                                 <div class=sectline>approved</div>
+                             
+                         </div>
+                     </div>
+                 
+            
+        
+
+        
+    </div>
+
+        
+        <div class=space10></div>
+    </div>
+
+    </div></div>
+
+    <p>
+
+    <div class=footerpad></div>
+    <div class=footer>
+    <center>
+    <div class=bottom>
+    <div class=linksbar>
+      <a href="/">Lookup</a>
+      <a href="/wiki/Welcome"><font color="red">Welcome</font></a>
+      <a href="/wiki/Main_Page"><font color="red">Wiki</font></a>
+      <a href="/wiki/Special:RequestAccount">Register</a>
+      
+      <a href="/play.html">Music</a>
+      <a href="/plot2.html">Plot 2</a>
+      <a href="/demo1.html">Demos</a>
+      <a href="/wiki/Index_to_OEIS">Index</a>
+      <a href="/webcam">WebCam</a>
+      <a href="/Submit.html">Contribute</a>
+      <a href="/eishelp2.html">Format</a>
+      <a href="/wiki/Style_Sheet">Style Sheet</a>
+      <a href="/transforms.html">Transforms</a>
+      <a href="/ol.html">Superseeker</a>
+      <a href="/recent">Recents</a>
+    </div>
+    <div class=linksbar>
+      <a href="/community.html">The OEIS Community</a>
+    </div>
+    <div class=linksbar>
+      Maintained by <a href="http://oeisf.org">The OEIS Foundation Inc.</a>
+    </div>
+
+    <div class=dbinfo>Last modified June 12 16:37 EDT 2026.  Contains 396520 sequences.</div>
+    <div class=legal>
+    <a href="/wiki/Legal_Documents">License Agreements, Terms of Use, Privacy Policy</a>
+    </div>
+
+    </div>
+    </center>
+    </div>
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a0abac826acd3956',t:'MTc4MTI5Njg2MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

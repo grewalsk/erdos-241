@@ -1,0 +1,786 @@
+arXiv:2105.03706v2  [math.CO]  18 Jun 2021
+Upper and lower bounds on the size of Bk[g] sets
+Griﬃn Johnston ∗ Michael Tait∗ Craig Timmons †
+June 21, 2021
+Abstract
+A subset A of the integers is a Bk[g] set if the number of multisets from A that
+sum to any ﬁxed integer is at most g. Let Fk,g (n) denote the maximum size of a Bk[g]
+set in {1, . . . , n}. In this paper we improve the best-known upper bounds on Fk,g (n)
+for g > 1 and k large. When g = 1 we match the best upper bound of Green with an
+improved error term. Additionally, we give a lower bound on Fk,g (n) that matches a
+construction of Lindstr¨ om while removing one of the hypoth eses.
+1 Introduction
+We will denote the integers {1, 2,...,n } by [n]. Given natural numbers k and g, a subset
+of Z is called a Bk[g] set if for any m there are at most g multisets {x1,...,x k} such that
+x1 + · · · +xk =m and xi ∈A. Determining bounds on the maximum size of a Bk[g] set in
+[n] is a diﬃcult and well-studied problem and is the focus of this paper. Le t Fk,g (n) be the
+maximum size of a Bk[g] set in [ n].
+Whenk = 2 and g = 1, B2[1] sets are called Sidon sets and have been studied extensively
+since being introduced by Sidon [25] in the context of Fourier series , and then studied further
+by Erd˝ os and Tur´ an [13] from a combinatorial perspective. It is known [4, 18] that F2, 1(n) ∼
+n1/ 2, and determining whether or not F2, 1(n) = n1/ 2 +O(1) is a 500 USD Erd˝ os problem
+[12]. Very recently the error term was improved by Balogh, F¨ uredi, and Roy [2] to F2, 1(n) ≤
+n1/ 2 + 0.998n1/ 4 for suﬃciently large n. This represents the ﬁrst improvement upon the error
+term in over 50 years.
+For other choices of k andg, the asymptotic behavior of Fk,g (n) has not been determined,
+yet there are upper and lower bounds that give the order of magnit ude as a function of n.
+First we discuss upper bounds.
+∗ Department of Mathematics & Statistics, Villanova University, Villano va, PA, U.S.A. {jjohns79,
+michael.tait}@villanova.edu. The second author is partially supported by National Science Foun da-
+tion grant DMS-2011553.
+† Department of Mathematics and Statistics, California State Univer sity Sacramento, U.S.A.
+craig.timmons@csus.edu. Research is supported in part by Simons Foundation Grant #35941 9
+1
+If A is a Bk[g] set contained in [ n], then each of the
+( |A|+k−1
+k
+)
+multisets of size k from
+A determines a sum which is an integer in [ kn]. Each such integer can appear as a sum at
+most g times so
+( |A|+k−1
+k
+)
+≤ gkn. This implies Fk,g (n) ≤ (gk!kn)1/k which is known as the
+trivial bound. When g = 1, a Bk[g] set is often called a Bk set. Nontrivial bounds on the
+size of a Bk set were given by Jia [16] and Kolountzakis [17] for k even, and by Chen [6] for
+k odd. These bounds show that
+Fk, 1(n) ≤
+(⌊ k
+2
+⌋
+!
+⌈k
+2
+⌉
+!kn
+) 1/k
++Ok(1). (1.1)
+When k is large, these bounds were improved by Green [15], who proved
+Fk, 1(n) ≤
+( ⌈k
+2
+⌉
+!
+⌊k
+2
+⌋
+!
+√
+πk
+2 (1 +ǫk)n
+) 1/k
+. (1.2)
+It is noted (see page 379 of [15]) that ǫk can be taken to be O(k−1/ 8).
+Forg >1, Cilleruelo, Ruzsa, and Trujillo [9] improved the trivial bound by prov ing
+Fk,g (n) ≤
+( k!kgn
+1 + cosk(π/k)
+) 1/k
+. (1.3)
+Using an idea that the author’s attribute to Alon, Cilleruelo and Jim´ en ez-Urroz [7] showed
+Fk,g (n) ≤
+( √
+3kk!gn
+) 1/k
+. (1.4)
+When 3 ≤ k ≤ 6, (1.3) is better and (1.4) is better for large k. Currently the best general
+upper bound, proved by the third author [28], is
+Fk,g (n) ≤ (1 +o(1))
+( xkk!kgn
+π
+) 1/k
+. (1.5)
+Here xk is the unique real number in (0 ,π ) that satisﬁes sin xk
+xk
+=
+(
+4
+3−cos(π/k ) − 1
+) k
+. In [28] it
+is shown that this upper bound is better than both (1.3) and (1.4) bu t that xkk!kg
+π →
+√
+3kk!g
+as k → ∞.
+Our ﬁrst main theorem is an upper bound for large k that improves (1.5) and matches
+(1.2). Our theorem improves the error term in (1.2) from O(k−1/ 8) [15] to O(k−1/ 3).
+Theorem 1.6. LetA ⊂ [n] be a Bk[g] set.
+(i) When g = 1
+|A| ≤
+( ⌈k
+2
+⌉
+!
+⌊k
+2
+⌋
+!
+√
+πk
+2 (1 +O(k−1/ 3))n
+) 1
+k
+,
+and
+2
+(ii) when g >1
+|A| ≤
+( √
+πk
+2 k!g(1 +O(k−1/ 3))n
+) 1
+k
+.
+The proof of Theorem 1.6 uses the Berry-Esseen theorem and is ins pired by recent work
+of Dubroﬀ, Fox, and Xu [11] who used a similar technique applied to the Erd˝ os distinct
+subset sums problem.
+Next we turn to lower bounds. Bose and Chowla [4] constructed a Bk set of size q in
+Zqk−1 for q an odd prime power, and this implies that Fk, 1(n) ≥ (1 −o(1))n1/k . Lindstr¨ om
+[18] showed
+Fk,g (n) ≥ (1 −o(1))(gn)1/k , (1.7)
+when g = mk−1 for some integer m. Cilleruelo and Jim´ enez-Urroz [7] showed that for any
+ǫ> 0, there exists a constant g(k,ǫ ) so that for g >g(k,ǫ )
+Fk,g (n) ≥
+(
+(1 −ǫ)
+√
+πk
+6 gn
+) 1/k
+. (1.8)
+Our second main theorem matches the bound in (1.7) and removes th e requirement that
+g =mk−1.
+Theorem 1.9. For any integers k ≥ 2 and g ≥ 1, we have Fk,g (n) ≥ (1 −o(1))(gn)1/k .
+Before continuing the discussion, it is important to note that short ly after a preprint of
+this article was made available, the authors were notiﬁed by Carlos Tr ujillo that while not
+stated explicitly, Theorem 1.9 follows from results of Caicedo, G´ ome z, and Trujillo [5]. The
+proof ideas are similar with the notable diﬀerence that [5] works ﬁrst in a general setting, and
+then specializes to known Bh-sets. In our work we focus only on Bose-Chowla Bh sets and
+consequently, the proof of the lower bound Fk,g (n) ≥ (1 −o(1))(gn)1/k is shorter. However,
+we recommend [5] for details on this technique and how it can be applied to Bh sets of
+Bose and Chowla, Ruzsa, and G´ omez and Trujillo. We leave in the deta ils of the proof of
+Theorem 1.9 for completeness and because it includes a density of pr imes argument that
+gives an asymptotic lower bound for all n; the theorem in [5] applies only to an inﬁnite
+sequence in n.
+Previous work on bounding Fk,g (n) is extensive and we have not included much of it. In
+particular, there are numerous papers that consider the case wh en k = 2 and g > 1 (e.g.
+[8, 10, 17, 21, 20, 30, 29]). For more information, see the surveys of Plagne [24] and O’Bryant
+[23]. In Section 2 we prove Theorem 1.6 and in Section 3 we prove Theor em 1.9.
+2 Upper bounds
+For a ﬁnite set S ⊂ N, we deﬁne E(S) = 1
+|S|
+∑
+s∈Ss and Var(S) = 1
+|S|
+∑
+s∈S(s − E(S))2.
+For any random variable X let fX be its probability distribution function and let FX be its
+cumulative distribution function.
+3
+Assume that A is a Bk[g] set in [ n]. To give an upper bound for the size of A, we will
+consider the distribution of sums of random elements of A. Deﬁne random variables Xi that
+are independent and identically distributed by
+P(Xi =a − E(A)) = 1
+|A|
+for everya ∈A. Note that E(Xi) = 0 and Var(Xi) = Var(A). Deﬁne δ so that Var(A) = δn2.
+Any set of natural numbers up to n has variance at most (n−1)2
+4 and hence δ ≤ 1/4.
+The details split into two cases depending on if g = 1 or if g >1. When g = 1 we take
+advantage of the fact that if A is a Bk[1] set, then for any c ∈ Z there is at most one solution
+(up to rearranging) to the equation
+a1 + · · · +a⌈k/ 2⌉ −a⌈k/ 2⌉+1 − · · · −ak =c, (2.1)
+where a1, · · ·,a k ∈A.
+When g >1, there are at most g solutions (up to rearranging) to the equation
+a1 + · · · +ak =c. (2.2)
+Deﬁne
+Y1 =X1 + · · · +X⌈k/ 2⌉
+Y2 =X⌈k/ 2⌉+1 + · · · +Xk
+Y =Y1 −Y2
+Z =X1 + · · · +Xk.
+Wheng = 1 we will consider the random variable Y and when g >1 we will consider the
+random variable Z.
+In [7], Cilleruelo and Jim´ enez-Urroz give an upper bound on the size of a Bk[g] set for
+g >1 that depends on the variance of the set. Their proof is easily modiﬁ ed to include the
+g = 1 case, and for our purposes it is more convenient to phrase the r esult in terms of the
+variance of the set. We give a short proof for completeness.
+Theorem 2.3 (Theorem 1.1 in [7]) . Let k,g ∈ N be ﬁxed. If A is a Bk[g] set in [n], then
+for g = 1 we have
+|A|2k
+12
+(
+⌈ k
+2 ⌉!⌊ k
+2 ⌋!
+) 2 ≤ (k +o(1))Var(A),
+and for g >1 we have
+|A|2k
+12(gk!)2 ≤ (k +o(1))Var(A).
+Proof. For convenience we assume that |A|k is divisible by ⌈ k
+2 ⌉!⌊ k
+2 ⌋! when g = 1 and by gk!
+when g > 1. If this is not the case we may truncate A and let the o(1) terms account for
+the diﬀerence.
+4
+The result follows by considering the variance of Y when g = 1 and the variance of Z
+when g >1. Because the Xi are independent, we have that Var( Y ) = Var(Z) = kVar(A).
+To lower bound this quantity, the variance of Y orZ is as small as possible when the values
+taken by the random variables are as close together as possible. By (2.1) and (2.2), when
+we look at all outputs of Y orZ, each value can occur at most ⌈ k
+2 ⌉!⌊ k
+2 ⌋! times for g = 1 and
+at most gk! times for g >1.
+Hence we have that the variance is bounded below by the variance of the multiset of
+integers from 1 to ℓ where ℓ = |A|k
+⌈ k
+2 ⌉!⌊ k
+2 ⌋! when g = 1, and where ℓ = |A|k
+gk! when g >1. Since
+each integer occurs the same number of times in this multiset, the va riance of the multiset
+is the same as that of the discrete uniform distribution of integers u p to ℓ. This is given by
+Var({1, · · ·,ℓ }) = ℓ2 − 1
+12 ,
+and the result follows.
+Whenk gets large, we can improve Theorem 2.3 by using more precise informa tion about
+Y andZ than the variance. As k goes to inﬁnity, these distributions will be close to normal
+distributions, and we use the Berry-Esseen theorem to quantify t his.
+Theorem 2.4 (Berry-Esseen Theorem). LetX1,...,X n be independent random variables with
+E[Xi] = 0 , E[X 2
+i ] = Var(Xi) and E[|Xi|3] = ρi < ∞. Let X =X1 + · · ·+Xn andσ2 = E[X 2].
+Then
+sup
+x∈R
+|FX(x) − Φ(x)| ≤ .56ψ,
+where FX(x) and Φ(x) are the cumulative distribution functions for X and the normal dis-
+tribution with mean zero and standard deviation σ respectively, and ψ =σ−3 ·∑ n
+i=1ρi.
+By Theorem 2.4, for any j we can approximate X1 +· · ·+Xj by a normal random variable
+with mean 0 and variance jδn 2 by using
+ρi = E[|Xi|3] ≤nE[X 2
+i ] = δn3,
+σ2 = Var(X) = jVar(Xi) = jδn 2,
+ψ = 1
+σ3
+j∑
+i=1
+ρi ≤ jδn 3
+j3/ 2δ3/ 2n3 = 1√jδ.
+(2.5)
+We will approximate Y1 by a normal distribution N (0, ⌈ k
+2 ⌉δn2) that has probability dis-
+tribution ϕ1(x) and cumulative distribution function Φ 1(x). Similarly, let N (0, ⌊ k
+2 ⌋δn2) and
+N (0,kδn 2) have probability distribution functions ϕ2(x) and ϕ(x) and cumulative distribu-
+tion functions Φ 2(x) and Φ( x), respectively. Since FY1 and FY2 are close to Φ 1 and Φ 2 by
+Theorem 2.4, we have that FY is close to Φ, quantiﬁed by the following lemma.
+Lemma 2.6. For Φ the cumulative distribution function of N (0,kδn 2), we have
+sup
+x
+|FZ(x) − Φ(x)| ≤ .56√
+kδ
+,
+5
+and
+sup
+x
+|FY (x) − Φ(x)| ≤ 4 · .56√
+⌊ k
+2 ⌋δ
+.
+Proof. The ﬁrst inequality follows from Theorem 2.4 and (2.5). Now we prove t he second.
+Since Y = Y1 −Y2 we have that fY (x) = (fY1 ∗f−Y2)(x). We also have ϕ = ϕ1 ∗ϕ2. Let x
+be arbitrary. Then
+|FY (x) − Φ(x)| =
+⏐
+⏐
+⏐
+⏐
+∫ x
+−∞
+fY1 ∗f−Y2 −ϕ1 ∗ϕ2
+⏐
+⏐
+⏐
+⏐
+=
+⏐
+⏐
+⏐
+⏐
+∫ x
+−∞
+ϕ2 ∗ (fY1 −ϕ1) +ϕ1 ∗ (f−Y2 −ϕ2) + (fY1 −ϕ1) ∗ (f−Y2 −ϕ2)
+⏐
+⏐
+⏐
+⏐
+≤
+⏐
+⏐
+⏐
+⏐
+∫ x
+−∞
+ϕ2 ∗ (fY1 −ϕ1)
+⏐
+⏐
+⏐
+⏐+
+⏐
+⏐
+⏐
+⏐
+∫ x
+−∞
+ϕ1 ∗ (f−Y2 −ϕ2)
+⏐
+⏐
+⏐
+⏐+
+⏐
+⏐
+⏐
+⏐
+∫ x
+−∞
+(fY1 −ϕ1) ∗ (f−Y2 −ϕ2)
+⏐
+⏐
+⏐
+⏐.
+We use Theorem 2.4 to show that each of the terms on the last line is sm all.
+⏐
+⏐
+⏐
+⏐
+∫ x
+−∞
+ϕ2 ∗ (fY1 −ϕ1)
+⏐
+⏐
+⏐
+⏐ =
+⏐
+⏐
+⏐
+⏐
+∫ x
+−∞
+∫ ∞
+−∞
+ϕ2(z −y)
+(
+fY1(y) −ϕ1(y)
+)
+dzdy
+⏐
+⏐
+⏐
+⏐
+=
+⏐
+⏐
+⏐
+⏐
+∫ x
+−∞
+fY1(y) −ϕ1(y)dy
+∫ ∞
+−∞
+ϕ2(z −y)dz
+⏐
+⏐
+⏐
+⏐
+=
+⏐
+⏐
+⏐
+⏐
+∫ x
+−∞
+fY1(y) −ϕ1(y)dy
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+⏐
+∫ ∞
+−∞
+ϕ2(z −y)dz
+⏐
+⏐
+⏐
+⏐
+≤ sup
+x∈R
+|FY1(x) − Φ 1(x)|
+⏐
+⏐
+⏐
+⏐
+∫ ∞
+−∞
+φ2(z −y)dz
+⏐
+⏐
+⏐
+⏐
+≤ .56
+√
+δ⌈ k
+2 ⌉
+where the last inequality follows because ϕ2 is a probability distribution function and from
+(2.5). Similarly, noting that ϕ2 is symmetric around 0, we have that
+⏐
+⏐
+⏐
+⏐
+∫ x
+−∞
+ϕ1 ∗ (f−Y2 −ϕ2)
+⏐
+⏐
+⏐
+⏐ ≤ .56
+√
+δ⌊ k
+2 ⌋
+,
+and
+⏐
+⏐
+⏐
+⏐
+∫ x
+−∞
+(fY1 −ϕ1) ∗ (f−Y2 −ϕ2)
+⏐
+⏐
+⏐
+⏐ ≤
+⏐
+⏐
+⏐
+⏐
+∫ x
+−∞
+fY1 ∗ (f−Y2 −ϕ2)
+⏐
+⏐
+⏐
+⏐+
+⏐
+⏐
+⏐
+⏐
+∫ x
+−∞
+ϕ1 ∗ (f−Y2 −ϕ2)
+⏐
+⏐
+⏐
+⏐ ≤ 2 .56
+√
+δ⌊ k
+2 ⌋
+We now have everything that we need to prove Theorem 1.6.
+6
+Proof of Theorem 1.6. Let k and g be ﬁxed and assume that A is a Bk[g] set in [ n]. As
+before, let Var(A) = δn2. If δ < π
+24, then we may apply Theorem 2.3 to obtain the claimed
+upper bound. Hence for the remainder of the proof we may assume that π
+24 ≤δ ≤ 1
+4. Since
+theXi are independent we have that the standard deviations of the rand om variables Y and
+Z are the same and we will denote this quantity by σ. We will consider the probability of
+the events that −t<Y ≤t and −t<Z ≤t where t is an integer that will be chosen later.
+Forg = 1, by Lemma 2.6 and the assumption that δ ≥π/24, we have that
+|FY (x) − Φ(x)| ≤ 4 · 0.56√
+⌊ k
+2 ⌋ π
+24
+,
+for all x. Hence
+P[−t<Y ≤t] = FY (t) −FY (−t)
+= Φ(t) − Φ( −t) −
+(
+(FY (−t) − Φ( −t)) − (FY (t) − Φ(t))
+)
+≥ Φ(t) − Φ( −t) −
+⏐
+⏐
+⏐FY (−t) − Φ( −t)
+⏐
+⏐
+⏐−
+⏐
+⏐
+⏐FY (t) − Φ(t)
+⏐
+⏐
+⏐
+≥ Φ(t) − Φ( −t) − 8 · 0.56
+√
+⌊ k
+2 ⌋ π
+24
+= 1
+σ
+√
+2π
+∫ t
+−t
+exp(− x2
+2σ2 )dx − 4.48√
+⌊ k
+2 ⌋ π
+24
+≥ (2t) · exp (− t2
+2σ 2 )
+σ
+√
+2π
+− 4.48√
+⌊ k
+2 ⌋ π
+24
+.
+On the other hand, by (2.1), we have that for any ﬁxed x
+P[Y =x] ≤
+(⌈ k
+2
+⌉
+!
+)(⌊ k
+2
+⌋
+!
+)
+|A|−k.
+Combining these two inequalities yields
+(2t) · exp (− t2
+2σ 2 )
+σ
+√
+2π − 4.48√
+⌊ k
+2 ⌋ π
+24
+≤ P[−t<Y ≤t] ≤ (2t)
+(⌈ k
+2
+⌉
+!
+)(⌊ k
+2
+⌋
+!
+)
+|A|−k.
+Using the inequality 1 −x ≤e−x for all x and σ2 ≥kπn 2/24, we have
+e
+− t2
+2σ 2 ≥ 1 − t2
+2σ2 ≥ 1 − 12t2
+πkn 2.
+7
+Applying this inequality, dividing both sides by 2 t and using σ ≤
+√
+kn
+2 leads to
+1 − 12t2
+πkn 2
+n
+√
+πk/2
+− 4.48
+2t
+√
+⌊ k
+2 ⌋ π
+24
+≤
+(⌈ k
+2
+⌉
+!
+)(⌊ k
+2
+⌋
+!
+)
+|A|−k.
+Setting t =k1/ 3n, we ﬁnd that s
+1 − 12
+πk 1/ 3
+n
+√
+πk/2
+−
+4. 48
+2k1/ 3n
+√
+⌊ k
+2 ⌋ π
+24
+·n
+√
+πk/2
+n
+√
+πk/2
+≤
+(⌈ k
+2
+⌉
+!
+)(⌊ k
+2
+⌋
+!
+)
+|A|−k.
+Rearranging gives the result for g = 1. For g >1 we use (2.2) and have that
+P[Z =x] ≤gk!|A|−k,
+for any x. Performing a similar calculation on P(−k1/ 3n<Z ≤k1/ 3n) gives the result, and
+we omit these details.
+3 Lower Bounds
+In this section we prove Theorem 1.9. The idea is to begin with a known c onstruction of
+a Bk[1] set and then consider the image of that set in a quotient group. T his idea has
+been used in other extremal graph theory and combinatorial numb er theory problems before
+[1, 2, 14, 19, 22, 27]. In particular, and as noted in the discussion fo llowing Theorem 1.9,
+Caicedo, G´ omez, and Trujillo [5] contains a more general approach than what is done here.
+Letg andk be ﬁxed positive integers with k ≥ 2. Assume that q is a power of prime such
+that g divides q − 1. Let Fqk be the ﬁnite ﬁeld with qk elements and let θ be a generator of
+the multiplicative group F∗
+qk of nonzero elements of Fqk. Bose and Chowla [4] proved that
+A = {a ∈ Zqk−1 :θa −θ ∈ Fq}
+is a Bk[1] set in Zqk−1. Let µ = qk−1
+g and let H be the subgroup of Zqk−1 generated by µ.
+Thus,H is the unique subgroup of Zqk−1 with g elements.
+Next we prove a lemma that is essential to the construction. This lem ma is essentially
+known (Lemma 2.2 of [26] or Lemma 2.1 of [3]). A short proof is included f or completeness.
+Lemma 3.1. If g, k, q, H and A are given as above and A −A := {a −b :a,b ∈A}, then
+(A −A) ∩H = {0}.
+Proof. Suppose a,b ∈A and a −b ∈H. There is an element s ∈ {0, 1,...,g − 1} such that
+a −b ≡sµ(modqk − 1). so θa−b =θsµ in Fqk. Let α,β ∈ Fq satisfyθa =θ +α andθb =θ +β.
+Observe that (θsµ )q−1 = (θqk−1)
+s(q− 1)
+g = 1 and so θsµ ∈ Fq. From θa−b = θsµ , it follows that
+θ +α =θsµ (θ +β) so
+(θsµ − 1)θ +θsµβ −α = 0.
+8
+The minimal polynomial of θ over Fq has degree k ≥ 2 and so we must have θsµ − 1 = 0 and
+θsµβ −α = 0. In particular, the ﬁrst equation implies s = 0 and so a ≡b(mod qk − 1).
+In the quotient group Γ := Zqk−1/H, let AH = {a +H : a ∈ A}. If a +H = b +H for
+some a +H,b +H ∈AH, then a −b ∈H which, by Lemma 3.1, implies a ≡b(mod qk − 1).
+Hence, q = |A| = |AH|. Next, we prove that AH is a Bk[g] set in Γ. Suppose c +H ∈ Γ and
+we have
+a1 +H + · · · +ak +H =c +H (3.2)
+for someai+H ∈AH. We will show that there are at most g such solutions up to the ordering
+of the terms on the left hand side of (3.2). Indeed, (3.2) implies a1+· · ·+ak ≡c+h(modqk−1)
+for some h ∈H. There is at most one multiset {a1,...a k} from A that is a solution to this
+equation. As there are g choices for h, there will be at most g multisets {a1 +H,...,a k +H}
+from AH that are solutions to (3.2). Therefore, AH is a Bk[g] set in Γ.
+We now ﬁnish the proof using a density of primes argument. For posit ive integers x, c,
+andm, let π(x;c,m ) be the number of primes p for which p ≤x andp ≡c(mod m). Writing
+φ for the Euler phi function, the prime number theorem in arithmetic p rogressions states
+that if gcd(c,m ) = 1, then
+π(x;c,m ) = x
+φ(m) lnx +O
+( x
+ln2x
+)
+.
+Let α = ⌊(1 −ǫ)1/k (gn)1/k ⌋ and β = ⌊(gn)1/k ⌋. We then have
+π(β; 1,g ) −π(α; 1,g ) ≥ 1
+φ(g)
+( β
+lnβ − α
+lnα −O
+( β
+ln2β
+))
+. (3.3)
+For large enough n depending on ǫ,g, and k, the right hand side of (3.3) is positive since x
+log x
+is strictly increasing for x>e . Thus, there is a prime q with q ≡ 1(mod g) and α ≤q ≤β.
+We can then choose a Bk[g]-set A in the group Zqk−1/H where |A| = q. This group is
+isomorphic to the cyclic group Z(qk−1)/g and we let A′ be a Bk[g]-set in this cyclic group.
+Since q ≤ β, we have qk−1
+g ≤ n. Therefore, we can view A′ as a subset of {1, 2,...,n } and
+under integer addition, A′ is still a Bk[g]-set. It remains to show that q ≥ (1 −o(1))(gn)1/k ,
+but this follows from the deﬁnition of α and the inequality q ≥α. We conclude that for all
+positive integers g and k with k ≥ 2,
+Fk,g (n) ≥ (1 −o(1))(gn)1/k .
+Acknowledgments
+The authors would like to thank Carlos Trujillo for bringing [5] to our at tention.
+9
+References
+[1] Noga Alon, Lajos R´ onyai, and Tibor Szab´ o. Norm-graphs: variations and applications.
+Journal of Combinatorial Theory, Series B , 76(2):280–290, 1999.
+[2] J´ ozsef Balogh, Zolt´ an F¨ uredi, and Souktik Roy. An upper bound on the size of Sidon
+sets. arXiv preprint arXiv:2103.15850 , 2021.
+[3] Fernando A. Benavides, David F. Daza, and Carlos A. Trujillo. Sido n sets and C4-
+saturated graphs. arXiv preprint arXiv:1810.05262 , 2019.
+[4] Raj C Bose and Sarvadaman Chowla. Theorems in the additive theo ry of numbers.
+Commentarii Mathematici Helvetici , 37(1):141–147, 1962.
+[5] Yadira Caicedo, Jhonny G´ omez, and Carlos Trujillo. Bh[g] modular sets from Bh mod-
+ular sets. JP Journal of Algebra, Number Theory and Applications , 37(1):1–19, 2015.
+[6] Sheng Chen. On the size of ﬁnite Sidon sequences. Proceedings of the American Math-
+ematical Society, 121(2):353–356, 1994.
+[7] Javier Cilleruelo and Jorge Jim´ enez-Urroz.Bh[g] sequences. Mathematika, 47(1-2):109–
+115, 2000.
+[8] Javier Cilleruelo, Imre Ruzsa, and Carlos Vinuesa. Generalized Sido n sets. Advances
+in Mathematics , 225(5):2786–2807, 2010.
+[9] Javier Cilleruelo, Imre Z Ruzsa, and Carlos Trujillo. Upper and lower bounds for ﬁnite
+Bh[g] sequences. Journal of Number Theory , 97(1):26–34, 2002.
+[10] Javier Cilleruelo and Carlos Vinuesa. B2[g] sets and a conjecture of Schinzel and
+Schmidt. Combinatorics, Probability and Computing , 17(6):741–747, 2008.
+[11] Quentin Dubroﬀ, Jacob Fox, and Max Wenqiang Xu. A note on the Erd˝ os distinct
+subset sums problem. SIAM Journal on Discrete Mathematics , 35(1):322–324, 2021.
+[12] Paul Erd˝ os. Some old and new problems on additive and combinat orial number the-
+ory. In Proceedings of the third international conference on Combi natorial mathematics ,
+pages 181–186, 1989.
+[13] Paul Erd˝ os and P´ al Tur´ an. On a problem of Sidon in additive nu mber theory, and
+on some related problems. Journal of the London Mathematical Society , 1(4):212–215,
+1941.
+[14] Zolt´ an F¨ uredi. New asymptotics for bipartite Tur´ an numbers. Journal of Combinatorial
+Theory, Series A , 75(1):141–144, 1996.
+[15] Ben Green. The number of squares and Bh[g] sets. Acta Arithmetica, 100(4):365–390,
+2001.
+10
+[16] Xing De Jia. On ﬁnite Sidon sequences. Journal of Number Theory , 44:84–92, 1993.
+[17] Mihail N Kolountzakis. The density of Bh[g] sequences and the minimum of dense cosine
+sums. Journal of Number Theory , 56(1):4–11, 1996.
+[18] Bernt Lindstr¨ om. Bh[g]-sequences from Bh-sequences. Proceedings of the American
+Mathematical Society, pages 657–659, 2000.
+[19] Ivan Livinsky. A construction for bipatite Tur´ an numbers. arXiv preprint
+arXiv:2101.06726, 2021.
+[20] Greg Martin and Kevin O’Bryant. The symmetric subset problem in continuous Ramsey
+theory. Experimental Mathematics , 16(2):145–165, 2007.
+[21] Greg Martin and Kevin O’Bryant. Constructions of generalized S idon sets. Journal of
+Combinatorial Theory, Series A , 113(4):591–607, 2006.
+[22] Zolt´ an L´ or´ ant Nagy. Supersaturation of C4: From Zarankiewicz towards Erd˝ os–
+Simonovits–Sidorenko. European Journal of Combinatorics , 75:19–31, 2019.
+[23] Kevin O’Bryant. A complete annotated bibliography of work relat ed to Sidon sequences.
+The Electronic Journal of Combinatorics , pages DS11–Jul, 2012.
+[24] Alain Plagne. Recent progress on ﬁnite Bh[g] sets. Congressus Numerantium , pages
+49–64, 2001.
+[25] Simon Sidon. Ein satz ¨ uber trigonometrische polyome und seine a nwendung in der
+theorie der fourier-reihen. Math. Ann. , 106:536–539, 1932.
+[26] Michael Tait and Craig Timmons. Sidon sets and graphs without 4- cycles. Journal of
+Combinatorics, 5(2):155–165, 2014.
+[27] Michael Tait and Craig Timmons. The Zarankiewicz problem in 3-par tite graphs. Jour-
+nal of Combinatorial Designs , 27(6):391–405, 2019.
+[28] Craig Timmons. Upper bounds for Bh[g]-sets with small h. Integers, 16, #A83:1–12,
+2016.
+[29] Gang Yu. An upper bound for B2[g] sets. Journal of Number Theory , 122(1):211–220,
+2007.
+[30] Gang Yu. A note on B2[g] sets. Integers, 8:A58, 2008.
+11

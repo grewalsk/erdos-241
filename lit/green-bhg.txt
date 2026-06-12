@@ -1,0 +1,1573 @@
+===== PAGE 1 =====
+The number of squares and Bh[g] sets
+by
+ben green1 (Cambridge)
+1. Introduction. In this paper we investigate the problem of min-
+imising, over all functions f :{1,...,N }→ R with ∑
+xf(x) = N, the
+quantity
+M(f) =
+∑
+a,b,c,d
+a+b=c+d
+f(a)f(b)f(c)f(d).
+We obtain a non-trivial lower bound forM(f) using techniques from Fourier
+analysis. We then demonstrate the relevance of this bound to upper bounds
+for Bh[g] sets. Recall that A⊆{ 1,...,N } is a Bh[g]-set if the number of
+representations of anyx asa1 +··· +ah (withai∈A) is at mostg, where we
+consider two such representations to be the same if they diﬀer only in the
+ordering of the summands. Letting A(h,g,N ) denote the size of the largest
+Bh[g] set that one may pick from {1,...,N }, we prove that
+A(3, 1,N ) ≤ ( 7
+2)1/3N 1/3(1 +o(1))
+and that
+A(4, 1,N ) ≤ 71/4N 1/4(1 +o(1)).
+Both of these improve on the current best-known bounds. We then obtain
+new bounds for A(h, 1,N ) when h is large. In the ﬁnal part of the paper
+we turn our attention to bounds for A(2,g,N ). Using an idea from a recent
+paper of Cilleruelo, Ruzsa and Trujillo [3] in combination with our own
+approach, we improve on the best-known bounds.
+2. Fourier analysis on ZN. We shall make substantial use of Fourier
+analysis. Our notation follows [5], but for the convenience of the reader we
+take this opportunity to give a swift introduction.
+Let N be a ﬁxed positive integer, and write ZN for the cyclic group with
+N elements. Let ω denote the complex number e2πi/N. Although ω clearly
+depends onN, we shall not indicate this dependence in the rest of the paper,
+trusting that the value of N is clear from context. Let f : ZN→ C be any
+1Supported by a grant from the Engineering and Physical Sciences Research Council
+(EPSRC) of the United Kingdom.
+1
+===== PAGE 2 =====
+function. Then for r∈ ZN we deﬁne the Fourier transform
+ˆf(r) =
+∑
+x∈ZN
+f(x)ωrx.
+We shall repeatedly use two important properties of the Fourier transform.
+The ﬁrst is Parseval’s identity, which states that if f : ZN → C and g :
+ZN→ C are two functions then
+N
+∑
+x∈ZN
+f(x)g(x) =
+∑
+r∈ZN
+ˆf(r)ˆg(r).
+The second is the interaction of convolutions with the Fourier transform.
+If f,g : G→ C are two functions on an abelian group G we deﬁne the
+convolution
+(f∗g)(x) =
+∑
+y∈G
+f(y)g(y−x).
+A key fact, which we shall use without further comment, is that
+(f∗g)ˆ(r) = ˆf(r)ˆg(r).
+The reader will note that this is a rather non-standard deﬁnition and, in
+particular, that the operation we have deﬁned is not associative. There are
+some situations in which it would be very tedious to indicate the intended
+bracketing of terms. Therefore we shall adopt the convention that
+f1∗f2∗···∗ fk = (((f1∗f2)∗f3)···∗ fk).
+Take, for example, sets Aj (j = 1, 2, 3) and identify them with their char-
+acteristic functions. Then (A1∗A2∗A3)(x) is simply the number of triples
+(a1,a 2,a 3)∈ A1×A2×A3 with a1−a2 +a3 = x. We will often use the
+∗ notation in contexts similar to this, and the practice of identifying a set
+with its characteristic function will also feature repeatedly in what follows.
+If f : G→ C is a function then very occasionally we will write f◦ for the
+function deﬁned byf◦(x) =f(−x). Observe that (A1∗A◦
+2)(x) is the number
+of pairs (a1,a 2)∈A1×A2 with a1 +a2 =x.
+One more piece of notation: throughout this paper we use O-notation for
+quantities varying with N, so that (for example) X = o(1) means that
+X→ 0 as N→∞ .
+3. Bh[g] sets. This section is a summary of the results known about
+2
+===== PAGE 3 =====
+Bh[g] sets up to March 2000. Other accounts may be found in [3], [6], [8]
+and [14].
+From now on we denote by A(h,g,N ) the size of the largest Bh[g]-set con-
+tained in{1,...,N }, and write A(h, 1,N ) =A(h,N ) for short.
+An early paper in this area was that of Erd˝ os and Tur´ an [4] in 1941, which
+is nicely exposited in [9]. This paper dealt with the problem of B2[1]-sets,
+which are also known as B2- or Sidon Sets. The bound
+(1) A(2,N ) ≤ N 1/2 +N 1/4 + 1
+can be obtained from their argument. Together with a slightly earlier
+result of Singer, which demonstrates the existence of B2-sets with |A| =
+N 1/2(1 +o(1)), this provides an asymptotically correct bound for A(2,N ).
+The question of the best possible error term is an extremely interesting one,
+not least because no-one has managed so much as to improve the constant
+attached to the N 1/4 in (1). It has often been conjectured that the correct
+error term is O(Nϵ).
+The situation for all other values of h and g is rather diﬀerent, and in fact
+the correct asymptotics have not been obtained in any case. By way of
+lower bounds Bose and Chowla showed that A(h,N )≥N 1/h(1 +o(1)), and
+in a recent preprint Cilleruelo, Ruzsa and Trujillo [3] obtained good lower
+bounds for A(2,g,N ) with g >1.
+Turning to upper bounds, a fairly simple counting argument shows that
+(2) A(h,g,N ) ≤ (gh·h!)1/hN 1/h.
+We call this the trivial bound, and for the reader’s convenience we sketch
+now the case h = 2. Let A⊆{ 1,...,N } be a B2[g]-set. Observe that if
+x = a1 +a2 with ai∈ A then 1 ≤ x≤ 2N. Hence by double counting
+ordered pairs (a1,a 2)∈ A2 we ﬁnd that |A|2≤ 2g· 2N, which translates
+into the trivial bound in this case, namely
+(3) A(2,g,N ) ≤ (4g)1/2N 1/2.
+These results show thatA(h,g,N ) has order of magnitudeN 1/h, so it makes
+sense to deﬁne
+α(h,g ) = lim sup
+N→∞
+N−1/hA(h,g,N )
+for all h≥ 2 and g≥ 1. We write α(h) = α(h, 1). The trivial bound and
+the Bose-Chowla theorem combine to give, in this notation,
+1 ≤ α(h,g ) ≤ (gh·h!)1/h
+3
+===== PAGE 4 =====
+and the results of Erd˝ os – Tur´ an and Singer show thatα(2) = 1.
+Until recently the trivial bound had not been improved for any pair ( h,g )
+with g >1. However Cilleruelo, Ruzsa and Trujillo [3] show that
+(4) α(2,g ) ≤ 2π + 4√
+π2 + 4π + 8g1/2.
+The constant appearing here is about 1.864. For g = 2 Cilleruelo [2] and
+Helm have independently given the bound
+(5) α(2, 2) ≤
+√
+6.
+Cilleruelo’s proof is simple and combinatorial, but only generalises to give
+α(2,g ) ≤
+√
+4g− 2,
+a slight improvement on (3). In§8 we oﬀer our own improvement to the up-
+per bound (3). This improves previously known results for g≤ 68. Finally
+in§9 we combine some of our ideas with some of the ideas in [3] to improve
+the bound (4) for all g.
+In the case g = 1 the situation is slightly better. Here the technique of
+Erd˝ os and Tur´ an, which gave the value ofα(2), has a natural generalisation
+which gives a non-trivial upper bound for α(h). The ﬁrst result of this kind
+was obtained by Lindstr¨ om [12] in 1969. He showed that
+(6) α(4) ≤ 81/4.
+Generalising his technique, Jia [10] obtained the bound
+(7) α(2k) ≤
+(
+k(k!)2)1/2k
+.
+A modiﬁcation of this approach gives a corresponding bound for odd values
+of h. Indeed the bound
+(8) α(2k− 1) ≤ (k!)2/(2k−1)
+was obtained independently by Chen [1] and Graham [6]. We conclude
+this introduction by mentioning two further results. The ﬁrst is the paper
+of Kolountzakis [11], in which the bound (7) is obtained by an interesting
+Fourier technique. We believe that this proof and that of Jia are morally the
+same, but the new perspective is interesting. Secondly it is worth remarking
+4
+===== PAGE 5 =====
+that Graham [6] obtained a slight improvement on (8) in the case k = 2.
+He proved that
+(9) α(3) ≤
+(
+4− 1
+228
+)1/3
+.
+The argument is long and combinatorial.
+4. Bounds for B4 sets – the ﬁrst part of the argument. In this
+section we begin our treatment of B4 sets. It is hoped that, after reading
+this section, the reader will have a good idea of the direction in which we
+are headed.
+Like all previous approaches, our attack takes as motivation the original
+argument of Erd˝ os and Tur´ an from 1941 [4]. We now give this argument in
+the form that we use to get our generalisation. We leave it as a (slightly
+non-trivial) exercise for the reader to check that our argument and that of
+[4] are really the same.
+Theorem 1 (Erd ˝os – Tur´an) For all N we have the bound
+A(2,N ) ≤ N 1/2 +N 1/4 + 1.
+P r o o f. Let A⊆{ 1,...,N } be a B2-set. It is easy to check that we
+must have A∗A(x)≤ 1 for all x̸= 0. Let u be a positive integer to be
+chosen later, and regardA as a subset of ZN +u. It is no longer the case that
+the modular version of A∗A satisﬁes A∗A(x)≤ 1 for all x, but it is true
+that A∗A(x)≤ 1 for 0 <|x|≤ u. Let I be the characteristic function of
+{1,...,u }, and write
+E =
+∑
+x∈ZN +u
+A∗A(x)I∗I(x).
+We countE in two ways. Firstly, by the discussion above, we have
+E ≤ |A|u +
+∑
+0<|x|≤u
+A∗A(x)I∗I(x)
+≤ |A|u +u2.
+Secondly, by Parseval’s identity, we have
+E = 1
+N +u
+∑
+r
+| ˆA(r)|2|ˆI(r)|2
+≥ |A|2u2
+N +u,
+5
+===== PAGE 6 =====
+where the hat symbol denotes Fourier transform in ZN +u. Comparing these
+upper and lower bounds for E, and putting u =⌊N 3/4⌋, gives the result. □
+An interesting feature of the argument is that we only used the fact that
+A∗A(x)≤ 1 for 0 <|x|≤ N 3/4, which seems to be a much weaker state-
+ment than saying that A is B2. Somehow this fact is the major barrier to
+improving the error term in (1).
+We now move on to B4-sets. Let A⊆{ 1,...,N } be a B4-set.
+Lemma 2 For all x∈ Z we have
+A∗A∗A∗A(x) ≤ 4 (1 +|A|(A∗A)(x)).
+P r o o f. Fix x. The quantity A∗A∗A∗A(x) counts the number of
+quadruples (a1,a 2,b 1,b 2)∈A4 with
+(10) a1 +a2−b1−b2 = x.
+If there are no solutions to this equation then the lemma is immediate.
+We show ﬁrst that if there is a solution to (10) in which ai̸=bj for all i,j
+then (10) has at most 4 solutions. Indeed ﬁx such a solution ( a1,a 2,b 1,b 2)
+and suppose that (a′
+1,a′
+2,b′
+1,b′
+2) is another solution. Then
+a1 +a2 +b′
+1 +b′
+2 = a′
+1 +a′
+2 +b1 +b2.
+ButA isB4, so the quadruples (a1,a 2,b′
+1,b′
+2) and (a′
+1,a′
+2,b 1,b 2) are the same
+up to a reordering. It follows that{a′
+1,a′
+2} ={a1,a 2} and{b′
+1,b′
+2} ={b1,b 2},
+giving at most 4 possibilities.
+If there is no solution of the kind discussed here then all solutions have
+a1 = b1, a1 = b2, a2 = b1 or a2 = b2. It is clear that, for each of these
+possibilities, (10) has |A|(A∗A)(x) solutions. Adding together everything
+above gives the result of the lemma. □
+We remark that the important feature of the above bound is the number 4.
+On average, A∗A(x) will be tiny.
+Once again we embed the problem into a cyclic group where we can take
+ﬁnite Fourier transforms. Let v≤N be a parameter to be chosen later, and
+regardA as a subset of Z2N +v in the obvious way. SinceA+A⊆ [1,..., 2N],
+the modular version of A∗A∗A∗A will satisfy the bound of Lemma 2 for
+|x|≤ v. That is to say,
+(11) A∗A∗A∗A(x) ≤ 4 (1 +|A|(A∗A)(x))
+6
+===== PAGE 7 =====
+for|x|≤ v, where everything in sight lives in Z2N +v. Let I = [1,...,u ] (as
+a subset of Z2N +v), where u≤ v is another parameter to be chosen later.
+It will turn out that u needs to be signiﬁcantly smaller than v. For the
+remainder of this section the hat symbol refers to Fourier transforms on
+Z2N +v. Using (11) we have the following key computation.
+1
+2N +v
+∑
+r
+| ˆA(r)|4|ˆI(r)|2 =
+∑
+x
+(A∗A∗A∗A)(x)(I∗I)(x)
+≤ 4u2 + 4|A|
+∑
+x
+(A∗A)(x)(I∗I)(x)
+= 4 u2 + 4|A|
+2N +v
+∑
+r
+| ˆA(r)|2|ˆI(r)|2
+≤ 4u2 + 4|A|
+2N +v|A|2
+∑
+r
+|ˆI(r)|2
+= 4 u2 + 4|A|
+2N +v|A|2(2N +v)u
+≤ 4u2 + 224N 7/4u
+2N +v ,(12)
+where we have used the fact that v ≤ N and the trivial bound |A| ≤
+100N 1/4. The inequality (12) gives immediately that
+(13) 8 Nu 2 + 4u2v + 224N 7/4u ≥
+∑
+r
+| ˆA(r)|4|ˆI(r)|2.
+Using the trivial lower bound|A|4u2 for the right hand side of (13) together
+with u = v = N 7/8 gives the Lindstr¨ om bound (6). However we are in a
+position to make a further improvement. The set A is extremely irregularly
+distributed in Z2N, being contained in {1,...,N }. This information allows
+us to say something non-trivial about ˆA(r) when r is small and non-zero.
+Much of our paper is concerned with exactly how much it is possible to
+deduce from this observation as regards (13). However the reader who is
+keen to see an improvement of (6) as quickly as possible may care to ﬁnd a
+positive constantc such that either| ˆA(±1)|≥ c|A| or| ˆA(±2)|≥ c|A|. Since
+I is a rather small interval the coeﬃcients ˆI(±1) and ˆI(±2) are as near to
+|I| as makes no diﬀerence. Substituting into (13) and putting u =v =N 7/8
+gives a bound of form
+|A| ≤(8− 2c4)1/4N 1/4(1 +o(1)).
+5. A lower bound for the number of squares. Letf :{1,...,N }→
+R be a function. Write |f| =∑
+xf(x) and suppose that |f| = N. Deﬁne
+7
+===== PAGE 8 =====
+the quantity M(f) by
+M(f) =
+∑
+a,b,c,d
+a+b=c+d
+f(a)f(b)f(c)f(d) =
+∑
+x
+(f∗f)(x)2 = f∗f∗f∗f(0).
+Since it is quite standard to refer to a quadruple of integers ( a,b,c,d ) with
+a +b = c +d as a square, we call M(f) the number of squares for f. Let
+us now introduce Fourier analysis to the study of M(f). We can regard
+f as a subset of Z2N in a natural way, by identifying {1,...,N } with the
+“ﬁrst half” of Z2N. Furthermore when we do this the modular convolution
+f∗f(x) is precisely the same as the Z-version, since the Z-version of f∗f
+is supported in an interval of length 2 N. It follows that
+(14) M(f) =
+∑
+x∈Z2N
+f∗f(x)2 = 1
+2N
+∑
+r∈Z2N
+| ˆf(r)|4.
+We shall be concerned with the following problem.
+Problem 3 How small can M(f) be, if|f| =N?
+The reader who has looked at Section 4 will realise, in view of (14), the
+pertinence of this problem to the issue of upper bounds for B4-sets.
+To get a feel for Problem 3 we prove a few easy results.
+Lemma 4 We have M(f)≥N 3/2 for all f.
+P r o o f. Observe that ∑
+xf∗f(x) = N 2 and that f∗f(x) = 0 for
+x /∈{− N + 1,...,N − 1}. The result is now immediate from the Cauchy-
+Schwarz inequality. Alternatively, the result is trivial from (14). □
+Lemma 5 We can have M(f)≤ 2N 3/3 +O(N).
+P r o o f. Take f to be the characteristic function of {1,...,N }. □
+Exactly as in Section 4 we realise, on closer examination of the second
+argument in Lemma 4, that a lot of information has been thrown away. We
+have not considered any of the non-zero Fourier coeﬃcents ˆf(r) (r̸= 0).
+Furthermore, since f is extremely irregularly distributed (being contained
+in{1,...,N }, which only ﬁlls half ofZ2N) we have every right to expect that
+the contribution from these coeﬃcients will be signiﬁcant. In fact, because
+of the way that f is distributed, we expect the non-zero Fourier coeﬃcients
+ˆf(r) with|r| very small to make a signiﬁcant contribution. Our objective
+8
+===== PAGE 9 =====
+now is to obtain a strong quantitative result from this observation.
+Let f :{1,...,N }→ R be a function. Let v be a positive integer (which
+will be assigned various values later on) and regardf as a function on Z2N +v
+in the natural way. In the following we will use the hat symbol (ˆ) to denote
+Fourier transforms on Z2N +v. Exactly as in (14) we have
+(15) M(f) = 1
+2N +v
+∑
+r
+| ˆf(r)|4.
+The reason for introducing v will be clear to the reader who has studied §4.
+Deﬁne
+E(X) =
+∑
+0<|r|≤X
+| ˆf(r)|4.
+We can now state the main theorem of this section. In this theorem (and
+for the remainder of the section) the tilde symbol (˜) denotes the Fourier
+transform on R. In other words if F∈L 1[0, 1] then we write, for λ∈ R,
+˜F (λ) =
+∫ ∞
+−∞
+F (x)eixλdx.
+Theorem 6 Let f :{1,...,N }→ R be a function with |f| = N, and let
+v,X be positive integers. Let f be regarded as a function on Z2N +v in the
+natural way, and let the hat symbol denote Fourier transforms on that group.
+Letp∈C 1[0, 1] be such that
+∫ 1
+0
+p(x)dx = 2.
+Then there is a constant C, depending only on p, such that
+E(X) ≥ γ(p)N 4
+(
+1−C
+(v
+N + N 2
+v2X + X 2
+N
+))
+,
+where
+γ(p) = 2
+(∑
+r≥1
+|˜p(πr)|4/3
+)−3
+.
+P r o o f. We remark that, for suitable choices of v and X, the dominant
+term in the above bound will be γ(p)N 4. Throughout this proof C will
+denote a constant which depends only on the ﬁxed function p. We follow
+the traditional convention in analytic number theory of allowing the same
+9
+===== PAGE 10 =====
+letter C to denote diﬀerent constants!
+Forx∈ [0, 2] deﬁne
+(16) U(x) =
+{ 1 (0 ≤x< 1)
+1−p(x− 1) (1 ≤x< 2),
+and set, for x∈ Z2N +v,
+(17) G(x) = U
+( x
+N + v
+2
+)
+.
+Let I be the characteristic function of the interval {1,..., v
+4} and write
+(18) H(x) =
+(4
+v
+)2
+G∗ (I∗I)(x).
+The idea here is that G is a discretised version of U, and H is a smoothed
+version ofG. Observe that G is equal to 1 forx = 1,...,N +v
+2, and thatI∗I
+is supported in{−v/4,v/ 4}. Therefore H is equal to 1 forx = v
+4,...,N +v
+4.
+It follows that ∑
+x
+f(x)H
+(
+x + v
+4
+)
+= N.
+Applying Parseval’s identity and the triangle inequality gives
+(19)
+∑
+r
+| ˆf(r)|| ˆH(r)| ≥2N 2.
+In order to use this we require a variety of estimates for ˆH(r). These will
+be of two forms. The ﬁrst estimate says that, when |r| is small, ˆH(r) can
+be estimated by approximating the sum
+ˆH(r) =
+∑
+x
+H(x)ωrx
+by an integral. Observe that here we are using ω to denote the quantity
+e
+2πi
+2N +v , because we are working with the group Z2N +v. The second estimate
+tells us that ˆH(r) is small when |r| is at all large. It is for the purpose
+of proving such a result that we are using the smoothed function H rather
+than G.
+Lemma 7 Let r : [0, 1]→ R be piecewise continuously diﬀerentiable, and
+let M be an integer. Then
+⏐⏐⏐⏐⏐
+∫ 1
+0
+r(x)dx − 1
+M
+∑
+0≤n<M
+r
+( n
+M
+)⏐⏐⏐⏐⏐ ≤ ∥r′∥∞
+M .
+10
+===== PAGE 11 =====
+P r o o f. This is just an easy application of the Fundamental Theorem of
+Calculus. □
+Observe that
+(20) | ˆH(r)| =
+(4
+v
+)2
+| ˆG(r)||ˆI(r)|2.
+It follows that| ˆH(r)|≤| ˆG(r)| for all r. Furthermore when r̸= 0 we have
+| ˆG(r)| =
+⏐⏐⏐⏐⏐⏐
+∑
+0≤x<N +v
+2
+p
+( x
+N + v
+2
+)
+ωrx
+⏐⏐⏐⏐⏐⏐
+.
+Hence, using this and Lemma 7 with r(x) =p(x)eπirx andM =N + v
+2 gives
+us what we called our ﬁrst estimate.
+Lemma 8 Let 0<|r|<N + v
+2. Then we have the inequality
+| ˆH(r)| ≤ |ˆG(r)| ≤(N +v)|˜p(πr)| +C|r|.
+P r o o f. Indeed we can take C = 4 (∥p′∥∞ +∥p∥∞). □
+It is possible to prove by very similar means that
+(21) | ˆH(0)| ≤C.
+We now turn our attentions to estimating | ˆH(r)| for large|r|. To this end
+recall (20). It follows immediately from Lemma 8 that there is a constant
+C such that
+(22) | ˆG(r)| ≤CN
+for all|r|≤ N + v
+2. We shall also require an upper bound for |ˆI(r)|.
+Lemma 9 Let 0<|r|≤ N + v
+2. Then
+|ˆI(r)| ≤ 3N
+|r|.
+P r o o f. By summing a geometric progression it is easy to see that
+|ˆI(r)| ≤ 2
+|ωr− 1|
+=
+(
+sin
+( πr
+2N +v
+))−1
+.
+11
+===== PAGE 12 =====
+It is also a simple matter to verify, for θ∈ [−π/2,π/ 2], the inequality
+| sinθ|−1 ≤ |θ|−1 + 1.
+The lemma follows immediately. □
+Lemma 10 There is a constant C such that
+| ˆH(r)| ≤ CN 3
+v2|r|2.
+P r o o f. This follows quickly from (20), (22) and the previous lemma. □
+Using Lemma 10 and the fact that |f| =N, we get that
+∑
+|r|>X
+| ˆf(r)|| ˆH(r)| ≤CN 4
+v2X.
+Using this and (21) it follows from (19) that
+∑
+0<|r|≤X
+| ˆf(r)|| ˆH(r)| ≥2N 2
+(
+1−C
+( 1
+N + N 2
+v2X
+))
+.
+Bringing Lemma 8 to bear on this gives, after a little calculation,
+(23)
+∑
+0<|r|≤X
+| ˆf(r)||˜p(πr)| ≥2N
+(
+1−C
+(v
+N + N 2
+v2X + X 2
+N
+))
+.
+Since both f and p are real-valued we have that | ˆf(r)| = | ˆf(−r)| and
+|˜p(πr)| =|˜p(−πr)| for all r. Therefore (23) implies that
+(24)
+∑
+1≤r≤X
+| ˆf(r)||˜p(πr)| ≥N
+(
+1−C
+(v
+N + N 2
+v2X + X 2
+N
+))
+.
+The proof of Theorem 6 can now be concluded by a single application of
+H¨ older’s Inequality with exponents (4, 4/3). □
+Apart from the problem of choosing a suitable function p, we can use The-
+orem 6 to get a lower bound for M(f).
+Theorem 11 Let f :{1,...,N }→ R be a function with |f| = N. Let
+p∈C 1[0, 1] be such that ∫ 1
+0
+p(x)dx = 2.
+12
+===== PAGE 13 =====
+Then
+M(f) ≥
+(1 +γ(p)
+2
+)
+N 3(1 +O(N−1/7)),
+where
+γ(p) = 2
+(∑
+r≥1
+|˜p(πr)|4/3
+)−3
+.
+P r o o f. Recall (15). Using this and Theorem 6 with v =N 6/7, X =N 3/7
+gives the result. □
+It only remains to choose a good function p, where “good” means that∫ 1
+0 p(x)dx equals 2 and γ(p) is as large as possible. Unfortunately we have
+not been able to give a best possible choice in closed form. A simple function
+that gives a good bound is
+(25) p(x) = 5
+2− 40
+(
+x− 1
+2
+)4
+.
+One can compute that
+(26) |˜p(πr)| =
+
+
+
+40
+π2|r|2− 960
+π4|r|4 r even,r̸= 0
+240
+π3|r|3− 1920
+π5|r|5 r odd,
+and then that
+(27) γ(p) =
+2
+(
+π2
+40
+)4
+(
+S1 +
+( 6
+π
+)4/3
+S2
+)3,
+where
+(28) S1 =
+∑
+reven
+r≥0
+⏐⏐⏐⏐
+1
+r2− 24
+π2r4
+⏐⏐⏐⏐
+4/3
+and
+(29) S2 =
+∑
+rodd
+r≥0
+⏐⏐⏐⏐
+1
+r3− 8
+π2r5
+⏐⏐⏐⏐
+4/3
+.
+There seems to be little hope of an analytic expression for these series, but
+one can compute thatS1≈ 0.0839757,S2≈ 0.1219299. It then follows from
+13
+===== PAGE 14 =====
+(27) that γ(p)> 1/7 (in fact it turns out that γ(p)≈ 1/6.9994).
+To conclude this section we restate Theorems 6 and 11 with this particular
+choice of p.
+Theorem 12 Let f :{1,...,N }→ R be a function with |f| = N, and
+let v,X be positive integers. Let f be regarded as a function on Z2N +v in
+the natural way, and let the hat symbol denote Fourier transforms on that
+group. Write
+E(X) =
+∑
+0<|r|<X
+| ˆf(r)|4.
+Then there is an absolute constant C such that
+E(X) ≥ 1
+7N 4
+(
+1−C
+(v
+N + N 2
+v2X + X 2
+N
+))
+.
+Theorem 13 Let f :{1,...,N }→ R be a function with |f| = N. Then
+we have
+M(f) ≥ 4
+7N 3
+for all suﬃciently large N.
+6. A return to B4 sets. Recall that our knowledge of B4 sets is
+currently encapsulated in (13), which we urge the reader to reconsider now.
+In the remarks following that equation we stated that our goal would be
+to say something about the Fourier coeﬃcients ˆA(r) with r non-zero and
+small. We now have this knowledge, in the form of Theorem 12.
+In (13) we must contend with the presence of|ˆI(r)|2. Notice, however, that
+|ˆI(r)| will diﬀer insigniﬁcantly from u if|r|≪ N/u. Indeed
+Lemma 14
+|ˆI(r)| ≥u− π|r|u2
+N .
+P r o o f. Let ω =e2πi/(2N +v). Then we have
+⏐⏐⏐u− ˆI(r)
+⏐⏐⏐ ≤
+u∑
+x=1
+|1−ωrx| ≤ 2π|r|u2
+2N +v ≤ π|r|u2
+N ,
+which is all we need. □
+14
+===== PAGE 15 =====
+Applying Theorem 12 with f(x) =NA(x)/|A| gives
+∑
+r
+| ˆA(r)|4|ˆI(r)|2 ≥
+∑
+|r|≤X
+| ˆA(r)|4|ˆI(r)|2
+≥ 8
+7u2|A|4
+(
+1−C
+(v
+N + N 2
+v2X + X 2
+N
+))(
+1− πXu
+N
+)2
+,
+where C is an absolute constant. From (13) we now have
+(30) 8N + 224
+(
+v + N 7/4
+u
+)
+≥ 8
+7|A|4
+(
+1−C
+(v
+N + N 2
+v2X + X 2
+N + Xu
+N
+))
+.
+We must now choose suitable values foru,v andX, recalling that we require
+u≤ v. There are many such choices and one is u = N 13/17, v = N 16/17,
+X =N 3/17. With these values in (30) we get
+Theorem 15
+A(4,N ) ≤ 71/4N 1/4(1 +o(1)).
+We now turn our attention to B3-sets. We shall be very brief here as there
+very little diﬀerence between this and the case of B4-sets.
+Lemma 16 LetA⊆{ 1,...,N } be a B3-set. Then
+A∗A∗A∗A(x) ≤ 2|A|(1 + (A∗A)(x)).
+P r o o f. A counting argument very similar to that in Lemma 2 gives
+A∗A∗A(x) ≤ 2(1 +|A|A(x)).
+Using the fact that
+A∗A∗A∗A(x) =
+∑
+y
+(A∗A∗A)(y)A(y−x),
+the lemma follows immediately. □
+The remainder of the derivation is almost exactly as before. One winds up
+with
+Theorem 17
+A(3,N ) ≤
+( 7
+2
+)1/3
+N 1/3(1 +o(1)).
+15
+===== PAGE 16 =====
+7. Large values of h. In this section we again consider upper bounds
+for Bh-sets. Our aim is to convince the reader that the methods we have
+just been using for B3 andB4 sets generalise rather easily to the case h≥ 5.
+For any given value ofh≥ 5, the diﬃculties we have experienced optimising
+our approach (i.e. choosing a good function p) are even more apparent.
+Therefore we shall not, in the sequel, discuss any such speciﬁc value of h.
+Rather we shall turn our attention to the behaviour of our methods as h
+becomes large. It turns out that rather simple ideas constitute essentially
+the best possible application of the methods of this paper.
+Let f :G→ R be a function on an abelian group G. Then throughout this
+section we will write f∗k for the k-fold convolution of f with itself.
+The following proposition, a sort of generalisation of Theorem 12, will be
+our main tool. This comes as little surprise.
+Proposition 18 Let k be a positive integer. Let f :{1,...,N }→ R+ be
+a function, and regard f as a function on ZkN +v in the natural way. Here
+k is to be regarded as ﬁxed (but large), and N,v are positive integers with
+v≪N. Then we have
+(31)
+∑
+|r|≤k/2
+| ˆf(r)|2k ≥ 1√πk1/2(1−ε(k))|f|2k,
+whereε(k)→ 0 as k→∞ .
+P r o o f. The idea is rather simple, but (as the form of (31) might suggest)
+some fairly careful analysis is required. Throughout the following k will be
+taken suﬃciently large. We have
+| ˆf(r)| =
+⏐⏐⏐⏐⏐
+∑
+x
+f(x)ωr(x−N
+2 )
+⏐⏐⏐⏐⏐
+≥
+∑
+x
+f(x) cos
+(
+2πr
+(
+x− N
+2
+)
+kN +v
+)
+.
+Therefore if|r|≤ k/2 we have
+| ˆf(r)| ≥ |f| cos
+(πr
+k
+)
+.
+16
+===== PAGE 17 =====
+Now we simply compute
+|f|−2k
+∑
+|r|≤k/2
+| ˆf(r)|2k ≥
+∑
+|r|≤k/2
+⏐⏐⏐cosπr
+k
+⏐⏐⏐
+2k
+≥
+∑
+|r|≤k5/8
+⏐⏐⏐⏐1− π2r2
+2k2
+⏐⏐⏐⏐
+2k
+≥
+⏐⏐⏐⏐1− 25
+k3/2
+⏐⏐⏐⏐
+2k ∑
+|r|≤k5/8
+e−π2r2/k.
+In this last step we have used the inequality
+1−x ≥ e−x(1−x2),
+which holds for x≤ 1. Now one observes that
+⏐⏐⏐⏐1− 25
+k3/2
+⏐⏐⏐⏐
+2k
+−→1
+as k→∞ , and that
+1√
+k
+∑
+|r|≤k5/8
+e−π2r2/k−→
+∫ ∞
+−∞
+e−π2x2
+dx = 1√π.
+The proposition now follows. The conscientious reader may care to check
+that we can even take ε(k) = 100k−1/8. □
+Interestingly the above is essentially best possible. We take the opportunity
+to sketch a proof of this fact now.
+Proposition 19 The bound of Proposition 18 is best possible in that the
+constant 1/√π cannot be increased.
+S k e t c h P r o o f. Let δ > 0 and let χ be the characteristic function
+of the set Aδ, which consists of the integers n∈ {−N/2,...,N/ 2} with
+|n|≥ (1−δ)N/2. Let f(n) = δ−1χ(n), so that |f| = N(1 +o(1)). For
+x∈ [−1/2, 1/2] deﬁne
+g(x) =
+{ δ−1 (|x|≥ (1−δ)/2)
+0 (otherwise)
+Nowg is the probability density function of a random variableX with mean
+0 and variance
+(32) σ2 = 1− (1−δ)3
+12δ > 1
+4(1−δ).
+17
+===== PAGE 18 =====
+Let{Xi}∞
+i=1 be a sequence of independent identically distributed random
+variables with density g. Then, by a suitable version of the Central Limit
+Theorem (see [7]), the density function of
+X1 +··· +Xm
+σ√m
+tends to the standard normal 1√
+2πe−x2/2 uniformly in x. In other words,
+√m·g∗m(xσ√m)−→ 1
+σ
+√
+2πe−x2/2
+uniformly in x. In particular for m≥m(δ) we have, using (32), that
+(33) g∗m(0) ≤
+√
+2
+mπ(1−δ).
+Now let k be a ﬁxed positive integer, and regard f as a function on ZkN in
+the natural way (in Proposition 18 we worked with ZkN +v, but we choose
+to ignore this technicality here). Using the hat symbol to denote Fourier
+transforms on this group, we have
+∑
+r
+| ˆf(r)|2k = kN
+∑
+x
+|f∗k(x)|2
+= kN|f∗2k(0)|.(34)
+Note that the modular version of |f∗2k(0)| is the same as the Z-version
+because f is supported in{−N/2,N/ 2}. It is thus not hard to see that, as
+N→∞ , we have
+f∗2k(0)
+N 2k−1 −→g∗2k(0).
+It follows from (34) that
+|f|−2k
+∑
+r
+| ˆf(r)|2k−→kg∗2k(0),
+again as N→∞ . If 2 k≥ m(δ) (as deﬁned earlier) then this implies, by
+(33), that
+|f|−2k
+∑
+r
+| ˆf(r)|2k ≤
+√
+k
+π(1− 2δ)
+for N suﬃciently large. Since δ can be chosen arbitrarily small, the propo-
+sition follows. □
+18
+===== PAGE 19 =====
+We turn now to the business of actually using Proposition 18 to get infor-
+mation about Bh sets. We shall be extremely brief, as almost all of the
+relevant ideas have been covered in §4 (which it may help to recall at this
+point). First of all we require generalisations of Lemmas 2 and 16.
+Lemma 20 Let h = 2k be a positive even integer, and let A⊆{ 1,...,N }
+be a Bh-set. Then, for any x∈ Z, we have that
+A∗2k(x) ≤ (k!)2 +k2|A|A∗(2k−2)(x).
+Lemma 21 Leth = 2k−1 be a positive odd integer, and let A⊆{ 1,...,N }
+be a Bh-set. Then, for any x∈ Z, we have that
+A∗2k(x) ≤ |A|
+(
+k!(k− 1)! +k(k− 1)A∗(2k−2)(x)
+)
+.
+Regard A as a subset of ZkN +v, and let I be the characteristic function
+of{1,...,u } where u ≪ v ≪ N. In the case h = 2k, an appropriate
+generalisation of (13) (which may be proved in exactly the same way) is
+k(k!)2Nu 2 + (2k + 4)!
+(
+N 2−1/2ku +u2v
+)
+≥
+∑
+r
+| ˆA(r)|2k|ˆI(r)|2.
+Applying Proposition 18 and Lemma 14 quickly gives
+k(k!)2N + (2k + 4)!
+(N 2−1/2k
+u +v
+)
+≥ 1√πk1/2(1−ε(k))|A|2k
+(
+1− πku
+N
+)2
+,
+where here (and in the following) ε(k)→ 0 as k→∞ . Taking u =N 1−1/3k
+and v =N 1−1/4k gives the following improvement of (7).
+Theorem 22
+α(2k) ≤
+(
+π1/2k1/2(k!)2(1 +ε(k))
+)1/2k
+.
+The case h = 2k− 1 may be treated similarly and one winds up with
+Theorem 23
+α(2k− 1) ≤
+(
+π1/2k−1/2(k!)2(1 +ε(k))
+)1/(2k−1)
+.
+19
+===== PAGE 20 =====
+8. New bounds for B2[g]-sets part I. In this section we apply the
+results of§5 to the problem of bounding α(2,g ) above. We show that our
+ideas lead to a non-trivial bound which is stronger than that of [3] for
+g≤ 68. Let A⊆{ 1,...,N } be a B2[g]-set. Let 0 < v≤ N be an integer
+to be chosen later, and regard A as a subset of Z2N +v in the obvious way.
+Then we have
+(35) M(A) =
+∑
+x
+(A∗A◦)(x)2 ≤ 2g
+∑
+x
+(A∗A◦)(x) = 2 g|A|2.
+On the other hand, using the hat symbol to denote Fourier transforms in
+Z2N +v, we have
+(36) (2 N +v)M(A) =
+∑
+r
+| ˆA(r)|4.
+Now letX be another positive integer to be chosen later, and split the sum
+in (36) into the two parts
+Σ1 =
+∑
+|r|≤X
+| ˆA(r)|4
+and
+Σ2 =
+∑
+X<|r|≤N +v
+2
+| ˆA(r)|4.
+Applying Proposition 12 with f(x) =NA(x)/|A| gives
+(37) Σ 1 ≥ 8
+7|A|4
+(
+1− C
+N
+(
+v + N 3
+v2X +X 2
+))
+.
+Furthermore by the Cauchy-Schwarz inequality, Parseval’s identity and the
+trivial bound|A|≤ (4g)1/2N 1/2 we have
+Σ2 ≥ 1
+2N +v
+
+ ∑
+X<|r|≤N +v
+2
+| ˆA(r)|2
+
+
+2
+≥ 1
+2N +v
+(
+(2N +v)|A|− 2X|A|2)2
+≥ (2N +v) (|A|− 12gX)2.(38)
+TakingX =N 3/7,v =N 6/7 in the above and doing a little calculation with
+(35), (36), (37) and (38) gives the following result.
+20
+===== PAGE 21 =====
+Theorem 24 We have
+α(2,g ) ≤
+√
+7
+2g− 7
+4.
+This improves on the bound of [3] for g≤ 68, and in particular
+α(2, 2) ≤ 1
+2
+√
+21.
+9. New Bounds for B2[g]-sets part II. In this section we discuss the
+paper [3]. We begin by translating the techniques of that paper into the
+language we have been using here, a relatively easy task. We then show
+that our methods complement those of [3], in the sense that we can get an
+improved bound on A(2,g,N ). We shall in fact prove the following result.
+Theorem 25
+A(2,g,N ) ≤
+( 17
+5
+)1/2
+g1/2N 1/2(1 +o(1)).
+Observe that (17/5)1/2 = 1.84391.. (in fact our method gives the slightly
+better constant 1.84385). This is weaker than the bound of Theorem 24 for
+g≤ 18, but stronger than the bound of [3] for all g. We give this bound
+more as an illustration of the sort of techniques that might be useful in this
+problem rather than for the constant 17/5 itself.
+We now translate the technique used in [3] to obtain the bound (4) into the
+language of our paper. Let A⊆{ 1,...,N } be a B2[g] set, and regard A as
+a subset of Z2N. Deﬁne f(x) = 2g− (A∗A◦)(x), so that 0≤f(x)≤ 2g for
+all x∈ Z2N. For any r̸= 0 the Fourier transform ˆf(r) is simply − ˆA(r)2.
+Hence we have, if ω =e2πi/2N,
+| ˆA(r)|2 =
+⏐⏐⏐⏐⏐
+∑
+x
+(2g− (A∗A◦)(x))ωrx
+⏐⏐⏐⏐⏐
+≤
+∑
+x
+|2g− (A∗A◦)(x)|
+= 4 Ng−|A|2.(39)
+Noting that A⊆{ 1,...,N }, Cilleruelo, Ruzsa and Trujillo show that A
+must have a large non-zero Fourier coeﬃcient ˆA(r). The technique used
+to do this bears some resemblance to the techniques we used earlier to
+show that, under the same hypotheses, ∑
+r̸=0| ˆA(r)|4 cannot be too small.
+One ﬁnds a non-negative function f, supported on {1,...,N }, for which∑
+r̸=0| ˆf(r)| is large compared to|f|. Observing that
+∑
+x
+A(x)f(x +N) = 0 ,
+21
+===== PAGE 22 =====
+one uses Parseval’s identity to conclude that
+∑
+r̸=0
+| ˆA(r)|| ˆf(r)| ≥ |A||f|,
+from which it follows that
+sup
+r̸=0
+| ˆA(r)|·
+∑
+r̸=0
+| ˆf(r)| ≥ |A||f|.
+We suppress a more detailed discussion, referring the interested reader to
+[3].
+For the rest of the paper deﬁne
+N∞(A) = 1
+|A| sup
+r̸=0
+| ˆA(r)|
+and
+N4(A) = 1
+|A|4
+∑
+r̸=0
+| ˆA(r)|4.
+The situation may be summarised by saying that [3] obtains information
+fromN∞(A), whereas we proﬁted from consideration of N4(A). Since these
+are rather diﬀerent objects, it is not altogether surprising that a stronger
+bound can be achieved by playing the two approaches oﬀ against one an-
+other. The remainder of the paper, which aims to show that this is indeed
+so, consists of three parts. In Step 1 we show that a lower bound on N∞(A)
+can be used slightly more eﬀectively than was done in (39). In Step 2 we
+show how a lower bound on N4(A) gives information in a rather simpler
+(but slightly weaker) way than in§8. This keeps the whole argument man-
+ageable. Finally, in Step 3, we show that considering N∞(A) and N4(A)
+together gives stronger information, for large g, than separate consideration
+of either N∞(A) (cf. [3]) or N4(A) (cf.§8).
+Step 1. Let us reconsider the derivation (39). There was only one in-
+equality, but it was rather crude. Our task here is to improve it.
+Lemma 26 LetL,M,R be integers with L + 1≤M/R. LetC(M,R ) be the
+set of all functions f : ZL→{ 0, 1, 2,... } with|f| = M and f(x)≤ R for
+all x. Then, for all f∈C (M,R ),
+| ˆf(1)| ≤R
+⏐⏐⏐⏐⏐
+sin π
+L
+(M
+R + 1
+)
+sin π
+L
+⏐⏐⏐⏐⏐.
+22
+===== PAGE 23 =====
+P r o o f. The result clearly generalises to | ˆf(r)| with r̸= 0. It is saying
+nothing more than that| ˆf(1)| is maximised, among all functions inC(M,R ),
+when f is as concentrated as possible. We prove this using a sort of com-
+pression argument. Let f be a member ofC(M,R ) with| ˆf(1)| maximal. Let
+u,v ∈ ZL be such that f(u)> 0 and f(v)< M, and deﬁne a new function
+gu,v∈C (M,R ) by
+g(x) = f(x) ( x̸=u,v )
+g(u) = f(u)− 1
+g(v) = f(v) + 1.
+Let ω = e2πi/L and suppose that a∈ [0,L ) is such that ˆf(1) = | ˆf(1)|ωra
+(a need not be an integer). Then one can check that
+|ˆg(1)| =
+⏐⏐⏐| ˆf(1)| +ωv−a−ωu−a
+⏐⏐⏐
+≥ |ˆf(1)| + cos
+(2π(v−a)
+L
+)
+− cos
+(2π(u−a)
+L
+)
+.
+In words, |ˆg(1)| is greater than | ˆf(1)| if|v−a| <|u−a|, where distance
+is measured on the torus [0 ,L ) which contains ZL as a subgroup. By the
+extremal property of f, this means that we cannot select u and v with
+|v−a|<|u−a|,f(u)> 0 andf(v)<M . In other wordsf is as concentrated
+about a as possible. □
+We can now use this lemma in place of the inequality (39), with f(x) =
+2g− (A∗A◦)(x), L = 2N and M = 2g. One gets for any r̸= 0 that
+| ˆA(r)|2 ≤ 2g
+⏐⏐⏐⏐⏐⏐
+sin π
+2N
+(
+4Ng−|A|2
+2g + 1
+)
+sinπ/2N
+⏐⏐⏐⏐⏐⏐
+.
+Writing (here and for the rest of the paper)
+Q = |A|2
+4Ng,
+this simpliﬁes to
+| ˆA(r)|2 ≤ 2g
+⏐⏐⏐⏐⏐
+sin
+(
+πQ− π
+2N
+)
+sin(π/2N)
+⏐⏐⏐⏐⏐.
+Recalling that Q <1 uniformly in N (a consequence of Theorem 24) this
+reduces yet further to give
+| ˆA(r)|2 ≤ 4gN sinπQ
+π (1 +o(1)).
+23
+===== PAGE 24 =====
+Finally this implies our strengthened version of (39), namely
+(40) sinπQ
+πQ ≥ N∞(A)2(1 +o(1)).
+Step 2. In this brief section we show that upper bounds forB2[g] sets are
+related to lower bounds forN4(A) =∑
+r̸=0| ˆA(r)|4/|A|4 in a very simple way
+(which is a little weaker than the approach taken in§8). Let A⊆{ 1,...,N }
+be a B2[g] set and regard A as a subset of Z2N. Then
+|A|4(1 +N4(A)) =
+∑
+r
+| ˆA(r)|4
+= 2 N
+∑
+x
+(A∗A◦)(x)2
+≤ 4Ng
+∑
+x
+(A∗A◦)(x)
+= |A|4
+Q .
+Hence
+(41) Q ≤ 1
+1 +N4(A) .
+Step 3. Unfortunately this section is a touch computational. We trust
+the reader will accept our apologies for this. At this point we take the
+opportunity to recall equation (24), from which we deduced Theorem 6
+by a simple application of H¨ older’s Inequality. Let f :{1,...,N }→ R
+be a function with |f| = N, and regard f as a function on Z2N +v. Let
+p : [0, 1]→ R be a continuously diﬀerentiable function with
+∫ 1
+0 p(x)dx = 2.
+Then, using the hat and tilde symbols to denote Fourier transforms onZ2N +v
+and R respectively, we had
+(42)
+∑
+1≤r≤X
+| ˆf(r)||˜p(πr)| ≥N
+(
+1−C
+(v
+N + N 2
+v2X + X 2
+N
+))
+.
+Takef(x) = NA(x)/|A| and p(x) = 5
+2− 40
+(
+x− 1
+2
+)4
+(as we did in proving
+Theorem 6). With X =N 3/7 and v =N 6/7, (42) gives
+(43)
+∑
+1≤r<N
+| ˆA(r)||˜p(πr)| ≥ |A|(1 +o(1)).
+24
+===== PAGE 25 =====
+Suppose that| ˆA(1)| =α|A|. Then, recalling (26), we get that
+(44)
+∑
+2≤r<N
+| ˆA(r)||˜p(πr)| ≥ |A|
+(
+1−α
+(240
+π3 − 1920
+π5
+))
+(1 +o(1)).
+Suppose that α< 7
+10, so that
+1−α
+(240
+π3 − 1920
+π5
+)
+≥ 0.
+Then we may apply H¨ older’s Inequality to (44) to obtain, after a few calcu-
+lations, that
+N4(A) ≥
+
+2α4 +
+2
+(
+π3
+240
+)4(
+1−α
+( 240
+π3 − 1920
+π5
+))4
+((π
+6
+)4/3
+S1 +S2−
+(
+1− 8
+π2
+)4/3)3
+
+ (1 +o(1)) (45)
+≈
+(
+2α4 + 4.8607836 (1− 1.4662621α)4)
+(1 +o(1)),(46)
+where S1 and S2 are the sums appearing in (28) and (29). Call the poly-
+nomial appearing in (46) p(α). Then one can check that p′(α) < 0 for
+α∈ [0, 0.47]. Hence, putting α = 0.4124078 in (46), we get that either
+(47) N∞(A) ≥ | ˆA(1)|
+|A| ≥ 0.4124078
+or else
+(48) N4(A) ≥ 0.1765468 (1 +o(1)).
+If (48) holds then, by (41), we have
+Q ≤ 0.8499448 (1 +o(1)).
+If (47) holds then, by (40) and a little easy computation we have again that
+Q ≤ 0.8499448 (1 +o(1)).
+Either way, it is easy to see (recalling that Q =|A|2/4Ng ) that Theorem
+25 is true. □
+10. Concluding remarks on Bh[g] sets. In this paper we have been
+concerned only with the problem of ﬁnding upper bounds for Bh[g]-subsets
+of{1,...,N }. However the notion of Bh[g]-set makes sense on any subset
+25
+===== PAGE 26 =====
+of an abelian group and perhaps the most natural questions concern Bh[g]-
+subsets of ZN. Indeed one feels that in passing from ZN to{1,...,N }
+one has somehow only introduced “boundary eﬀects” that should have little
+bearing on the apparently deeper underlying arithmetic questions. Our work
+in this paper has been concerned with improving the estimates for these
+boundary eﬀects, and unfortunately our methods are unable to give any
+new information about Bh[g]-subsets of ZN. Let M(h,g,N ) denote the size
+of the largest Bh[g]-subset of ZN. Clearly then M(h,g,N )≤A(h,g,N ). So
+far as I am aware, the best known upper bounds on M(h,N ) =M(h, 1,N )
+come from simple applications of Lemmas 20 and 21 (which, as one can
+easily check, hold equally well in the modular case). That is to say, one has
+M(2k,N ) ≤ (k!)1/kN 1/2k(1 +o(1))
+and
+M(2k− 1,N ) ≤ (k!(k− 1)!)1/(2k−1)N 1/(2k−1)(1 +o(1)).
+In my opinion any signiﬁcant lowering of these bounds would require a
+substantial advance in our understanding of these additive representation
+questions.
+For higher values ofg it seems that essentially no non-trivial upper bounds
+are known in the modular case. ForB2[g] sets one could adapt the argument
+of§8 to get the bound
+M(2,g,N ) ≤ (2g− 1)1/2N 1/2(1 +o(1)),
+a slight improvement on the trivial bound. Non-trivial lower bounds can be
+obtained, but it should be noted that the results in [3] do not apply to the
+modular case. All these questions are very interesting.
+11. Further remarks on functions with minimal M(f). In this
+section, which is really an appendix, we oﬀer a miscellany of further results
+concerning Problem 3. Although these results are not necessary for an
+understanding of the rest of the paper they do throw a little light on some
+of the methods we have been using.
+We start by showing that the upper bound of Lemma 5 is not tight, even if
+we restrict attention to functions taking only two values.
+Lemma 27 There is an f :{1,...,N }→{ 0, 1} with|f| =N and M(f)≤
+0.64074N 3 +O(N 2).
+26
+===== PAGE 27 =====
+P r o o f. Let Aα be the set obtained by removing an interval of length
+αN from the middle of {1,...,N }. Let fα be the characteristic function
+of Aα, weighted by a factor (1 −α)−1 so that|fα| =N. A slightly tedious
+computation enables one to show that for α< 1/3 we have
+M(fα) =
+2
+3− 3α + 6α2− 5α3
+(1−α)4 N 3 +O(N 2).
+It is straightforward to check that the minimum in [0 , 1/3] occurs at α≈
+0.13257. □
+We now turn to a study of the extremal functions in Problem 3. Letting S
+denote the set of all f :{1,...,N }→ R with|f| =N, an easy compactness
+argument shows that there is a function F ∈S such that M(f)≥ M(F )
+for all f∈S . We write M(F ) =M0.
+Lemma 28 F∗F∗F is equal to M0/N on{1,...,N }.
+P r o o f. Let g :{1,...,N }→ R be any function with ∑
+xg(x) = 0. Then
+for any ϵ we must have M(F +ϵg)≥M0. A small computation gives that
+d
+dϵ
+∑
+x
+((F +ϵg)∗ (F +ϵg)(x))2
+⏐⏐⏐⏐⏐
+ϵ=0
+= 4
+∑
+x
+(F∗F )(x)(F∗g)(x)
+= 4
+∑
+x
+(F∗F∗F )(x)g(x).
+This expression must equal 0, and simple linear algebra tells us that this is
+the case precisely whenF∗F∗F equal to some constantc(F ) on{1,...,N }.
+It is easy to compute the value of c(F ) in terms of M0. Indeed
+(49) M0 =
+∑
+x
+(F∗F )(x)2 =
+∑
+x
+(F∗F∗F )(x)F (x) = c(F )N.
+Lemma 29 There is a unique extremal function in Problem 3.
+P r o o f. For the proof of this lemma we let the hat symbol (ˆ) denote the
+Fourier transform on Z. Thus for θ∈ T = [0, 1] we set
+ˆf(θ) =
+∑
+x
+f(x)e(xθ),
+wheree(t) =e2πit. With this notation it follows, using standard facts about
+Fourier transforms, that
+M(f) =
+∫ 1
+0
+| ˆf(θ)|4dθ.
+27
+===== PAGE 28 =====
+Let f,g :{1,...,N }→ R be two functions with|f| =|g| =N. We use the
+inequality ⏐⏐⏐⏐
+a +b
+2
+⏐⏐⏐⏐
+4
++
+⏐⏐⏐⏐
+a−b
+2
+⏐⏐⏐⏐
+4
+≤ |a|4 +|b|4
+2 ,
+which is valid for all a,b∈ C and follows immediately from the identity
+|a +b|4 +|a−b|4 + 6
+(
+|a|2−|b|2)2
++ 2
+(
+|ab|2−ℜa2b
+2)
+= 8(|a|4 +|b|4).
+Setting a = ˆf(θ), b = ˆg(θ) and integrating over θ∈ [0, 1] we get that
+(50) M
+(f +g
+2
+)
+≤ M(f) +M(g)
+2 ,
+with strict inequality unless∥ ˆf−ˆg∥4 = 0. Since ˆf and ˆg are both continuous
+this implies that ˆf = ˆg, which in turn forcesf =g identically. Suppose now
+thatM(f) =M(g) =M0. Then, as|(f +g)/2| =N, we must have equality
+in (50). This proves the lemma. □
+For the remainder of this section we will work in Z2N. As usual we shall
+regard functions
+f :{1,...,N }→ R
+as functions on Z2N, and the hat symbol will once again refer to the Fourier
+transform on Z2N.
+Lemma 30 Let G :{1,...,N }→ R be a function with |G| =N. Let H2N
+denote the set of all functions H : Z2N→ R with|H| = 0 and H(x) = 1 for
+x = 1,...,N (compare§5 ). Then we have
+(51)
+(∑
+r̸=0
+| ˆG(r)|4
+)(∑
+r̸=0
+| ˆH(r)|4/3
+)3
+≥ 16N 8
+for all H ∈ H2N. Suppose that in addition G∗ G∗ G is constant on
+{1,...,N }. Then equality can occur in (51).
+S k e t c h P r o o f. The ﬁrst part of the lemma (that is to say the inequality
+(51)) can be derived in much the same way that we proved Theorem 6 in§5.
+In fact, the argument is a great deal simpler because we have not introduced
+any smoothing device here. For the second statement, we simply observe
+that one can take
+H(x) = 2NG∗G∗G(x)−N 3
+2M(G)−N 3 .
+28
+===== PAGE 29 =====
+The convolutions are taken in Z2N, but one can check that the modular
+convolution G∗G∗G is also constant on {1,...,N }. This concludes the
+proof of the lemma. □
+This lemma has a number of consequences. First of all it provides justiﬁ-
+cation for the approach we used in §5 to obtain a lower bound for M(f).
+Secondly it allows us to prove
+Corollary 31 Suppose G :{1,...,N }→ R is a function with |G| = N
+for which G∗G∗G is constant on {1,...,N }. Then G =F .
+P r o o f. It follows easily from Lemma 30 that G is extremal for Problem
+3, the problem of minimising M(G). Hence, by Lemma 29, G =F . □
+To conclude we should like to remark that Problem 3 is closely related to
+the problem of ﬁnding the best possible constants in what are known as
+Inequalities of Nikol’sk˘ ıi Type.
+Acknowledgements. The author would like to thank Alex Barnard,
+for plotting our extremal function F numerically and for advice concerning
+computations; Tim Gowers, for helpful advice; and Imre Ruzsa for making
+the preprint [3] available. Finally I would like to thank the referee for a
+couple of helpful suggestions.
+References
+[1] S. C h e n, On the Size of Finite Sidon Sequences , Proc. Amer. Math.
+Soc. 121 (1994) 353–356.
+[2] J. C i l l e r u e l o, An Upper Bound for B2[2] Sequences, Journal of
+Combinatorial Theory, Series A 89 (2000) 141–144.
+[3] J. C i l l e r u e l o, I. Z. R u z s a and C. T r u j i l l o, Upper and
+Lower Bounds for Finite Bh[g] Sequences,g >1, to appear in Journal
+of Number Theory.
+[4] P. E r d ˝ o s and P. T u r ´ a n, On a Problem of Sidon in Additive
+Number Theory and On Some Related Problems, Journal of the London
+Mathematical Society 16 (1941) 212–215.
+[5] W. T. G o w e r s,A New Proof of Szemer´ edi’s Theorem for Progressions
+of Length Four, Geom. Funct. Anal. 8 (1998) 529 – 551.
+29
+===== PAGE 30 =====
+[6] S. W. G r a h a m, Bh Sequences, in Analyic Number Theory Vol
+1 (Allerton Park, IL, 1995) 431–449, Progress in Mathematics 138,
+Birkh¨ auser, Boston MA 1996.
+[7] G. R. G r i m m e t t and D. R. S t i r z a k e r, Probability and Random
+Processes, Clarendon Press, Oxford 1992.
+[8] R. K. G u y, Unsolved Problems in Number Theory Second Edition,
+Springer 1994.
+[9] H. H a l b e r s t a m and K. F. R o t h, Sequences Second Edition,
+Springer 1983.
+[10] X. J i a, On B2k Sequences, Journal of Number Theory 48 (1994) 183–
+196.
+[11] M. N. K o l o u n t z a k i s, The Density of Bh[g] Sequences and the
+Minimum of Dense Cosine Sums , Journal of Number Theory 56 (1996)
+4–11.
+[12] B. L i n d s t r ¨ o m, A Remark on B4-Sequences, Journal of Combina-
+torial Theory 7 (1969) 276–277.
+[13] H. L. M o n t g o m e r y, Topics in Multiplicative Number Theory ,
+Springer 1971.
+[14] A. S ´ a r k ˝ o z y and V. T. S ´ o s,On Additive Representation Functions,
+in The Mathematics of Paul Erd˝ os, Vol. 1, Springer 1997.
+department of pure mathematics and mathematical statistics
+university of cambridge
+wilberforce road
+cambridge cb3 0wb, england
+30
