@@ -81,14 +81,30 @@ Data: [`data/bose_chowla_all.csv`](data/bose_chowla_all.csv).
   their own interval. Greedy augmentation ratios decline toward 1. This is evidence **for** the
   conjecture from the disproof route — the natural dense family has no slack to exploit.
 
-**COMPUTATION B2 (structured family search).** Workflow `wf_caeb452f-833` (greedy-from-scratch,
-dilated/translated BC unions, deep local search, modular-lift, digit-constrained families), all
-verified by the standalone checker. Synthesis: [`lit/lower_bound_search.md`]. *(Summary folded in
-once the background search completes; preliminary: nothing sustainably exceeds ratio 1+c.)*
+**COMPUTATION B2 (structured family search).** Workflow `wf_caeb452f-833`, five families, all
+sets verified by the standalone checker. Synthesis: [`lit/lower_bound_search.md`]. **No family
+sustains ratio 1+c over ℤ.** Findings:
+- **Greedy** = OEIS A051912; ratio decays as ≈N^{−0.106} (so |A|~N^{0.228}, not N^{1/3}),
+  crossing below 1 near N≈8000. The thin baseline, not a dense family.
+- **Unions of dilated/translated BC:** pure translates A₀∪(A₀+T) are **never** B₃ for |A₀|≥3
+  (explicit collision a_i+a_j+(a_k+T) = a_i+a_k+(a_j+T)); dilated unions need D growing with q,
+  forcing ratio ≈2/D^{1/3}→0. Best (q=4) ratio 1.17 is an isolated small-N artifact.
+- **Depth local search within [1,q³−1]:** a depth-1 *swap* (remove one BC element, refill)
+  **does beat size q at small q** — e.g. size 14 in [1,2196] at q=13, where single-element
+  augmentation is already locally maximal — but the surplus over q shrinks +2→+1→**0 for q≥16**.
+  Refines B1: BC sets are single-element-maximal from q≥13 but only fully swap-maximal from q≥16;
+  ratio still → 1.
+- **Modular lift:** modular sets sustain ratio ≈2^{1/3}=1.26 in the torus (free wraparound), but
+  lifting to ℤ and paying for max(A) erases the bonus — they tie or lose to f(N) at equal N.
+- **Digit/algebraic:** cubes/squares are B₃ but too sparse (ratio→0); Golomb rulers are B₂ not B₃;
+  **B₃ sets do not compose** — A+s·B fails B₃ for every spacing s (the triple-sum decouples the
+  a- and b-sums, losing the pairing). This is the mechanistic reason the only dense construction
+  must be algebraic (Bose–Chowla encodes the pairing into a single field element θ+c).
 
-**Verdict (HEURISTIC, strongly supported):** no construction found beats (1+o(1))N^{1/3}; the
-Bose–Chowla constant 1 looks genuinely hard to improve, and its local maximality is concrete
-evidence the lower bound is tight in shape.
+**Verdict (HEURISTIC, strongly supported):** no construction beats (1+o(1))N^{1/3}; the Bose–Chowla
+constant 1 looks genuinely hard to improve. Its (asymptotic) local maximality, the non-composition
+of B₃ sets, and the non-transfer of the modular density bonus are three independent pieces of
+concrete evidence that the lower bound is tight in shape — i.e. evidence *for* the conjecture.
 
 ---
 

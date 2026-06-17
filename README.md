@@ -1,6 +1,16 @@
 # Erdős Problem #241 — maximum size of B₃ sets
 
-**Status snapshot: 2026-06-12 17:38 EDT** (work in progress; background computations still running)
+**Status snapshot: 2026-06-12 (all workstreams complete; see `results.md`)**
+
+> Quick map: [`results.md`](results.md) (labeled outcomes) · [`writeup/literature_memo.md`](writeup/literature_memo.md) ·
+> [`writeup/modular_theorem.md`](writeup/modular_theorem.md) (THEOREM candidate) ·
+> [`writeup/upper_bound_program.md`](writeup/upper_bound_program.md) (Green + certified kernel) ·
+> [`writeup/assessment.md`](writeup/assessment.md) (final assessment).
+>
+> Headlines: (1) exact f(N) to 159 = OEIS A387704, b-file extended by 9 terms; (2) modular THEOREM
+> candidate k³≤2m+3k² (adversarially verified); (3) **certified** improvement of Green's constant
+> 1.51825→1.51587 N^{1/3} by optimizing his kernel; (4) Bose–Chowla shown asymptotically locally
+> maximal — no family beats ratio 1.
 
 ## The problem
 
