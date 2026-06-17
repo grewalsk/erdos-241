@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "/Users/kabirgrewal/projects/erdos-241/code/bose_chowla.py", line 244, in <module>
-    A, n = bose_chowla(q)
-           ^^^^^^^^^^^^^^
-  File "/Users/kabirgrewal/projects/erdos-241/code/bose_chowla.py", line 115, in bose_chowla
-    assert len(sub) == q, (len(sub), q)
-           ^^^^^^^^^^^^^
-AssertionError: (3, 25)

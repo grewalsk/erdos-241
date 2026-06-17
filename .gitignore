@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.pyc
+
+# compiled solvers (build with: cc -O2 -o fsolver fsolver.c -lm)
+code/fsolver
+code/gsolver
+
+# stderr logs (transient; time-cap notices etc.)
+data/*.err
